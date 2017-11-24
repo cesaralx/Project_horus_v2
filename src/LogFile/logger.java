@@ -20,6 +20,7 @@ import java.util.stream.Stream;
  * @author alexi
  */
 public class logger {
+    listaLog listLog = new listaLog();
     Logger logger = Logger.getLogger(logger.class.getName());
     FileHandler fh;
 
@@ -61,7 +62,7 @@ public class logger {
     }
     
     public void readFile() throws FileNotFoundException, IOException {
-        listaLog listLog = new listaLog();
+
         listLog.inicializacion();
         boolean isrun = false;
 
@@ -79,6 +80,22 @@ public class logger {
             listLog.visualizar();
         }
     }
+    
+    public void orderByTipo() throws FileNotFoundException, IOException {
+
+        listLog.bubbleSortTipo();
+        System.out.println("Despues de ordenar");
+        listLog.visualizar();
+        listLog.generarLogOrdenado();
+        // refresh info del log
+        
+
+    }
+        
+            
+   
+    
+    
     
 
 }

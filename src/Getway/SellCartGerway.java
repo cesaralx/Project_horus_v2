@@ -88,7 +88,7 @@ public class SellCartGerway {
         con = dbCon.geConnection();
         SQL sql = new SQL();
         try {
-            pst = con.prepareStatement("select * from "+db+".Sell limit 0,15");
+            pst = con.prepareStatement("select top 15 * from venta ");
             rs = pst.executeQuery();
             while (rs.next()){
                 sellCart.Id = rs.getString(1);
@@ -102,9 +102,9 @@ public class SellCartGerway {
                 sellCart.warrentyVoidDate = rs.getString(9);
                 sellCart.sellerID = rs.getString(10);
                 sellCart.sellDate = rs.getString(11);
-                sellCart.givenProductID = sql.getName(sellCart.productID, sellCart.givenProductID, "Products");
-                sellCart.sellerName = sql.getName(sellCart.sellerID, sellCart.sellerName, "User");
-                sellCart.customerName = sql.getName(sellCart.customerID, sellCart.customerName, "Customer");
+                sellCart.givenProductID = sql.getName(sellCart.productID, sellCart.givenProductID, "productos");
+                sellCart.sellerName = sql.getName(sellCart.sellerID, sellCart.sellerName, "usuario");
+                sellCart.customerName = sql.getName(sellCart.customerID, sellCart.customerName, "cliente");
                 
                 sellCart.soldList.addAll(new ListSold(sellCart.Id,sellCart.sellID ,sellCart.productID, sellCart.givenProductID, sellCart.customerID, sellCart.customerName, sellCart.pursesPrice, sellCart.sellPrice, null, sellCart.quantity, sellCart.totalPrice, sellCart.pursrsDate, sellCart.warrentyVoidDate, sellCart.sellerID, sellCart.sellerName, sellCart.sellDate));
             }pst.close();
@@ -120,7 +120,7 @@ public class SellCartGerway {
         sellCart.carts.clear();
         SQL sql = new SQL();
         try {
-            pst = con.prepareStatement("select * from "+db+".Sell where SellId like ?");
+            pst = con.prepareStatement("select * from venta where ventaId like ?");
             pst.setString(1, "%" + sellCart.sellID + "%");
             rs = pst.executeQuery();
             while (rs.next()){
@@ -135,9 +135,9 @@ public class SellCartGerway {
                 sellCart.warrentyVoidDate = rs.getString(9);
                 sellCart.sellerID = rs.getString(10);
                 sellCart.sellDate = rs.getString(11);
-                sellCart.givenProductID = sql.getName(sellCart.productID, sellCart.givenProductID, "Products");
-                sellCart.sellerName = sql.getName(sellCart.sellerID, sellCart.sellerName, "User");
-                sellCart.customerName = sql.getName(sellCart.customerID, sellCart.customerName, "Customer");
+                sellCart.givenProductID = sql.getName(sellCart.productID, sellCart.givenProductID, "productos");
+                sellCart.sellerName = sql.getName(sellCart.sellerID, sellCart.sellerName, "usuario");
+                sellCart.customerName = sql.getName(sellCart.customerID, sellCart.customerName, "cliente");
                 
                 sellCart.soldList.addAll(new ListSold(sellCart.Id,sellCart.sellID ,sellCart.productID, sellCart.givenProductID, sellCart.customerID, sellCart.customerName, sellCart.pursesPrice, sellCart.sellPrice, null, sellCart.quantity, sellCart.totalPrice, sellCart.pursrsDate, sellCart.warrentyVoidDate, sellCart.sellerID, sellCart.sellerName, sellCart.sellDate));
             }pst.close();

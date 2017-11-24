@@ -183,17 +183,11 @@ public class LoginController1 implements Initializable {
                         Stage stage = (Stage) btnLogin.getScene().getWindow();
                         stage.close();
                     } else {
-                        log.wirteLogInfo("Password Not Match");
-//                        Alert alert = new Alert(Alert.AlertType.ERROR);
-//                        alert.setTitle("Password Not Match");
-//                        alert.setHeaderText("Error : Name or Pass Not matched");
-//                        alert.setContentText("User Name or Password not matched \ntry Again");
-//                        alert.initStyle(StageStyle.UNDECORATED);
-//                        alert.showAndWait();
+                        log.wirteLogInfo("Password No Coincide");
                         TrayNotification tn = new TrayNotification();
                         tn.setNotificationType(NotificationType.WARNING);
-                               tn.setTitle("Password Not Match");
-                               tn.setMessage("User Name or Password not matched \ntry Again");
+                               tn.setTitle("Password no coincide");
+                               tn.setMessage("User Name o Password no coincide \nPrueba de nuevo");
                                tn.setAnimationType(AnimationType.FADE);
                                tn.showAndDismiss(Duration.seconds(2));
                     }
@@ -211,7 +205,7 @@ public class LoginController1 implements Initializable {
 //            alert.showAndWait();
             TrayNotification tn = new TrayNotification();
             tn.setNotificationType(NotificationType.ERROR);
-            tn.setTitle("Errpr: Server Not Found");
+            tn.setTitle("Error: Server Not Found");
             tn.setMessage("Make sure your SQL server is Start properly, \ntry Again");
             tn.setAnimationType(AnimationType.FADE);
             tn.showAndDismiss(Duration.seconds(2));
@@ -248,7 +242,7 @@ public class LoginController1 implements Initializable {
             Stage nStage = new Stage();
             nStage.setScene(scene);
             nStage.setMaximized(false);
-            nStage.setTitle("Server Status -StoreKeeper");
+            nStage.setTitle("Server Status -Nice Vaping");
             nStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -303,7 +297,7 @@ public class LoginController1 implements Initializable {
             Stage nStage = new Stage();
             nStage.setScene(scene);
             nStage.setMaximized(false);
-            nStage.setTitle("Registration -StoreKeeper");
+            nStage.setTitle("Registro -Nice Vaping");
             nStage.show();
             Stage stage = (Stage) hlCrateAccount.getScene().getWindow();
             stage.close();

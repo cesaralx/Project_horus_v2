@@ -114,7 +114,7 @@ public class StockController implements Initializable {
 
     @FXML
     public void btnStockOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("Store");
+        lblHeader.setText("Tienda");
         CurrentStoreController asc = new CurrentStoreController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();
@@ -132,7 +132,7 @@ public class StockController implements Initializable {
 
     @FXML
     private void btnSupplyerOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("Supplyer");
+        lblHeader.setText("Proveedor");
         ViewSupplyerController vsc = new ViewSupplyerController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();
@@ -149,7 +149,7 @@ public class StockController implements Initializable {
 
     @FXML
     private void btnBrandsOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("Brands");
+        lblHeader.setText("Marcas");
         ViewBrandController vbc = new ViewBrandController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();
@@ -166,7 +166,7 @@ public class StockController implements Initializable {
 
     @FXML
     private void btnCatagoryOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("Catagories");
+        lblHeader.setText("Categorias");
         ViewCatagoryController vcc = new ViewCatagoryController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();
@@ -200,7 +200,7 @@ public class StockController implements Initializable {
 
     @FXML
     private void btnRmaOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("RMA");
+        lblHeader.setText("Devolucion");
         ViewRMAController vrmac = new ViewRMAController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();
@@ -222,7 +222,7 @@ public class StockController implements Initializable {
     public void settingPermission(){
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".UserPermission where id=?");
+            pst = con.prepareStatement("select * from userpermission where Idi=?");
             pst.setString(1, usrId);
             rs = pst.executeQuery();
             while(rs.next()){

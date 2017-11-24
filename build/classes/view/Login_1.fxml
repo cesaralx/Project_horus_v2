@@ -30,7 +30,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Student.png" />
+                        <Image url="@../icons/avatar_circle_blue_48dp.png" />
                      </image>
                   </ImageView>
                   <JFXTextField fx:id="txtUsername" labelFloat="true" layoutX="54.0" layoutY="138.0" maxWidth="297.0" minWidth="226.0" prefHeight="31.0" prefWidth="297.0" promptText="Username">
@@ -74,6 +74,11 @@
             </Label>
             <Separator layoutX="350.0" layoutY="93.0" opacity="0.9" prefWidth="150.0" />
             <JFXButton fx:id="bntServer" buttonType="RAISED" layoutX="745.0" layoutY="555.0" onAction="#hlDbOnAction" ripplerFill="#e47c7c" style="-fx-background-color: #00718A;" text="Configuracion" textFill="WHITE" />
+            <ImageView fitHeight="128.0" fitWidth="200.0" layoutX="691.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/niceVaping_logo_v1.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

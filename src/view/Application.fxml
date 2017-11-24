@@ -34,17 +34,12 @@
                            <content>
                               <AnchorPane BorderPane.alignment="CENTER">
                                  <children>
-                                    <Text fill="#cc3535" layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Control">
-                                       <font>
-                                          <Font name="System Bold Italic" size="21.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="46.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="btnHome" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#btnHomeOnClick" prefHeight="78.0" prefWidth="127.0" text="Inicio">
+                                    <Button fx:id="btnHome" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#btnHomeOnClick" prefHeight="49.0" prefWidth="127.0" text="Inicio">
                                        <graphic>
                                           <ImageView fx:id="imgHomeBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -53,12 +48,12 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="btnStore" contentDisplay="TOP" layoutY="133.0" mnemonicParsing="false" onAction="#btnStoreOnClick" prefHeight="78.0" prefWidth="127.0" text="Tienda">
+                                    <Button fx:id="btnStore" contentDisplay="TOP" layoutY="133.0" mnemonicParsing="false" onAction="#btnStoreOnClick" prefHeight="55.0" prefWidth="127.0" text="Tienda">
                                        <graphic>
                                           <ImageView fx:id="imgStoreBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -67,7 +62,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnEmplopye" contentDisplay="TOP" layoutY="316.0" mnemonicParsing="false" onAction="#btnEmplopyeOnClick" prefHeight="78.0" prefWidth="127.0" text="Empleados">
+                                    <Button fx:id="btnEmplopye" contentDisplay="TOP" layoutY="316.0" mnemonicParsing="false" onAction="#btnEmplopyeOnClick" prefHeight="45.0" prefWidth="127.0" text="Empleados">
                                        <graphic>
                                           <ImageView fx:id="imgEmployeBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -76,17 +71,17 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="46.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="46.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="btnSell" contentDisplay="TOP" layoutY="225.0" mnemonicParsing="false" onAction="#btnSellOnClick" prefHeight="78.0" prefWidth="127.0" text="Venta">
+                                    <Button fx:id="btnSell" contentDisplay="TOP" layoutY="225.0" mnemonicParsing="false" onAction="#btnSellOnClick" prefHeight="50.0" prefWidth="127.0" text="Venta">
                                        <graphic>
                                           <ImageView fx:id="imgSellBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -95,12 +90,12 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="btnSettings" contentDisplay="TOP" layoutY="405.0" mnemonicParsing="false" onAction="#btnSettingsOnClick" prefHeight="78.0" prefWidth="127.0" text="Configuracion">
+                                    <Button fx:id="btnSettings" contentDisplay="TOP" layoutY="405.0" mnemonicParsing="false" onAction="#btnSettingsOnClick" prefHeight="51.0" prefWidth="127.0" text="Configuracion">
                                        <graphic>
                                           <ImageView fx:id="imgSettingsBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -109,12 +104,12 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="5.0" fitWidth="114.0" layoutX="45.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icon/btnBreak.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="btnAbout" contentDisplay="TOP" layoutY="496.0" mnemonicParsing="false" onAction="#btnAboutOnClick" prefHeight="78.0" prefWidth="127.0" text="Acerca de">
+                                    <Button fx:id="btnAbout" contentDisplay="TOP" layoutY="496.0" mnemonicParsing="false" onAction="#btnAboutOnClick" prefHeight="37.0" prefWidth="127.0" text="Acerca de">
                                        <graphic>
                                           <ImageView fx:id="imgAboutBtn" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -123,6 +118,11 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
+                                    <ImageView fitHeight="40.0" fitWidth="44.0" layoutX="42.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/niceVaping_logo_v1.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </AnchorPane>
                            </content>
@@ -158,7 +158,7 @@
                                                          <graphic>
                                                             <AnchorPane prefHeight="225.0" prefWidth="190.0">
                                                                <children>
-                                                                  <Circle fx:id="circleImgUsr" fill="DODGERBLUE" layoutX="100.0" layoutY="49.0" radius="46.0" stroke="BLACK" strokeType="INSIDE" />
+                                                                  <Circle fx:id="circleImgUsr" fill="#88a6c3" layoutX="100.0" layoutY="49.0" radius="46.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
                                                                   <Label fx:id="lblUsrNamePopOver" alignment="CENTER" layoutY="107.0" prefHeight="15.0" prefWidth="196.0" text="UserName" />
                                                                   <Label fx:id="lblFullName" alignment="CENTER" layoutX="2.0" layoutY="129.0" prefHeight="15.0" prefWidth="196.0" text="Full Name" />
                                                                   <Label fx:id="lblRoleAs" alignment="CENTER" layoutX="3.0" layoutY="148.0" prefHeight="15.0" prefWidth="196.0" text="Role" />
@@ -173,7 +173,7 @@
                                                       <AnchorPane prefHeight="20.0" prefWidth="120.0">
                                                          <children>
                                                             <Circle fx:id="imgUsrTop" fill="DODGERBLUE" layoutX="26.0" layoutY="24.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
-                                                            <Label fx:id="lblUsrName" layoutX="52.0" layoutY="17.0" text="Rifat" />
+                                                            <Label fx:id="lblUsrName" layoutX="52.0" layoutY="17.0" text="Usuario" />
                                                          </children>
                                                       </AnchorPane>
                                                    </graphic>
@@ -207,7 +207,11 @@
                                     </HBox>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Label layoutX="62.0" layoutY="23.0" text="My Logo Goes Hear" textFill="#fff7f7" />
+                                          <Text fill="#cc3535" layoutX="-89.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nice Vaping" wrappingWidth="191.41162109375">
+                                             <font>
+                                                <Font name="System Bold Italic" size="21.0" />
+                                             </font>
+                                          </Text>
                                        </children>
                                     </AnchorPane>
                                  </children>

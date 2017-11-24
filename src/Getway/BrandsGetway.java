@@ -39,16 +39,15 @@ public class BrandsGetway {
 
     public void save(Brands brands) {
         con = dbCon.geConnection();
-        brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "Supplyer", "SupplyerName");
+        brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "proveedor", "ProveedorNombre");
 
         try {
-            pst = con.prepareStatement("insert into "+db+".Brands values(?,?,?,?,?,?)");
-            pst.setString(1, null);
-            pst.setString(2, brands.brandName);
-            pst.setString(3, brands.brandComment);
-            pst.setString(4, brands.supplyrId);
-            pst.setString(5, brands.creatorId);
-            pst.setString(6, LocalDate.now().toString());
+            pst = con.prepareStatement("insert into marcas (MarcaNombre, Descripcion, ProveedorId, CreatorId, Fecha ) values(?,?,?,?,?)");
+            pst.setString(1, brands.brandName);
+            pst.setString(2, brands.brandComment);
+            pst.setString(3, brands.supplyrId);
+            pst.setString(4, brands.creatorId);
+            pst.setString(5, LocalDate.now().toString());
             pst.executeUpdate();
             con.close();
             pst.close();
@@ -69,7 +68,7 @@ public class BrandsGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareCall("select * from "+db+".Brands");
+            pst = con.prepareCall("select * from marcas");
             rs = pst.executeQuery();
             while (rs.next()) {
                 brands.id = rs.getString(1);
@@ -78,8 +77,8 @@ public class BrandsGetway {
                 brands.supplyrId = rs.getString(4);
                 brands.creatorId = rs.getString(5);
                 brands.date = rs.getString(6);
-                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "Supplyer");
-                brands.creatorName = sql.getName(brands.creatorId, brands.creatorName, "User");
+                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "proveedor");
+                brands.creatorName = sql.getName(brands.creatorId, brands.creatorName, "usuario");
                 brands.brandDitails.addAll(new ListBrands(brands.id, brands.brandName, brands.brandComment, brands.supplyerName, brands.creatorName, brands.date));
             }
             con.close();
@@ -96,7 +95,7 @@ public class BrandsGetway {
 
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".Brands where id=?");
+            pst = con.prepareCall("select * from marcas where MarcaID=?");
             pst.setString(1, brands.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -104,7 +103,7 @@ public class BrandsGetway {
                 brands.brandName = rs.getString(2);
                 brands.brandComment = rs.getString(3);
                 brands.supplyrId = rs.getString(4);
-                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "Supplyer");
+                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "proveedor");
             }
             con.close();
             pst.close();
@@ -123,7 +122,7 @@ public class BrandsGetway {
 
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".Brands where BrandName like ? ORDER BY BrandName");
+            pst = con.prepareCall("select * from marcas where MarcaNombre like ? ORDER BY MarcaNombre");
             System.out.println("Brand name in Brand Object");
             pst.setString(1, "%" + brands.brandName + "%");
 
@@ -135,8 +134,8 @@ public class BrandsGetway {
                 brands.supplyrId = rs.getString(4);
                 brands.creatorId = rs.getString(5);
                 brands.date = rs.getString(6);
-                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "Supplyer");
-                brands.creatorName = sql.getName(brands.creatorId, brands.creatorName, "User");
+                brands.supplyerName = sql.getName(brands.supplyrId, brands.supplyerName, "proveedor");
+                brands.creatorName = sql.getName(brands.creatorId, brands.creatorName, "usuario");
                 brands.brandDitails.addAll(new ListBrands(brands.id, brands.brandName, brands.brandComment, brands.supplyerName, brands.creatorName, brands.date));
             }
             con.close();
@@ -152,7 +151,7 @@ public class BrandsGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("delete from "+db+".Brands where Id=?");
+            pst = con.prepareStatement("delete from marcas where MarcaID=?");
             pst.setString(1, brands.id);
             pst.executeUpdate();
         } catch (SQLException e) {
@@ -164,7 +163,7 @@ public class BrandsGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("update "+db+".Brands set BrandName=? , Description=?,SupplyerId=? where Id=?");
+            pst = con.prepareStatement("update marcas set MarcaNombre=? , Descripcion=?,ProveedorId=? where MarcaID=?");
             pst.setString(1, brands.brandName);
             pst.setString(2, brands.brandComment);
             pst.setString(3, brands.supplyrId);
@@ -188,7 +187,7 @@ public class BrandsGetway {
         con = dbCon.geConnection();
         boolean inNotUse = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Catagory where BrandId=?");
+            pst = con.prepareStatement("select * from categoria where MarcaID=?");
             pst.setString(1, brands.id);
             rs = pst.executeQuery();
             while(rs.next()){

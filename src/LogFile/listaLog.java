@@ -1,5 +1,7 @@
 package LogFile;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.FileHandler;
 
 public class listaLog {
 
@@ -93,6 +95,26 @@ public class listaLog {
                 actual.imprimir(); 
                 actual = actual.siguiente;
             }
+        }
+    }
+    
+        public void generarLogOrdenado() throws IOException {
+        if (tam == 0) {
+            System.out.println("NO HAY DATOS ALMACENADOS");
+        } else {
+            modeloLog actual;
+            actual = inicio;
+            String text;
+            PrintWriter fh;
+            
+            fh = new PrintWriter( System.getProperty("user.dir")+ "/logOrdenado.log");
+
+            while (actual != null) {
+               text = actual.imprimirTA(); 
+               fh.append(text+"\n");
+                actual = actual.siguiente;
+            }
+            fh.close();
         }
     }
 
@@ -214,5 +236,59 @@ public class listaLog {
 //        }
 //
 //    }
+        
+         public void bubbleSortTipo() throws IOException {
+        logger log = new logger();
+        boolean done = false;
+        try {
+            while (!done) {
+                modeloLog actual = inicio;
+                done = true;
+                log.wirteLogInfo("Entro");
+                while (actual != null) {
+                    log.wirteLogInfo("Actual es distinto de null");
+                    if (actual.siguiente != null) {
+                        int compare = actual.siguiente.getTipo().compareTo(actual.getTipo());
+                        if (compare > 0) {
+                            swap(actual.siguiente, actual);
+                            done = false;
+                            log.wirteLogInfo("siguiengte es mayor a actual");
+                        }
+                    } else {
+                        actual.siguiente = null;
+                        int compare2 = actual.getTipo().compareTo(actual.anterior.getTipo());
+                        if (compare2 > 0) {
+                            swap(actual, actual.anterior);
+                            done = true;
+                        }
+                    }
+                    actual = actual.siguiente;
+                    log.wirteLogInfo("Actual = a siguiente " + done);
+                }
+                log.wirteLogInfo("Salio " + done);
+            }
+            log.wirteLogInfo("Termino ciclo");
+        } catch (NullPointerException e) {
+            System.err.println("Error: " + e);
+        }
+    }
+
+    private void swap(modeloLog n1, modeloLog n2) throws IOException {
+        logger log = new logger();
+        log.wirteLogInfo("Cambiando n1: " + n1.getTipo() + " con n2: " + n2.getTipo());
+
+        modeloLog aux = new modeloLog();
+        aux.setAnterior(n1.getAnterior());
+        aux.setSiguiente(n1.getSiguiente());
+        aux.setLineaLog(n1.getLineaLog());
+
+        n1.setLineaLog(n2.getLineaLog());
+        n1.setAnterior(n2.getAnterior());
+        n1.setSiguiente(n2.getSiguiente());
+
+        n2.setLineaLog(aux.getLineaLog());
+        n2.setAnterior(aux.getAnterior());
+        n2.setSiguiente(aux.getSiguiente());
+    }
         
 }

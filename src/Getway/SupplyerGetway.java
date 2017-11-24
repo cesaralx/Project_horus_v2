@@ -37,14 +37,13 @@ public class SupplyerGetway {
         if (isUniqSupplyerName(supplyer)) {
             try {
                 con = dbCon.geConnection();
-                pst = con.prepareCall("insert into "+db+".Supplyer values(?,?,?,?,?,?,?)");
-                pst.setString(1, null);
-                pst.setString(2, supplyer.supplyerName);
-                pst.setString(3, supplyer.supplyerContactNumber);
-                pst.setString(4, supplyer.supplyerAddress);
-                pst.setString(5, supplyer.supplyerDescription);
-                pst.setString(6, supplyer.creatorId);
-                pst.setString(7, LocalDate.now().toString());
+                pst = con.prepareCall("insert into proveedor (ProveedorNombre, ProveedorTelefono, ProveedorDireccion, ProveedorDescripcion, CreatorId, Fecha ) values(?,?,?,?,?,?)");
+                pst.setString(1, supplyer.supplyerName);
+                pst.setString(2, supplyer.supplyerContactNumber);
+                pst.setString(3, supplyer.supplyerAddress);
+                pst.setString(4, supplyer.supplyerDescription);
+                pst.setString(5, supplyer.creatorId);
+                pst.setString(6, LocalDate.now().toString());
                 pst.executeUpdate();
                 con.close();
                 pst.close();
@@ -65,7 +64,7 @@ public class SupplyerGetway {
     public void view(Orders supplyer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareCall("select * from "+db+".Supplyer");
+            pst = con.prepareCall("select * from proveedor");
             rs = pst.executeQuery();
             while (rs.next()) {
                 supplyer.id = rs.getString(1);
@@ -92,7 +91,7 @@ public class SupplyerGetway {
         con = dbCon.geConnection();
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".Supplyer where SupplyerName like ? or SupplyerPhoneNumber like ? ORDER BY SupplyerName");
+            pst = con.prepareCall("select * from proveedor where proveedorNombre like ? or proveedorTelefono like ? ORDER BY proveedorNombre");
             pst.setString(1, "%" + supplyer.supplyerName + "%");
             pst.setString(2, "%" + supplyer.supplyerName + "%");
             rs = pst.executeQuery();
@@ -120,7 +119,7 @@ public class SupplyerGetway {
         con = dbCon.geConnection();
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".Supplyer where id=?");
+            pst = con.prepareCall("select * from proveedor where ProveedorId=?");
             pst.setString(1, supplyer.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -145,7 +144,7 @@ public class SupplyerGetway {
         System.out.println("we are in update");
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer where Id=? and SupplyerName=?");
+            pst = con.prepareStatement("select * from proveedor where ProveedorId=? and ProveedorNombre=?");
             pst.setString(1, supplyer.id);
             pst.setString(2, supplyer.supplyerName);
             rs = pst.executeQuery();
@@ -179,7 +178,7 @@ public class SupplyerGetway {
         try {
 
             con = dbCon.geConnection();
-            pst = con.prepareCall("SELECT * FROM "+db+".Brands WHERE SupplyerId=?");
+            pst = con.prepareCall("SELECT * FROM marcas WHERE ProveedorId=?");
             pst.setString(1, supplyer.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -207,7 +206,7 @@ public class SupplyerGetway {
         boolean uniqSupplyer = false;
         con = dbCon.geConnection();
         try {
-            pst = con.prepareCall("select SupplyerName from "+db+".Supplyer where SupplyerName=?");
+            pst = con.prepareCall("select ProveedorNombre from proveedor where ProveedorNombre=?");
             pst.setString(1, supplyer.supplyerName);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -233,7 +232,7 @@ public class SupplyerGetway {
     public void updateNow(Orders supplyer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("update "+db+".Supplyer set SupplyerName=? , SupplyerPhoneNumber=?,SupplyerAddress=? ,SuplyerDescription=? where Id=?");
+            pst = con.prepareStatement("update proveedor set ProveedorNombre=? , ProveedorTelefono=?, ProveedorDireccion=? ,ProveedorDescripcion=? where ProveedorId=?");
             pst.setString(1, supplyer.supplyerName);
             pst.setString(2, supplyer.supplyerContactNumber);
             pst.setString(3, supplyer.supplyerAddress);
@@ -259,7 +258,7 @@ public class SupplyerGetway {
         try {
             System.out.println("and i am hear");
             con = dbCon.geConnection();
-            pst = con.prepareCall("delete from "+db+".Supplyer where Id=?");
+            pst = con.prepareCall("delete from proveedor where ProveedorId=?");
             pst.setString(1, supplyer.id);
             pst.executeUpdate();
             con.close();
@@ -274,7 +273,7 @@ public class SupplyerGetway {
         con = dbCon.geConnection();
         boolean isUpdate = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer where Id=?");
+            pst = con.prepareStatement("select * from proveedor where ProveedorId=?");
             pst.setString(1, supplyer.id);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -286,7 +285,7 @@ public class SupplyerGetway {
         con = dbCon.geConnection();
         boolean isNotUse = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Brands where SupplyerId=?");
+            pst = con.prepareStatement("select * from marcas where ProveedorId=?");
             pst.setString(1, supplyer.id);
             rs = pst.executeQuery();
             while (rs.next()) {

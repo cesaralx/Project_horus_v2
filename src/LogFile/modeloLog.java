@@ -46,7 +46,51 @@ public class modeloLog {
 
 
     public void imprimir() {
-        System.out.println("El nombre es: " + getLineaLog()+" \n");
+        System.out.println(getLineaLog()+" \n");
+//        System.out.println(getTipo()+"\n");
     }
+    
+        public String imprimirTA() {
+        return getLineaLog();
+//        System.out.println(getTipo()+"\n");
+    }
+    
+    public String getTipo(){
+        String[] parts = getLineaLog().split(",");
+        String part1 = parts[0]; // fecha
+        String part2 = parts[1]; // hora
+        String part3 = parts[2]; // tipo
+        String part4 = parts[3]; // accion
+        return part3;   
+    }
+
+    public String getHora() {
+        String[] parts = getLineaLog().split(",");
+        String part1 = parts[0]; // fecha
+        String part2 = parts[1]; // hora
+        String part3 = parts[2]; // tipo
+        String part4 = parts[3]; // accion
+        return part2;
+    }
+    
+    public String getAccion() {
+        String[] parts = getLineaLog().split(",");
+        String part1 = parts[0]; // fecha
+        String part2 = parts[1]; // hora
+        String part3 = parts[2]; // tipo
+        String part4 = parts[3]; // accion
+        return part4;
+    }
+
+    public String getFecha() {
+        String[] parts = getLineaLog().split(",");
+        String part1 = parts[0]; // fecha
+        String part2 = parts[1]; // hora
+        String part3 = parts[2]; // tipo
+        String part4 = parts[3]; // accion
+        return part1;
+    }
+    
+    
 }
 

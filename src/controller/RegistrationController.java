@@ -103,7 +103,6 @@ public class RegistrationController implements Initializable {
         Scene scene = new Scene(root);
         Stage nStage = new Stage();
         nStage.setScene(scene);
-        nStage.setMaximized(false);
         nStage.setTitle("Nice Vaping ");
         nStage.show();
 
@@ -161,7 +160,7 @@ public class RegistrationController implements Initializable {
             System.out.println("User name vacio");
             nullChecq = false;
         } else {
-            System.out.println("Iser name no vacio");
+            System.out.println("User name no vacio");
             nullChecq = true;
         }
         return nullChecq;

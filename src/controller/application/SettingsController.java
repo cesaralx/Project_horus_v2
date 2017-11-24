@@ -22,11 +22,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import media.userNameMedia;
 
 /**
@@ -41,6 +44,8 @@ public class SettingsController implements Initializable {
     private MenuItem miOrganize;
     @FXML
     private MenuItem miBackup;
+    @FXML
+    private MenuItem miLogFile;
     @FXML
     private StackPane spSettingContent;
     @FXML
@@ -130,6 +135,22 @@ public class SettingsController implements Initializable {
     @FXML
     private void miBackupOnAction(ActionEvent event) {
         
+    }
+    
+            @FXML
+    private void openLogFile(ActionEvent event) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/view/logFile.fxml"));
+            Scene scene = new Scene(root);
+            Stage nStage = new Stage();
+            nStage.setScene(scene);
+            nStage.setMaximized(false);
+            nStage.setTitle("LogFile viewer -Nice Vaping");
+            nStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void settingPermission(){

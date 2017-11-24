@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="controller.LogFileController">
+   <children>
+      <JFXTextArea fx:id="taLog" layoutX="59.0" layoutY="95.0" prefHeight="211.0" prefWidth="490.0" />
+      <Label fx:id="lblLog" layoutX="249.0" layoutY="36.0" text="LogFile" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="bntReadLog" layoutX="67.0" layoutY="340.0" onAction="#readLog" ripplerFill="#3f19ff" text="Leer log">
+         <effect>
+            <Glow level="0.42" />
+         </effect>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="67.0" layoutY="22.0" opacity="0.39" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+      <JFXButton layoutX="151.0" layoutY="333.0" prefHeight="38.0" prefWidth="113.0" text="Ordenar por fecha" wrapText="true" />
+      <JFXButton layoutX="287.0" layoutY="340.0" text="Ordenar por usuario" />
+      <JFXButton fx:id="bntOrdenarTipo" layoutX="422.0" layoutY="340.0" onAction="#orderByTipo" text="Ordenar por tipo" />
+   </children>
+</AnchorPane>
