@@ -38,25 +38,24 @@ public class CatagoryGetway {
 
     public void save(Catagory catagory) {
         con = dbCon.geConnection();
-        catagory.brandName = sql.getIdNo(catagory.brandName, catagory.brandId, "Brands", "BrandName");
-        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "Brands", "BrandName");
-        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "Supplyer", "SupplyerName");
+        catagory.brandName = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
+        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
+        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "proveedor", "ProveedorNombre");
         try {
-            pst = con.prepareStatement("insert into "+db+".Catagory values(?,?,?,?,?,?,?)");
-            pst.setString(1, null);
-            pst.setString(2, catagory.catagoryName);
-            pst.setString(3, catagory.catagoryDescription);
-            pst.setString(4, catagory.brandId);
-            pst.setString(5, catagory.supplyerId);
-            pst.setString(6, catagory.creatorId);
-            pst.setString(7, LocalDate.now().toString());
+            pst = con.prepareStatement("insert into categoria(CategoriaNombre, CategoriaDescripcion, MarcaID, ProveedorId, CreatorId, Fecha) values(?,?,?,?,?,?)");
+            pst.setString(1, catagory.catagoryName);
+            pst.setString(2, catagory.catagoryDescription);
+            pst.setString(3, catagory.brandId);
+            pst.setString(4, catagory.supplyerId);
+            pst.setString(5, catagory.creatorId);
+            pst.setString(6, LocalDate.now().toString());
             pst.executeUpdate();
             pst.close();
             con.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess : save sucess");
-            alert.setContentText("Category" + "  '" + catagory.catagoryName + "' " + "Added Sucessfuly");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado correctamente");
+            alert.setContentText("Categoria" + "  '" + catagory.catagoryName + "' " + "Agregada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -70,7 +69,7 @@ public class CatagoryGetway {
         con = dbCon.geConnection();
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".Catagory");
+            pst = con.prepareCall("select * from categoria");
             rs = pst.executeQuery();
             while (rs.next()) {
                 catagory.id = rs.getString(1);
@@ -80,9 +79,9 @@ public class CatagoryGetway {
                 catagory.supplyerId = rs.getString(5);
                 catagory.creatorId = rs.getString(6);
                 catagory.date = rs.getString(7);
-                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "Brands");
-                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "Supplyer");
-                catagory.creatorName = sql.getName(catagory.creatorId, catagory.catagoryName, "User");
+                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "marcas");
+                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "proveedor");
+                catagory.creatorName = sql.getName(catagory.creatorId, catagory.catagoryName, "usuario");
                 catagory.catagoryDetails.addAll(new ListCatagory(catagory.id, catagory.catagoryName, catagory.catagoryDescription, catagory.brandName, catagory.supplyerName, catagory.creatorName, catagory.date));
             }
             pst.close();
@@ -96,7 +95,7 @@ public class CatagoryGetway {
     public void selectedView(Catagory catagory) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Catagory where Id=?");
+            pst = con.prepareStatement("select * from categoria where CategoriaId=?");
             pst.setString(1, catagory.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -105,8 +104,8 @@ public class CatagoryGetway {
                 catagory.catagoryDescription = rs.getString(3);
                 catagory.brandId = rs.getString(4);
                 catagory.supplyerId = rs.getString(5);
-                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "Brands");
-                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "Supplyer");
+                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "marcas");
+                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "proveedor");
             }
             pst.close();
             con.close();
@@ -121,7 +120,7 @@ public class CatagoryGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Brands where SupplyerId=?");
+            pst = con.prepareStatement("select * from marcas where ProveedorId=?");
             pst.setString(1, catagory.supplyerId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -141,7 +140,7 @@ public class CatagoryGetway {
         catagory.catagoryDetails.clear();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Catagory where CatagoryName like ? ORDER BY CatagoryName");
+            pst = con.prepareStatement("select * from categoria where CategoriaNombre like ? ORDER BY CategoriaNombre");
 
             pst.setString(1, "%" + catagory.catagoryName + "%");
             rs = pst.executeQuery();
@@ -154,9 +153,9 @@ public class CatagoryGetway {
                 catagory.creatorId = rs.getString(6);
                 catagory.date = rs.getString(7);
 
-                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "Brands");
-                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "Supplyer");
-                catagory.creatorName = sql.getName(catagory.creatorId, catagory.catagoryName, "User");
+                catagory.brandName = sql.getName(catagory.brandId, catagory.brandName, "marcas");
+                catagory.supplyerName = sql.getName(catagory.supplyerId, catagory.supplyerName, "proveedor");
+                catagory.creatorName = sql.getName(catagory.creatorId, catagory.catagoryName, "usuario");
 
                 catagory.catagoryDetails.addAll(new ListCatagory(catagory.id, catagory.catagoryName, catagory.catagoryDescription, catagory.brandName, catagory.supplyerName, catagory.creatorName, catagory.date));
             }
@@ -170,11 +169,11 @@ public class CatagoryGetway {
 
     public void update(Catagory catagory) {
         con = dbCon.geConnection();
-        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "Brands", "BrandName");
-        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "Supplyer", "SupplyerName");
+        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
+        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "proveedor", "ProveedorNombre");
 
         try {
-            pst = con.prepareStatement("update "+db+".Catagory set CatagoryName=? , CatagoryDescription=?,BrandId=?,SupplyerId=? where Id=?");
+            pst = con.prepareStatement("update categoria set CategoriaNombre=? , CategoriaDescripcion=?,MarcaID=?,ProveedorId=? where CategoriaId=?");
             pst.setString(1, catagory.catagoryName);
             pst.setString(2, catagory.catagoryDescription);
             pst.setString(3, catagory.brandId);
@@ -184,9 +183,9 @@ public class CatagoryGetway {
             pst.close();
             con.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Update : update sucess");
-            alert.setContentText("Category" + "  '" + catagory.catagoryName + "' " + "Update Sucessfuly");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Update : actualizacion correcta");
+            alert.setContentText("Categoria" + "  '" + catagory.catagoryName + "' " + "Actualizada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -199,7 +198,7 @@ public class CatagoryGetway {
     public void delete(Catagory catagory) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("delete from "+db+".Catagory where Id=?");
+            pst = con.prepareStatement("delete from categoria where CategoriaId=?");
             pst.setString(1, catagory.id);
             pst.executeUpdate();
             pst.close();
@@ -213,14 +212,14 @@ public class CatagoryGetway {
         con = dbCon.geConnection();
         boolean isNotUse = false;
         try {
-            pst = con.prepareCall("select * from "+db+".Products where CatagoryId=?");
+            pst = con.prepareCall("select * from productos where CategoriaId=?");
             pst.setString(1, catagory.id);
             rs = pst.executeQuery();
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("ERROE : Already exist ");
-                alert.setContentText("Category" + "  '" + rs.getString(2) + "' " + "Already exist");
+                alert.setHeaderText("ERROR : Ya existe ");
+                alert.setContentText("Categoria" + "  '" + rs.getString(2) + "' " + "Ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 return isNotUse;

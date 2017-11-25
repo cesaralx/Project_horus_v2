@@ -38,21 +38,21 @@ public class CustomerGetway {
     public void save(Customer customer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("insert into "+db+".Customer values(?,?,?,?,?,?,?)");
-            pst.setString(1, null);
-            pst.setString(2, customer.customerName);
-            pst.setString(3, customer.customerConNo);
-            pst.setString(4, customer.customerAddress);
-            pst.setString(5, customer.totalBuy);
-            pst.setString(6, customer.userId);
-            pst.setString(7, LocalDateTime.now().toString());
+            pst = con.prepareStatement("insert into cliente (ClienteNombre, "
+                    + "ClienteContNo,ClienteDireccion, TotalBuy, CreatorId,Fecha) values(?,?,?,?,?,?)");
+            pst.setString(1, customer.customerName);
+            pst.setString(2, customer.customerConNo);
+            pst.setString(3, customer.customerAddress);
+            pst.setString(4, customer.totalBuy);
+            pst.setString(5, customer.userId);
+            pst.setString(6, LocalDateTime.now().toString());
             pst.executeUpdate();
             pst.close();
             con.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess : save sucess");
-            alert.setContentText("Customer" + "  '" + customer.customerName + "' " + "Added successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado correctamente");
+            alert.setContentText("Cliente" + "  '" + customer.customerName + "' " + "agregado correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -65,7 +65,7 @@ public class CustomerGetway {
     public void view(Customer customer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Customer");
+            pst = con.prepareStatement("select * from cliente");
             rs = pst.executeQuery();
             while (rs.next()) {
                 customer.id = rs.getString(1);
@@ -75,7 +75,7 @@ public class CustomerGetway {
                 customer.totalBuy = rs.getString(5);
                 customer.userId = rs.getString(6);
                 customer.date = rs.getString(7);
-                customer.userName = sql.getName(customer.userId, customer.userName, "User");
+                customer.userName = sql.getName(customer.userId, customer.userName, "usuario");
                 customer.customerList.addAll(new ListCustomer(customer.id, customer.customerName, customer.customerConNo, customer.customerAddress, customer.totalBuy, customer.userName, customer.date));
             }
             rs.close();
@@ -89,7 +89,7 @@ public class CustomerGetway {
     public void selectedView(Customer customer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Customer where Id=?");
+            pst = con.prepareStatement("select * from cliente where ClienteId=?");
             pst.setString(1, customer.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -110,7 +110,7 @@ public class CustomerGetway {
         con = dbCon.geConnection();
         customer.customerList.clear();
         try {
-            pst = con.prepareStatement("select * from "+db+".Customer where CustomerName like ? or CustomerContNo like ?");
+            pst = con.prepareStatement("select * from cliente where ClienteNombre like ? or ClienteContNo like ?");
             pst.setString(1, "%" + customer.customerName + "%");
             pst.setString(2, "%" + customer.customerName + "%");
             rs = pst.executeQuery();
@@ -122,7 +122,7 @@ public class CustomerGetway {
                 customer.totalBuy = rs.getString(5);
                 customer.userId = rs.getString(6);
                 customer.date = rs.getString(7);
-                customer.userName = sql.getName(customer.userId, customer.userName, "User");
+                customer.userName = sql.getName(customer.userId, customer.userName, "usuario");
                 customer.customerList.addAll(new ListCustomer(customer.id, customer.customerName, customer.customerConNo, customer.customerAddress, customer.totalBuy, customer.userName, customer.date));
             }
             rs.close();
@@ -136,7 +136,7 @@ public class CustomerGetway {
     public void update(Customer customer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("UPDATE "+db+".Customer set CustomerName=?,CustomerContNo=?,CustomerAddress=? where Id=?");
+            pst = con.prepareStatement("UPDATE cliente set ClienteNombre=?,ClienteContNo=?,ClienteDireccion=? where ClienteId=?");
             pst.setString(1, customer.customerName);
             pst.setString(2, customer.customerConNo);
             pst.setString(3, customer.customerAddress);
@@ -145,9 +145,9 @@ public class CustomerGetway {
             pst.close();
             con.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Update : Update sucess");
-            alert.setContentText("Customer" + "  '" + customer.customerName + "' " + "update successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Update : Update correcto");
+            alert.setContentText("Cliente" + "  '" + customer.customerName + "' " + "actualizacion correcta");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -159,7 +159,7 @@ public class CustomerGetway {
     public void delete(Customer customer) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("delete from "+db+".Customer where id=?");
+            pst = con.prepareStatement("delete from cliente where ClienteId=?");
             pst.setString(1, customer.id);
             pst.executeUpdate();
             pst.close();
@@ -173,14 +173,14 @@ public class CustomerGetway {
         con = dbCon.geConnection();
         boolean isNotUsed = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Sells where CustomerId=?");
+            pst = con.prepareStatement("select * from venta where ClienteId=?");
             pst.setString(1, customer.id);
             rs = pst.executeQuery();
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("ERROE : Already exist ");
-                alert.setContentText("This Customer use in sell'" + rs.getString(2) + "' brand \n delete Customer first");
+                alert.setHeaderText("ERROR : Ya existe ");
+                alert.setContentText("El cliente usado en la venta'" + rs.getString(2) + "' marca \n borra el cliente primero");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 return isNotUsed;

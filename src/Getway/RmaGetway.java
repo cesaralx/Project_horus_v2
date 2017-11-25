@@ -37,18 +37,18 @@ public class RmaGetway {
     public void save(RMA rma) {
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("insert into "+db+".RMA values(?,?,?,?,?,?)");
-            pst.setString(1, null);
-            pst.setString(2, rma.rmaName);
-            pst.setString(3, rma.rmaDays);
-            pst.setString(4, rma.rmaComment);
-            pst.setString(5, rma.creatorId);
-            pst.setString(6, LocalDate.now().toString());
+            pst = con.prepareCall("insert into devolucion (DevoluionNombre, "
+                    + "DevoluionDias, Comentario, CreatorId, DevoluionFecha) values(?,?,?,?,?)");
+            pst.setString(1, rma.rmaName);
+            pst.setString(2, rma.rmaDays);
+            pst.setString(3, rma.rmaComment);
+            pst.setString(4, rma.creatorId);
+            pst.setString(5, LocalDate.now().toString());
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess : save sucess");
-            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Added successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado correctamente");
+            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Agregado correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -61,7 +61,7 @@ public class RmaGetway {
 
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".RMA");
+            pst = con.prepareCall("select * from devolucion");
             rs = pst.executeQuery();
             while (rs.next()) {
                 rma.id = rs.getString(1);
@@ -70,7 +70,7 @@ public class RmaGetway {
                 rma.rmaComment = rs.getString(4);
                 rma.creatorId = rs.getString(5);
                 rma.date = rs.getString(6);
-                rma.creatorName = sql.getName(rma.creatorId, rma.creatorName, "User");
+                rma.creatorName = sql.getName(rma.creatorId, rma.creatorName, "usuario");
                 rma.rmaDetails.addAll(new ListRma(rma.id, rma.rmaName, rma.rmaDays, rma.rmaComment, rma.creatorName, rma.date));
             }
         } catch (SQLException ex) {
@@ -81,7 +81,7 @@ public class RmaGetway {
     public void selectedView(RMA rma) {
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".RMA where id=?");
+            pst = con.prepareCall("select * from devolucion where DevoluionId=?");
             pst.setString(1, rma.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -102,7 +102,7 @@ public class RmaGetway {
         System.out.println("name :" + rma.rmaName);
         try {
             con = dbCon.geConnection();
-            pst = con.prepareCall("select * from "+db+".RMA where RMAName like ? or RMADays like ? ORDER BY RMAName");
+            pst = con.prepareCall("select * from devolucion where DevoluionNombre like ? or DevoluionDias like ? ORDER BY DevoluionNombre");
 
             pst.setString(1, "%" + rma.rmaName + "%");
             pst.setString(2, "%" + rma.rmaName + "%");
@@ -115,7 +115,7 @@ public class RmaGetway {
                 rma.rmaComment = rs.getString(4);
                 rma.creatorId = rs.getString(5);
                 rma.date = rs.getString(6);
-                rma.creatorName = sql.getName(rma.creatorId, rma.creatorName, "User");
+                rma.creatorName = sql.getName(rma.creatorId, rma.creatorName, "usuario");
                 rma.rmaDetails.addAll(new ListRma(rma.id, rma.rmaName, rma.rmaDays, rma.rmaComment, rma.creatorName, rma.date));
             }
 
@@ -126,16 +126,16 @@ public class RmaGetway {
 
     public void update(RMA rma) {
         try {
-            pst = con.prepareStatement("update "+db+".RMA set RMAName=? , RMADays=?, Comment=? where Id=?");
+            pst = con.prepareStatement("update devolucion set DevoluionNombre=? , DevoluionDias=?, Comentario=? where DevoluionId=?");
             pst.setString(1, rma.rmaName);
             pst.setString(2, rma.rmaDays);
             pst.setString(3, rma.rmaComment);
             pst.setString(4, rma.id);
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess : save sucess");
-            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Updated successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado correcto");
+            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Actualizado correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -149,7 +149,7 @@ public class RmaGetway {
         try {
             System.out.println("and i am hear");
             con = dbCon.geConnection();
-            pst = con.prepareCall("delete from "+db+".RMA where Id=?");
+            pst = con.prepareCall("delete from devolucion where DevoluionId=?");
             pst.setString(1, rma.id);
             pst.executeUpdate();
             pst.close();
@@ -163,16 +163,16 @@ public class RmaGetway {
         con = dbCon.geConnection();
         boolean uniqRMA = false;
         try {
-            pst = con.prepareCall("select * from "+db+".RMA where RMAName=? or RMADays=?");
+            pst = con.prepareCall("select * from devolucion where DevoluionNombre=? or DevoluionDias=?");
             pst.setString(1, rma.rmaName);
             pst.setString(2, rma.rmaDays);
             rs = pst.executeQuery();
             while (rs.next()) {
                 System.out.println("in not uniq");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : save sucess");
-                alert.setContentText("RMA" + "  '" + rma.rmaName + "' " + "Already exist");
+                alert.setTitle("Correcto");
+                alert.setHeaderText("ERROR : guardado ");
+                alert.setContentText("Devolucion" + "  '" + rma.rmaName + "' " + "ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 
@@ -192,14 +192,14 @@ public class RmaGetway {
         con = dbCon.geConnection();
         boolean isNotUse = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where RMAId=?");
+            pst = con.prepareStatement("select * from productos where DevoluionId=?");
             pst.setString(1, rma.id);
             rs = pst.executeQuery();
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : save sucess");
-                alert.setContentText("This RMA use in product'" + rs.getString(2) + "'  \n delete product first");
+                alert.setTitle("Correcto");
+                alert.setHeaderText("ERROR : guardado");
+                alert.setContentText("Esta devolucion'" + rs.getString(2) + "'  \n borra producto primero");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 return isNotUse;

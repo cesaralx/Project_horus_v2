@@ -54,7 +54,7 @@ public class BrandBLL {
 
     public boolean isTrueUpdate(Brands brands) {
         boolean isTreu = false;
-        brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "Supplyer", "SupplyerName");
+        brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "proveedor", "ProveedorNombre");
         System.out.println("we are in update");
 
         try {
@@ -78,7 +78,7 @@ public class BrandBLL {
         boolean uniqSupplyer = false;
         try {
             pst = con.prepareCall("select * from marcas where MarcaNombre=? and ProveedorId=?");
-            brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "Supplyer", "SupplyerName");
+            brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "proveedor", "ProveedorNombre");
             pst.setString(1, brands.brandName);
             pst.setString(2, brands.supplyrId);
             rs = pst.executeQuery();

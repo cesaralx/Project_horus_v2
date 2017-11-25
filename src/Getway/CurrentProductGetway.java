@@ -38,21 +38,23 @@ public class CurrentProductGetway {
     public void save(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("insert into "+db+".Products values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            pst.setString(1, null);
-            pst.setString(2, currentProduct.productId);
-            pst.setString(3, currentProduct.productName);
-            pst.setString(4, currentProduct.quantity);
-            pst.setString(5, currentProduct.description);
-            pst.setString(6, currentProduct.supplierId);
-            pst.setString(7, currentProduct.brandId);
-            pst.setString(8, currentProduct.catagoryId);
-            pst.setString(9, currentProduct.unitId);
-            pst.setString(10, currentProduct.pursesPrice);
-            pst.setString(11, currentProduct.sellPrice);
-            pst.setString(12, currentProduct.rmaId);
-            pst.setString(13, currentProduct.userId);
-            pst.setString(14, currentProduct.date);
+            pst = con.prepareStatement("insert into productos(ProductoId,ProductoNombre,"
+                    + "Cantidad,Descripcion,ProveedorId, MarcaID, "
+                    + "CategoriaId,UnitId,MonederoPrecio,VentaPecio, "
+                    + "DevoluionId, UsuarioId, Fecha ) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            pst.setString(1, currentProduct.productId);
+            pst.setString(2, currentProduct.productName);
+            pst.setString(3, currentProduct.quantity);
+            pst.setString(4, currentProduct.description);
+            pst.setString(5, currentProduct.supplierId);
+            pst.setString(6, currentProduct.brandId);
+            pst.setString(7, currentProduct.catagoryId);
+            pst.setString(8, currentProduct.unitId);
+            pst.setString(9, currentProduct.pursesPrice);
+            pst.setString(10, currentProduct.sellPrice);
+            pst.setString(11, currentProduct.rmaId);
+            pst.setString(12, currentProduct.userId);
+            pst.setString(13, currentProduct.date);
             pst.executeUpdate();
             pst.close();
             con.close();
@@ -69,7 +71,7 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("SELECT SQL_NO_CACHE * FROM "+db+".Products");
+            pst = con.prepareStatement("SELECT * FROM productos DBCC DROPCLEANBUFFERS DBCC FREEPROCCACHE");
             rs = pst.executeQuery();
             while (rs.next()) {
 
@@ -87,12 +89,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -107,7 +109,7 @@ public class CurrentProductGetway {
     public void selectedView(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where id=?");
+            pst = con.prepareStatement("select * from productos where id=?");
             pst.setString(1, currentProduct.id);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -125,12 +127,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
             }
             pst.close();
             con.close();
@@ -163,12 +165,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -184,7 +186,7 @@ public class CurrentProductGetway {
 
         currentProduct.currentProductList.clear();
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where ProductId like ? or ProductName like ?");
+            pst = con.prepareStatement("select * from productos where ProductoId like ? or ProductoNombre like ?");
             pst.setString(1, "%" + currentProduct.productId + "%");
             pst.setString(2, "%" + currentProduct.productId + "%");
             rs = pst.executeQuery();
@@ -204,12 +206,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -224,9 +226,9 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         currentProduct.currentProductList.clear();
-        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "Supplyer", "SupplyerName");
+        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "proveedor", "ProveedorNombre");
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where SupplyerId=?");
+            pst = con.prepareStatement("select * from productos where ProveedorId=?");
             pst.setString(1, currentProduct.supplierId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -244,12 +246,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -264,12 +266,12 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         currentProduct.currentProductList.clear();
-        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "Supplyer", "SupplyerName");
+        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "proveedor", "ProveedorNombre");
         currentProduct.brandId = sql.getBrandID(currentProduct.supplierId, currentProduct.brandId, currentProduct.brandName);
-        System.out.println("Brand ID: " + currentProduct.brandId);
+        System.out.println("Marca ID: " + currentProduct.brandId);
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where BrandId=?");
+            pst = con.prepareStatement("select * from productos where MarcaID=?");
             pst.setString(1, currentProduct.brandId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -287,12 +289,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -307,11 +309,11 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         currentProduct.currentProductList.clear();
-        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "Supplyer", "SupplyerName");
+        currentProduct.supplierId = sql.getIdNo(currentProduct.supplierName, currentProduct.supplierId, "proveedor", "ProveedorNombre");
         currentProduct.brandId = sql.getBrandID(currentProduct.supplierId, currentProduct.brandId, currentProduct.brandName);
         currentProduct.catagoryId = sql.getCatagoryId(currentProduct.supplierId, currentProduct.brandId, currentProduct.catagoryId, currentProduct.catagoryName);
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where CatagoryId=?");
+            pst = con.prepareStatement("select * from productos where CategoriaId=?");
             pst.setString(1, currentProduct.catagoryId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -329,12 +331,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -351,7 +353,7 @@ public class CurrentProductGetway {
         currentProduct.currentProductList.clear();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where RMAId=?");
+            pst = con.prepareStatement("select * from productos where DevoluionId=?");
             pst.setString(1, currentProduct.rmaId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -369,12 +371,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.currentProductList.addAll(new ListProduct(currentProduct.id, currentProduct.productId, currentProduct.productName, currentProduct.quantity, currentProduct.description, currentProduct.supplierName, currentProduct.brandName, currentProduct.catagoryName, currentProduct.unitName, currentProduct.pursesPrice, currentProduct.sellPrice, currentProduct.rmaName, currentProduct.userName, currentProduct.date));
             }
             pst.close();
@@ -389,7 +391,7 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Products where ProductId=?");
+            pst = con.prepareStatement("select * from productos where ProductoId=?");
             pst.setString(1, currentProduct.productId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -407,12 +409,12 @@ public class CurrentProductGetway {
                 currentProduct.rmaId = rs.getString(12);
                 currentProduct.userId = rs.getString(13);
                 currentProduct.date = rs.getString(14);
-                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "Supplyer");
-                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "Brands");
-                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "Catagory");
-                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "Unit");
-                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "RMA");
-                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "User");
+                currentProduct.supplierName = sql.getName(currentProduct.supplierId, currentProduct.supplierName, "proveedor");
+                currentProduct.brandName = sql.getName(currentProduct.brandId, currentProduct.brandName, "marcas");
+                currentProduct.catagoryName = sql.getName(currentProduct.catagoryId, currentProduct.catagoryName, "categoria");
+                currentProduct.unitName = sql.getName(currentProduct.unitId, currentProduct.unitName, "unit");
+                currentProduct.rmaName = sql.getName(currentProduct.rmaId, currentProduct.rmaName, "devolucion");
+                currentProduct.userName = sql.getName(currentProduct.userId, currentProduct.userName, "usuario");
                 currentProduct.rmaDayesss = sql.getDayes(currentProduct.rmaDayesss, currentProduct.rmaId);
                 long dateRMA = Long.parseLong(currentProduct.rmaDayesss);
 
@@ -431,7 +433,7 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer");
+            pst = con.prepareStatement("select * from proveedor");
             rs = pst.executeQuery();
             while (rs.next()) {
                 currentProduct.supplyerList = rs.getString(2);
@@ -448,9 +450,9 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
 
         try {
-            pst = con.prepareStatement("update "+db+".Products set ProductId=?, ProductName=?, Quantity=?, Description=?, "
-                    + "SupplyerId=?, BrandId=?, CatagoryId=?,"
-                    + " UnitId=?, PursesPrice=?, SellPrice=?, RMAId=?, Date=?  where Id=?");
+            pst = con.prepareStatement("update productos set ProductoId=?, ProductoNombre=?, Cantidad=?, Descripcion=?, "
+                    + "ProveedorId=?, MarcaID=?, CategoriaId=?,"
+                    + " UnitId=?, MonederoPrecio=?, VentaPecio=?, DevoluionId=?, Fecha=?  where Id=?");
             pst.setString(1, currentProduct.productId);
             pst.setString(2, currentProduct.productName);
             pst.setString(3, currentProduct.quantity);
@@ -469,9 +471,9 @@ public class CurrentProductGetway {
             con.close();
             rs.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Update : update sucess");
-            alert.setContentText("Category" + "  '" + currentProduct.productId + "' " + "Update Sucessfuly");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Update : update correcto");
+            alert.setContentText("Categoria" + "  '" + currentProduct.productId + "' " + "Actualizada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
         } catch (SQLException ex) {
@@ -482,7 +484,7 @@ public class CurrentProductGetway {
     public void delete(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("delete from "+db+".Products where id=?");
+            pst = con.prepareStatement("delete from productos where id=?");
             pst.setString(1, currentProduct.id);
             pst.executeUpdate();
             pst.close();
@@ -496,12 +498,12 @@ public class CurrentProductGetway {
         con = dbCon.geConnection();
         boolean isNotSoled = false;
         try {
-            pst = con.prepareStatement("select * from "+db+".Sell where ProductId=?");
+            pst = con.prepareStatement("select * from venta where ProductoId=?");
             pst.setString(1, currentProduct.id);
             rs = pst.executeQuery();
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Sucess");
+                alert.setTitle("Correcto");
                 alert.setHeaderText("WARNING : ");
                 alert.setContentText("This product has been  soled you can't delete it");
                 alert.initStyle(StageStyle.UNDECORATED);
