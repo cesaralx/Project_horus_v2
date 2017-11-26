@@ -148,12 +148,12 @@ public class ViewRMAController implements Initializable {
 
     public void showDetails() {
         tblViewRMA.setItems(rma.rmaDetails);
-        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
-        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("DevoluionNombre"));
-        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("DevoluionDias"));
-        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("Comentario"));
-        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
-        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("DevoluionFecha"));
+        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("ramId"));
+        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("rmaName"));
+        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("rmaDays"));
+        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("rmaComment"));
+        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
+        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("date"));
         rmaGetway.view(rma);
     }
 
@@ -193,12 +193,12 @@ public class ViewRMAController implements Initializable {
         rma.rmaDetails.clear();
         rma.rmaName = tfSearch.getText().trim();
         tblViewRMA.setItems(rma.rmaDetails);
-        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
-        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("DevoluionNombre"));
-        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("DevoluionDias"));
-        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("Comentario"));
-        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
-        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("DevoluionFecha"));
+        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("ramId"));
+        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("rmaName"));
+        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("rmaDays"));
+        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("rmaComment"));
+        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
+        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("date"));
         rmaGetway.searchView(rma);
 
     }

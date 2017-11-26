@@ -122,7 +122,7 @@ public class RegistrationController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Login Now");
             alert.setHeaderText("Login now");
-            alert.setContentText("Tu cuenta de administrador se ha creado correctamente \n presiona ok para iniciar sesion");
+            alert.setContentText("Tu cuenta se ha creado correctamente \n presiona ok para iniciar sesion");
             alert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {

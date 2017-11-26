@@ -324,19 +324,19 @@ public class CurrentStoreController implements Initializable {
     public void viewDetails() {
         System.out.println("CLCKED");
         tblViewCurrentStore.setItems(productCurrent.currentProductList);
-        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("ProductoId"));
-        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("ProductoNombre"));
-        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("Cantidad"));
-        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
-        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
-        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
-        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
-        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("MonederoPrecio"));
-        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("VentaPecio"));
-        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
-        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("UsuarioId"));
-        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
+        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("suppliedBy"));
+        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("catagory"));
+        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
+        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("pursesPrice"));
+        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("sellPrice"));
+        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("rma"));
+        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("user"));
+        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("date"));
         currentProductGetway.viewFistTen(productCurrent);
     }
 
@@ -480,19 +480,19 @@ public class CurrentStoreController implements Initializable {
         cbSoteViewRMA.setPromptText("Selecciona devolucion");
 
         tblViewCurrentStore.setItems(productCurrent.currentProductList);
-        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("ProductoId"));
-        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("ProductoNombre"));
-        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("Cantidad"));
-        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
-        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
-        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
-        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
-        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("MonederoPrecio"));
-        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("VentaPecio"));
-        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
-        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("UsuarioId"));
-        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
+        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("suppliedBy"));
+        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("catagory"));
+        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
+        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("pursesPrice"));
+        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("sellPrice"));
+        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("rma"));
+        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("user"));
+        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("date"));
         currentProductGetway.view(productCurrent);
 
     }

@@ -101,8 +101,11 @@ public class SQL {
             pst.setString(1, usrName);
             rs = pst.executeQuery();
             while (rs.next()) {
-                pst = con.prepareStatement("insert into userpermission values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, null);
+                pst = con.prepareStatement("insert into userpermission (AddProducto,AddProveedor,AddMarca,"
+                        + "AddCategoria,AddUnit,AddCliente,UpFechaProductp,UpFechaProveedor,UpFechaMarca,UpFechaCatagoria,"
+                        + "UpFechaUnit,UpFechaCliente,ManejoDevolucion,VentaProducto,ProveerDescuento,"
+                        + "ManejoEmpleados,ManejoEmpresa,CambiarPassword,UsuarioId ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                pst.setInt(1, 1);
                 pst.setInt(2, 1);
                 pst.setInt(3, 1);
                 pst.setInt(4, 1);
@@ -120,8 +123,7 @@ public class SQL {
                 pst.setInt(16, 1);
                 pst.setInt(17, 1);
                 pst.setInt(18, 1);
-                pst.setInt(19, 1);
-                pst.setInt(20, rs.getInt("UsuarioId"));
+                pst.setInt(19, rs.getInt("UsuarioId"));
 
                 pst.executeUpdate();
             }con.close();
@@ -154,7 +156,7 @@ public class SQL {
 
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+tableName+" where Id=?");
+            pst = con.prepareStatement("select * from "+tableName+" where "+tableName+"Id=?");
             pst.setString(1, id);
             rs = pst.executeQuery();
             while (rs.next()){

@@ -129,24 +129,24 @@ public class ViewSupplyerController implements Initializable {
         supplyer.supplyerName = tfSearch.getText().trim();
 
         tblSupplyer.setItems(supplyer.supplyerDetails);
-        clmSUpplyerId.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        clmSupplyerName.setCellValueFactory(new PropertyValueFactory<>("ProveedorNombre"));
-        clmSupplyerPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("ProveedorTelefono"));
-        clmSupplyerAddress.setCellValueFactory(new PropertyValueFactory<>("ProveedorDireccion"));
-        clmSupplyerDescription.setCellValueFactory(new PropertyValueFactory<>("ProveedorDescripcion"));
-        clmSupplyerJoining.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        clmSUpplyerId.setCellValueFactory(new PropertyValueFactory<>("supplyerId"));
+        clmSupplyerName.setCellValueFactory(new PropertyValueFactory<>("supplyerName"));
+        clmSupplyerPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("supplyerPhoneNumber"));
+        clmSupplyerAddress.setCellValueFactory(new PropertyValueFactory<>("supplyerAddress"));
+        clmSupplyerDescription.setCellValueFactory(new PropertyValueFactory<>("supplyerDescription"));
+        clmSupplyerJoining.setCellValueFactory(new PropertyValueFactory<>("dataOfjoining"));
         supplyerGetway.searchView(supplyer);
     }
 
 
     public void showDetails() {
         tblSupplyer.setItems(supplyer.supplyerDetails);
-        clmSUpplyerId.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        clmSupplyerName.setCellValueFactory(new PropertyValueFactory<>("ProveedorNombre"));
-        clmSupplyerPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("ProveedorTelefono"));
-        clmSupplyerAddress.setCellValueFactory(new PropertyValueFactory<>("ProveedorDireccion"));
-        clmSupplyerDescription.setCellValueFactory(new PropertyValueFactory<>("ProveedorDescripcion"));
-        clmSupplyerJoining.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        clmSUpplyerId.setCellValueFactory(new PropertyValueFactory<>("supplyerId"));
+        clmSupplyerName.setCellValueFactory(new PropertyValueFactory<>("supplyerName"));
+        clmSupplyerPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("supplyerPhoneNumber"));
+        clmSupplyerAddress.setCellValueFactory(new PropertyValueFactory<>("supplyerAddress"));
+        clmSupplyerDescription.setCellValueFactory(new PropertyValueFactory<>("supplyerDescription"));
+        clmSupplyerJoining.setCellValueFactory(new PropertyValueFactory<>("dataOfjoining"));
         supplyerGetway.view(supplyer);
 
     }

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="860.0" stylesheets="@../../../style/MainStyle.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.application.stock.ViewBrandController">
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="860.0" stylesheets="@../../../style/MainStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.application.stock.ViewBrandController">
    <children>
       <BorderPane layoutX="220.0" layoutY="144.0" prefHeight="505.0" prefWidth="762.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -35,11 +41,11 @@
                           </menus>
                         </MenuBar>
                      </graphic></TableColumn>
-                <TableColumn fx:id="tblCollumName" editable="false" prefWidth="149.0" text="Brands" />
-                  <TableColumn fx:id="tblCollumSupplyer" prefWidth="144.0" text="Supplier" />
-                  <TableColumn fx:id="tblCollumDescription" prefWidth="156.0" text="Description " />
-                  <TableColumn fx:id="tblCollumCreator" prefWidth="173.0" text="Add By" />
-                  <TableColumn fx:id="tblClmDate" minWidth="79.0" prefWidth="177.0" text="Create Date" />
+                <TableColumn fx:id="tblCollumName" editable="false" prefWidth="149.0" text="Marcas" />
+                  <TableColumn fx:id="tblCollumSupplyer" prefWidth="144.0" text="Proveedor" />
+                  <TableColumn fx:id="tblCollumDescription" prefWidth="156.0" text="Descripcion" />
+                  <TableColumn fx:id="tblCollumCreator" prefWidth="173.0" text="Agregado por" />
+                  <TableColumn fx:id="tblClmDate" minWidth="79.0" prefWidth="177.0" text="Fecha de creacion" />
               </columns>
                <contextMenu>
                   <ContextMenu>
@@ -60,7 +66,7 @@
          <top>
             <HBox alignment="CENTER" prefHeight="59.0" prefWidth="762.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="tfSearch" onAction="#tfSearchOnAction" onKeyReleased="#tfSearchOnKeyPress" prefHeight="31.0" prefWidth="566.0" promptText="Search Brands" />
+                  <TextField fx:id="tfSearch" onAction="#tfSearchOnAction" onKeyReleased="#tfSearchOnKeyPress" prefHeight="31.0" prefWidth="566.0" promptText="Buscar Marcas" />
                   <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshOnAction" prefHeight="30.0" prefWidth="34.0" />
                </children>
             </HBox>
@@ -70,9 +76,9 @@
                <children>
                   <HBox alignment="CENTER_RIGHT" layoutX="228.0" layoutY="-9.0" prefHeight="91.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button fx:id="btnAddBrand" mnemonicParsing="false" onAction="#btnAddBrandOnAction" text="Add Brand" />
-                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
-                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
+                        <Button fx:id="btnAddBrand" mnemonicParsing="false" onAction="#btnAddBrandOnAction" text="Agregar Marca" />
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Actualizar" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Eliminar" />
                      </children>
                   </HBox>
                </children>

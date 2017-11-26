@@ -255,14 +255,15 @@ public class LoginController1 implements Initializable {
         con = dbCon.geConnection();
         if (con != null) {
             try {
-                pst = con.prepareStatement("SELECT UsuarioId FROM usuario ORDER BY UsuarioId ASC OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY ");
+                pst = con.prepareStatement("SELECT top 1 UsuarioId FROM usuario "); 
+//        pst = con.prepareStatement("SELECT UsuarioId FROM usuario ORDER BY UsuarioId ASC OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY  "); 
                 rs = pst.executeQuery();
                 if (rs.next()) {
 //                    apMother.setOpacity(0.7);
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText("Error");
-                    alert.setContentText("You can't create an account without admin \n permission");
+                    alert.setContentText("Ya existe una cueta de administrador \n restaura tu contrasena de administrador");
                     alert.initStyle(StageStyle.UNDECORATED);
                     Optional<ButtonType> result = alert.showAndWait();
                     if (result.isPresent() && result.get() == ButtonType.OK) {

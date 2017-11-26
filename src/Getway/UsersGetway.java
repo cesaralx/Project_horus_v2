@@ -44,7 +44,7 @@ public class UsersGetway {
                 pst.setString(2, users.fullName);
                 pst.setString(3, users.emailAddress);
                 pst.setString(4, users.contactNumber);
-                pst.setString(5, users.salary);
+                pst.setDouble(5, Double.parseDouble(users.salary));
                 pst.setString(6, users.address);
                 pst.setString(7, users.password);
                 pst.setString(8, "1");
@@ -175,9 +175,13 @@ public class UsersGetway {
     public void delete(Users users) {
         con = dbConnection.geConnection();
         try {
+            pst = con.prepareStatement("delete userpermission where UsuarioId=?");
+            pst.setString(1, users.id);
+            pst.executeUpdate();
             pst = con.prepareStatement("delete usuario where UsuarioId=?");
             pst.setString(1, users.id);
             pst.executeUpdate();
+
             pst.close();
             con.close();
         } catch (SQLException e) {

@@ -188,14 +188,14 @@ public class ViewCatagoryController implements Initializable {
 
     public void showDetails() {
         tblCatagory.setItems(catagory.catagoryDetails);
-        tablClmBox.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
-        clmCatagoryId.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
-        clmCatagoryName.setCellValueFactory(new PropertyValueFactory<>("CategoriaNombre"));
-        clmCatagoryBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
-        clmSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        clmCatagoryDescription.setCellValueFactory(new PropertyValueFactory<>("CategoriaDescripcion"));
-        clmCatagoryCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
-        clmCatagoryDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        tablClmBox.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clmCatagoryId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clmCatagoryName.setCellValueFactory(new PropertyValueFactory<>("catagoryName"));
+        clmCatagoryBrand.setCellValueFactory(new PropertyValueFactory<>("brandId"));
+        clmSupplyer.setCellValueFactory(new PropertyValueFactory<>("supplyerId"));
+        clmCatagoryDescription.setCellValueFactory(new PropertyValueFactory<>("catagoryDescription"));
+        clmCatagoryCreator.setCellValueFactory(new PropertyValueFactory<>("creatorId"));
+        clmCatagoryDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         catagoryGetway.view(catagory);
         tablClmBox.setCellFactory(cellFactories.cellFactoryCheckBox);
 
@@ -207,13 +207,13 @@ public class ViewCatagoryController implements Initializable {
         catagory.catagoryName = tfSearch.getText().trim();
         tblCatagory.setItems(catagory.catagoryDetails);
 
-        clmCatagoryId.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
-        clmCatagoryName.setCellValueFactory(new PropertyValueFactory<>("CategoriaNombre"));
-        clmCatagoryBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
-        clmSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        clmCatagoryDescription.setCellValueFactory(new PropertyValueFactory<>("CategoriaDescripcion"));
-        clmCatagoryCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
-        clmCatagoryDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        clmCatagoryId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clmCatagoryName.setCellValueFactory(new PropertyValueFactory<>("catagoryName"));
+        clmCatagoryBrand.setCellValueFactory(new PropertyValueFactory<>("brandId"));
+        clmSupplyer.setCellValueFactory(new PropertyValueFactory<>("supplyerId"));
+        clmCatagoryDescription.setCellValueFactory(new PropertyValueFactory<>("catagoryDescription"));
+        clmCatagoryCreator.setCellValueFactory(new PropertyValueFactory<>("creatorId"));
+        clmCatagoryDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         catagoryGetway.searchView(catagory);
 
     }

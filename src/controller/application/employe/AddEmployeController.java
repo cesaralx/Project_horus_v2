@@ -173,8 +173,11 @@ public class AddEmployeController implements Initializable {
             pst.setString(1, tfUserName.getText());
             rs = pst.executeQuery();
             while (rs.next()) {
-                pst = con.prepareStatement("insert into userpermission values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, null);
+                pst = con.prepareStatement("insert into userpermission (AddProducto,AddProveedor,AddMarca,"
+                        + "AddCategoria,AddUnit,AddCliente,UpFechaProductp,UpFechaProveedor,UpFechaMarca,UpFechaCatagoria,"
+                        + "UpFechaUnit,UpFechaCliente,ManejoDevolucion,VentaProducto,ProveerDescuento,"
+                        + "ManejoEmpleados,ManejoEmpresa,CambiarPassword,UsuarioId ) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                pst.setInt(1, 0);
                 pst.setInt(2, 0);
                 pst.setInt(3, 0);
                 pst.setInt(4, 0);
@@ -192,8 +195,7 @@ public class AddEmployeController implements Initializable {
                 pst.setInt(16, 0);
                 pst.setInt(17, 0);
                 pst.setInt(18, 0);
-                pst.setInt(19, 0);
-                pst.setInt(20, rs.getInt("UsuarioId"));
+                pst.setInt(19, rs.getInt("UsuarioId"));
 
                 pst.executeUpdate();
 

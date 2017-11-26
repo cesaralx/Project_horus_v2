@@ -120,12 +120,12 @@ public class ViewBrandController implements Initializable {
         brands.brandDitails.clear();
         brands.brandName = tfSearch.getText();
         tblBrand.setItems(brands.brandDitails);
-        tblCollumId.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
-        tblCollumName.setCellValueFactory(new PropertyValueFactory<>("MarcaNombre"));
-        tblCollumSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
-        tblCollumDescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
-        tblCollumCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
-        tblClmDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
+        tblCollumId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tblCollumName.setCellValueFactory(new PropertyValueFactory<>("brandName"));
+        tblCollumSupplyer.setCellValueFactory(new PropertyValueFactory<>("supplyerName"));
+        tblCollumDescription.setCellValueFactory(new PropertyValueFactory<>("brandComment"));
+        tblCollumCreator.setCellValueFactory(new PropertyValueFactory<>("creatorId"));
+        tblClmDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         brandsGetway.searchView(brands);
 
     }

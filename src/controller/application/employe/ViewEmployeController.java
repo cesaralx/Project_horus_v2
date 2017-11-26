@@ -295,7 +295,7 @@ public class ViewEmployeController implements Initializable {
 
     @FXML
     private void hlViewUpdateHistory(ActionEvent event) throws IOException {
-        String emp = "Employee";
+        String emp = "Empleados";
         History history = new History();
         history.viewText(emp, tfUserName.getText(), name);
         System.out.println("view");
