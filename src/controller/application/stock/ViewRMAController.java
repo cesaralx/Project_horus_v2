@@ -148,12 +148,12 @@ public class ViewRMAController implements Initializable {
 
     public void showDetails() {
         tblViewRMA.setItems(rma.rmaDetails);
-        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("ramId"));
-        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("rmaName"));
-        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("rmaDays"));
-        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("rmaComment"));
-        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
-        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
+        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("DevoluionNombre"));
+        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("DevoluionDias"));
+        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("Comentario"));
+        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
+        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("DevoluionFecha"));
         rmaGetway.view(rma);
     }
 
@@ -176,7 +176,7 @@ public class ViewRMAController implements Initializable {
             AddRMAController rmaController = fxmlLoader.getController();
             media.setId(usrId);
             rmaController.setMedia(media);
-            rmaController.lblContent.setText("ADD RMA");
+            rmaController.lblContent.setText("Agrega Devolucion");
             rmaController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -193,12 +193,12 @@ public class ViewRMAController implements Initializable {
         rma.rmaDetails.clear();
         rma.rmaName = tfSearch.getText().trim();
         tblViewRMA.setItems(rma.rmaDetails);
-        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("ramId"));
-        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("rmaName"));
-        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("rmaDays"));
-        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("rmaComment"));
-        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
-        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        clmRMAId.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
+        clmRMAName.setCellValueFactory(new PropertyValueFactory<>("DevoluionNombre"));
+        clmRMADayes.setCellValueFactory(new PropertyValueFactory<>("DevoluionDias"));
+        clmRMADiscription.setCellValueFactory(new PropertyValueFactory<>("Comentario"));
+        clmRMACreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
+        clmRMADate.setCellValueFactory(new PropertyValueFactory<>("DevoluionFecha"));
         rmaGetway.searchView(rma);
 
     }
@@ -222,7 +222,7 @@ public class ViewRMAController implements Initializable {
                     AddRMAController rmaController = fxmlLoader.getController();
                     media.setId(usrId);
                     rmaController.setMedia(media);
-                    rmaController.lblContent.setText("RMA DETAILS");
+                    rmaController.lblContent.setText("Detalle devolucion");
                     rmaController.btnUpdate.setVisible(true);
                     rmaController.btnSave.setVisible(true);
                     rmaController.rmaId = selectedRma.getRamId();

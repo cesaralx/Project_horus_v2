@@ -159,7 +159,7 @@ public class AddCatagoryController implements Initializable {
             AddBrandController supplyerController = fxmlLoader.getController();
             media.setId(userId);
             supplyerController.setMedia(media);
-            supplyerController.lblHeader.setText("Add Brand");
+            supplyerController.lblHeader.setText("Agrega Marca");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -224,7 +224,7 @@ public class AddCatagoryController implements Initializable {
         cbBrandName.getItems().clear();
         cbBrandName.setPromptText(null);
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer");
+            pst = con.prepareStatement("select * from proveedor");
             rs = pst.executeQuery();
             while (rs.next()) {
                 supplyerName = rs.getString(2);
@@ -240,9 +240,9 @@ public class AddCatagoryController implements Initializable {
     private void cbBrandNameOnClick(MouseEvent event) throws SQLException {
         cbBrandName.getItems().clear();
         supplyerName = cbSupplyerName.getSelectionModel().getSelectedItem();
-        supplyerId = sql.getIdNo(supplyerName, supplyerId, "Supplyer", "SupplyerName");
+        supplyerId = sql.getIdNo(supplyerName, supplyerId, "proveedor", "ProveedorNombre");
 
-        pst = con.prepareStatement("select * from "+db+".Brands where SupplyerId=?");
+        pst = con.prepareStatement("select * from marcas where ProveedorId=?");
         pst.setString(1, supplyerId);
         rs = pst.executeQuery();
         while (rs.next()) {

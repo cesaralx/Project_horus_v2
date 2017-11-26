@@ -52,8 +52,8 @@ public class CatagoryBLL {
 
     public boolean checkUpdate(Catagory catagory){
         boolean isTrueUpdate = false;
-        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "Brands", "BrandName");
-        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "Supplyer", "SupplyerName");
+        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
+        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "proveedor", "ProveedorNombre");
 
         try {
             pst = con.prepareStatement("select * from categoria where CategoriaNombre=? and MarcaID=? and ProveedorId=? and CategoriaId=?");
@@ -75,8 +75,8 @@ public class CatagoryBLL {
     public boolean isUniqName(Catagory catagory) {
 
         boolean uniqSupplyer = false;
-        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "Brands", "BrandName");
-        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "Supplyer", "SupplyerName");
+        catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
+        catagory.supplyerId = sql.getIdNo(catagory.supplyerName, catagory.supplyerId, "proveedor", "ProveedorNombre");
         try {
             pst = con.prepareCall("select * from categoria where CategoriaNombre=? and MarcaID=? and ProveedorId=?");
             pst.setString(1, catagory.catagoryName);

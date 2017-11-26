@@ -3,9 +3,6 @@ package BLL;
 import DAL.Unit;
 import Getway.UnitGetway;
 
-/**
- * Created by rifat on 8/15/15.
- */
 public class UnitBLL {
     
     UnitGetway unitGetway = new UnitGetway();

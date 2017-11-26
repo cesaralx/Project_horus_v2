@@ -102,8 +102,8 @@ public class AddSupplyerController implements Initializable {
                 || taSupplyerAddress.getText().trim().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("error");
-            alert.setHeaderText("ERROR : NULL FOUND");
-            alert.setContentText("Please fill all require field");
+            alert.setHeaderText("ERROR : no enocntrado");
+            alert.setContentText("Por favor llena todos los campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             

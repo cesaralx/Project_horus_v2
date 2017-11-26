@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<Group stylesheets="@../../../style/PopUp.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.application.stock.AddProductController">
+<Group stylesheets="@../../../style/PopUp.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.application.stock.AddProductController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="570.0" prefWidth="734.0" stylesheets="@../../../style/MainStyle.css">
          <children>
-            <Label fx:id="lblHeader" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="30.0" prefWidth="726.0" text="ADD PRODUCT">
+            <Label fx:id="lblHeader" alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="30.0" prefWidth="726.0" text="Agregar Producto">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -47,20 +53,20 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Product Id :" />
-                  <RadioButton fx:id="rbStatic" mnemonicParsing="false" onAction="#rbStaticOnAction" onMouseClicked="#rbStaticOnClicked" text="Static" GridPane.columnIndex="1" />
-                  <RadioButton fx:id="rbSeq" mnemonicParsing="false" onAction="#rbSeqOnAction" onMouseClicked="#rbSeqOnClick" text="Sequential" GridPane.columnIndex="2" />
-                  <Label text="Product Name :" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Label text="Quantity :" GridPane.rowIndex="4" />
-                  <Label text="Purses Price :" GridPane.rowIndex="6" />
-                  <Label text="Sell Price" GridPane.rowIndex="8" />
-                  <Label text="Description" GridPane.rowIndex="10" />
-                  <Label text="Supplied By :" GridPane.columnIndex="4" />
-                  <Label text="Brand :" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <Label text="Category :" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Label text="ID Producto :" />
+                  <RadioButton fx:id="rbStatic" mnemonicParsing="false" onAction="#rbStaticOnAction" onMouseClicked="#rbStaticOnClicked" text="Estatico" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="rbSeq" mnemonicParsing="false" onAction="#rbSeqOnAction" onMouseClicked="#rbSeqOnClick" text="Secuencial" GridPane.columnIndex="2" />
+                  <Label text="Nombre :" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Label text="Cantidad :" GridPane.rowIndex="4" />
+                  <Label text="Pecio de compra::" GridPane.rowIndex="6" />
+                  <Label text="Precio de venta :" GridPane.rowIndex="8" />
+                  <Label text="Descripcion :" GridPane.rowIndex="10" />
+                  <Label text="Proveído por:" GridPane.columnIndex="4" />
+                  <Label text="Marca :" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label text="Categoria :" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <Label text="Unit :" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <Label text="Return Marcentiging Autharization" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="8" />
-                  <Label text="Date :" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                  <Label text="Autorizacion devolucion" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                  <Label text="Fecha :" GridPane.columnIndex="4" GridPane.rowIndex="10" />
                   <TextField fx:id="tfProductId" GridPane.columnSpan="3" GridPane.rowIndex="1" />
                   <TextField fx:id="tfProductName" GridPane.columnSpan="3" GridPane.rowIndex="3" />
                   <TextField fx:id="tfProductQuantity" GridPane.columnSpan="3" GridPane.rowIndex="5" />
@@ -100,7 +106,7 @@
                   <ComboBox fx:id="cbSupplyer" onAction="#cbSupplyerOnAction" onMouseClicked="#cbSupplyerOnClicked" prefHeight="31.0" prefWidth="212.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                   <ComboBox fx:id="cmbBrand" onAction="#cmbBrandOnAction" onMouseClicked="#cmbBrandOnClick" prefHeight="31.0" prefWidth="201.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                   <ComboBox fx:id="cmbCatagory" onAction="#cmbCatagoryOnAction" onMouseClicked="#cmbCatagoryOnClick" prefHeight="31.0" prefWidth="238.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Actualizar" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
                </children>
             </GridPane>
          </children>

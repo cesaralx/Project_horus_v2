@@ -160,8 +160,8 @@ public class AddProductController implements Initializable {
     private void btnSaveOnAction(ActionEvent event) {
         System.out.println("Presesd");
         if (isNotNull()) {
-            unitId = sql.getIdNo(cbUnit.getSelectionModel().getSelectedItem(), unitId, "Unit", "UnitName");
-            rmaId = sql.getIdNo(cbRMA.getSelectionModel().getSelectedItem(), rmaId, "RMA", "RMAName");
+            unitId = sql.getIdNo(cbUnit.getSelectionModel().getSelectedItem(), unitId, "unit", "UnitName");
+            rmaId = sql.getIdNo(cbRMA.getSelectionModel().getSelectedItem(), rmaId, "devolucion", "DevoluionNombre");
             if (!tfValue.getText().trim().isEmpty()) {
                 String value = tfValue.getText();
                 int foo = Integer.parseInt(value);
@@ -184,9 +184,9 @@ public class AddProductController implements Initializable {
                 }
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("error");
-                alert.setHeaderText("Sucess : save sucess ");
-                alert.setContentText("Product added successfully");
+                alert.setTitle("Error");
+                alert.setHeaderText("Correcto : guardado ");
+                alert.setContentText("Producto agregado correctamente");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 
@@ -207,8 +207,8 @@ public class AddProductController implements Initializable {
                 currentProductBLL.save(currentProduct);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("error");
-                alert.setHeaderText("Sucess : save sucess ");
-                alert.setContentText("Product added successfully");
+                alert.setHeaderText("Completo : guardado ");
+                alert.setContentText("Productos agregado correctamente");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 
@@ -253,7 +253,7 @@ public class AddProductController implements Initializable {
         cmbBrand.getItems().clear();
         cmbBrand.getItems().removeAll();
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer");
+            pst = con.prepareStatement("select * from proveedor");
             rs = pst.executeQuery();
             while (rs.next()) {
                 cbSupplyer.getItems().addAll(rs.getString(2));
@@ -269,7 +269,7 @@ public class AddProductController implements Initializable {
         cbSupplyer.getSelectionModel().getSelectedItem();
 
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer where SupplyerName=?");
+            pst = con.prepareStatement("select * from proveedor where ProveedorNombre=?");
             pst.setString(1, cbSupplyer.getSelectionModel().getSelectedItem());
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -287,7 +287,7 @@ public class AddProductController implements Initializable {
         cmbCatagory.getItems().removeAll();
         cmbCatagory.setPromptText(null);
         try {
-            pst = con.prepareStatement("select * from "+db+".Brands where SupplyerId=?");
+            pst = con.prepareStatement("select * from marcas where ProveedorId=?");
             pst.setString(1, supplyerId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -302,7 +302,7 @@ public class AddProductController implements Initializable {
     public void cmbCatagoryOnClick(Event event) {
         cmbCatagory.getItems().clear();
         try {
-            pst = con.prepareStatement("select * from "+db+".Catagory where SupplyerId=? and BrandId=?");
+            pst = con.prepareStatement("select * from categoria where ProveedorId=? and MarcaID=?");
             pst.setString(1, supplyerId);
             pst.setString(2, brandId);
             rs = pst.executeQuery();
@@ -318,7 +318,7 @@ public class AddProductController implements Initializable {
     private void cmbBrandOnAction(ActionEvent event) {
         cmbBrand.getSelectionModel().getSelectedItem();
         try {
-            pst = con.prepareStatement("select * from "+db+".Brands where BrandName=? and SupplyerId=?");
+            pst = con.prepareStatement("select * from marcas where MarcaNombre=? and ProveedorId=?");
             pst.setString(1, cmbBrand.getSelectionModel().getSelectedItem());
             pst.setString(2, supplyerId);
             rs = pst.executeQuery();
@@ -334,7 +334,7 @@ public class AddProductController implements Initializable {
     public void cmbCatagoryOnAction(ActionEvent actionEvent) {
         cmbCatagory.getSelectionModel().getSelectedItem();
         try {
-            pst = con.prepareStatement("select * from "+db+".Catagory where SupplyerId=? and BrandId=?");
+            pst = con.prepareStatement("select * from categoria where ProveedorId=? and MarcaID=?");
             pst.setString(1, supplyerId);
             pst.setString(2, brandId);
             rs = pst.executeQuery();
@@ -351,7 +351,7 @@ public class AddProductController implements Initializable {
 
         cbUnit.getItems().clear();
         try {
-            pst = con.prepareStatement("select * from "+db+".Unit");
+            pst = con.prepareStatement("select * from unit");
             rs = pst.executeQuery();
             while (rs.next()) {
                 cbUnit.getItems().addAll(rs.getString(2));
@@ -366,7 +366,7 @@ public class AddProductController implements Initializable {
     private void cbRMAOnClick(MouseEvent event) {
         cbRMA.getItems().clear();
         try {
-            pst = con.prepareStatement("select * from "+db+".RMA");
+            pst = con.prepareStatement("select * from devolucion");
             rs = pst.executeQuery();
             while (rs.next()) {
                 cbRMA.getItems().addAll(rs.getString(2));
@@ -391,8 +391,8 @@ public class AddProductController implements Initializable {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("error");
-            alert.setHeaderText("ERROR : NULL FOUND");
-            alert.setContentText("Please fill all require field");
+            alert.setHeaderText("ERROR : no enocntrado");
+            alert.setContentText("Por favor llena todos los campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -452,7 +452,7 @@ public class AddProductController implements Initializable {
     @FXML
     private void cbUnitOnAction(ActionEvent event) {
         try {
-            pst = con.prepareStatement("select * from "+db+".Unit where UnitName=?");
+            pst = con.prepareStatement("select * from unit where UnitName=?");
             pst.setString(1, cbUnit.getSelectionModel().getSelectedItem());
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -466,7 +466,7 @@ public class AddProductController implements Initializable {
     @FXML
     private void cbRMAOnAction(ActionEvent event) {
         try {
-            pst = con.prepareStatement("select * from "+db+".RMA where RMAName=?");
+            pst = con.prepareStatement("select * from devolucion where DevoluionNombre=?");
             pst.setString(1, cbRMA.getSelectionModel().getSelectedItem());
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -490,7 +490,7 @@ public class AddProductController implements Initializable {
             AddSupplyerController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblCaption.setText("Add Supplyer");
+            supplyerController.lblCaption.setText("Agrega proveedor");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             supplyerController.addSupplyerStage(nStage);
@@ -516,7 +516,7 @@ public class AddProductController implements Initializable {
             AddBrandController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblHeader.setText("Add Brand");
+            supplyerController.lblHeader.setText("Agrega Marca");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -541,7 +541,7 @@ public class AddProductController implements Initializable {
             AddCatagoryController catagoryController = fxmlLoader.getController();
             media.setId(usrId);
             catagoryController.setMedia(media);
-            catagoryController.lblHeaderContent.setText("Add Item");
+            catagoryController.lblHeaderContent.setText("Agrega Item");
             catagoryController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -566,7 +566,7 @@ public class AddProductController implements Initializable {
             AddUnitController unitController = fxmlLoader.getController();
             media.setId(usrId);
             unitController.setNameMedia(media);
-            unitController.lblContent.setText("ADD UNIT");
+            unitController.lblContent.setText("Agrega unidad");
             unitController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -591,7 +591,7 @@ public class AddProductController implements Initializable {
             AddRMAController rmaController = fxmlLoader.getController();
             media.setId(usrId);
             rmaController.setMedia(media);
-            rmaController.lblContent.setText("ADD RMA");
+            rmaController.lblContent.setText("Agrega Devolucion");
             rmaController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);

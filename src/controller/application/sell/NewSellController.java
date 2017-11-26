@@ -158,8 +158,8 @@ public class NewSellController implements Initializable {
     private void mbtnCustomerOnClicked(MouseEvent event) {
         customer.customerName = tfCustomerSearch.getText().trim();
         tblCustomerSortView.setItems(customer.customerList);
-        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("customerContNo"));
+        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("ClienteNombre"));
+        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("ClienteContNo"));
         customerGetway.searchView(customer);
     }
 
@@ -173,8 +173,8 @@ public class NewSellController implements Initializable {
     private void tfCustomerSearchOnKeyReleased(KeyEvent event) {
         customer.customerName = tfCustomerSearch.getText().trim();
         tblCustomerSortView.setItems(customer.customerList);
-        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("customerContNo"));
+        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("ClienteNombre"));
+        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("ClienteContNo"));
         customerGetway.searchView(customer);
     }
 
@@ -344,7 +344,7 @@ public class NewSellController implements Initializable {
             AddCustomerController addCustomerController = fXMLLoader.getController();
             media.setId(userId);
             addCustomerController.setNameMedia(nameMedia);
-            addCustomerController.lblCustomerContent.setText("ADD CUSTOMER");
+            addCustomerController.lblCustomerContent.setText("Agregar Clientes");
             addCustomerController.btnUpdate.setVisible(false);
             Stage stage = new Stage();
             stage.setScene(scene);

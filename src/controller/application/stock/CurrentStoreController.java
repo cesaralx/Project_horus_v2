@@ -186,10 +186,10 @@ public class CurrentStoreController implements Initializable {
         con = dbCon.geConnection();
         cbSoteViewBrands.getItems().clear();
         suplyerName = cbSoteViewSupplyer.getSelectionModel().getSelectedItem();
-        suplyerId = sql.getIdNo(suplyerName, suplyerId, "Supplyer", "SupplyerName");
+        suplyerId = sql.getIdNo(suplyerName, suplyerId, "proveedor", "ProveedorNombre");
 
         try {
-            pst = con.prepareStatement("select * from marcas where SupplyerId=?");
+            pst = con.prepareStatement("select * from marcas where ProveedorId=?");
             pst.setString(1, suplyerId);
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -209,10 +209,10 @@ public class CurrentStoreController implements Initializable {
         con = dbCon.geConnection();
         cbSoteViewCatagory.getItems().clear();
         suplyerName = cbSoteViewSupplyer.getSelectionModel().getSelectedItem();
-        suplyerId = sql.getIdNo(suplyerName, suplyerId, "Supplyer", "SupplyerName");
+        suplyerId = sql.getIdNo(suplyerName, suplyerId, "proveedor", "ProveedorNombre");
         brandId = sql.getBrandID(suplyerId, brandId, brandName);
         try {
-            pst = con.prepareStatement("select * from categoria where SupplyerId=? and BrandId=?");
+            pst = con.prepareStatement("select * from categoria where ProveedorId=? and MarcaID=?");
             pst.setString(1, suplyerId);
             pst.setString(2, brandId);
             rs = pst.executeQuery();
@@ -287,8 +287,8 @@ public class CurrentStoreController implements Initializable {
     private void btnDeleteOnAction(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Login Now");
-        alert.setHeaderText("Confirm");
-        alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+        alert.setHeaderText("Confirmacion");
+        alert.setContentText("Estas seguro de eliminar esto \n click ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -324,19 +324,19 @@ public class CurrentStoreController implements Initializable {
     public void viewDetails() {
         System.out.println("CLCKED");
         tblViewCurrentStore.setItems(productCurrent.currentProductList);
-        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
-        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("suppliedBy"));
-        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("catagory"));
-        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
-        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("pursesPrice"));
-        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("sellPrice"));
-        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("rma"));
-        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("user"));
-        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("ProductoId"));
+        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("ProductoNombre"));
+        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("Cantidad"));
+        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
+        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
+        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
+        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
+        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
+        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("MonederoPrecio"));
+        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("VentaPecio"));
+        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
+        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("UsuarioId"));
+        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         currentProductGetway.viewFistTen(productCurrent);
     }
 
@@ -353,7 +353,7 @@ public class CurrentStoreController implements Initializable {
             AddProductController addProductController = fxmlLoader.getController();
             userMedia.setId(usrId);
             addProductController.setNameMedia(userMedia);
-            addProductController.lblHeader.setText("PRODUCT DETAILS");
+            addProductController.lblHeader.setText("DETALLE DE PRODUCTO");
             addProductController.btnUpdate.setVisible(true);
             addProductController.btnSave.setVisible(false);
             addProductController.id = tblViewCurrentStore.getSelectionModel().getSelectedItem().getId();
@@ -474,25 +474,25 @@ public class CurrentStoreController implements Initializable {
         cbSoteViewSupplyer.getItems().clear();
         cbSoteViewBrands.getItems().clear();
         cbSoteViewCatagory.getItems().clear();
-        cbSoteViewSupplyer.setPromptText("Select supplier");
-        cbSoteViewBrands.setPromptText("select brands");
-        cbSoteViewCatagory.setPromptText("select category");
-        cbSoteViewRMA.setPromptText("select rma");
+        cbSoteViewSupplyer.setPromptText("Selecciona proveedor");
+        cbSoteViewBrands.setPromptText("Selecciona marcas");
+        cbSoteViewCatagory.setPromptText("Selecciona categorias");
+        cbSoteViewRMA.setPromptText("Selecciona devolucion");
 
         tblViewCurrentStore.setItems(productCurrent.currentProductList);
-        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
-        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("suppliedBy"));
-        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("catagory"));
-        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("unit"));
-        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("pursesPrice"));
-        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("sellPrice"));
-        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("rma"));
-        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("user"));
-        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("ProductoId"));
+        tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("ProductoNombre"));
+        tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("Cantidad"));
+        tblClmProductdescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
+        tblClmProductSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
+        tblClmProductBrand.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
+        tblClmProductCatagory.setCellValueFactory(new PropertyValueFactory<>("CategoriaId"));
+        tblClmProductUnit.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
+        tblClmProductPursesPrice.setCellValueFactory(new PropertyValueFactory<>("MonederoPrecio"));
+        tblClmProductSellPrice.setCellValueFactory(new PropertyValueFactory<>("VentaPecio"));
+        tblClmProductRMA.setCellValueFactory(new PropertyValueFactory<>("DevoluionId"));
+        tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("UsuarioId"));
+        tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         currentProductGetway.view(productCurrent);
 
     }
@@ -501,9 +501,9 @@ public class CurrentStoreController implements Initializable {
     private void cbSoteViewRMAOnAction(ActionEvent event) {
         con = dbCon.geConnection();
         rmaName = cbSoteViewRMA.getSelectionModel().getSelectedItem();
-        System.out.println("Rma Name " + rmaName);
+        System.out.println("Devolucion " + rmaName);
         try {
-            pst = con.prepareStatement("select * from "+db+".RMA where RMAName=?");
+            pst = con.prepareStatement("select * from devolucion where DevoluionNombre=?");
             pst.setString(1, rmaName);
             rs = pst.executeQuery();
             while (rs.next()) {

@@ -118,7 +118,7 @@ public class ViewCustomerController implements Initializable {
             AddCustomerController addCustomerController = fXMLLoader.getController();
             media.setId(userId);
             addCustomerController.setNameMedia(nameMedia);
-            addCustomerController.lblCustomerContent.setText("ADD CUSTOMER");
+            addCustomerController.lblCustomerContent.setText("Agrega Cliente");
             addCustomerController.btnUpdate.setVisible(false);
             Stage stage = new Stage();
             stage.setScene(scene);

@@ -144,7 +144,7 @@ public class PassChangeController implements Initializable {
         boolean conDitionValid = true;
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from User where Id=? and Password=?");
+            pst = con.prepareStatement("select * from usuario where UsuarioId=? and Password=?");
             pst.setString(1, userId);
             pst.setString(2, pfCurrentPass.getText());
             rs = pst.executeQuery();
@@ -190,7 +190,7 @@ public class PassChangeController implements Initializable {
 
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("Update "+db+".User set Password=? where Id=?");
+            pst = con.prepareStatement("Update usuario set Password=? where UsuarioId=?");
             pst.setString(1, pfNewPass.getText());
             pst.setString(2, userId);
             pst.executeUpdate();

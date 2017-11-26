@@ -1,8 +1,5 @@
 package List;
 
-/**
- * Created by rifat on 8/4/15.
- */
 public class ListBrands {
     public String id;
     public String brandName;

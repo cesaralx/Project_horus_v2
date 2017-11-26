@@ -139,7 +139,7 @@ public class ViewUnitController implements Initializable {
             AddUnitController unitController = fxmlLoader.getController();
             media.setId(usrId);
             unitController.setNameMedia(media);
-            unitController.lblContent.setText("ADD UNIT");
+            unitController.lblContent.setText("Agregar Unit");
             unitController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -213,11 +213,11 @@ public class ViewUnitController implements Initializable {
 
     public void showDetails() {
         tblViewUnit.setItems(unit.unitDetails);
-        clmUnitId.setCellValueFactory(new PropertyValueFactory<>("unitId"));
-        clmUnitName.setCellValueFactory(new PropertyValueFactory<>("unitName"));
-        clmUnitDescription.setCellValueFactory(new PropertyValueFactory<>("unitDescription"));
-        clmUnitCreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
-        clmUnitCreateDate.setCellValueFactory(new PropertyValueFactory<>("dateOfCreation"));
+        clmUnitId.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
+        clmUnitName.setCellValueFactory(new PropertyValueFactory<>("UnitName"));
+        clmUnitDescription.setCellValueFactory(new PropertyValueFactory<>("UnitDescripcion"));
+        clmUnitCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
+        clmUnitCreateDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         unitGetway.view(unit);
     }
 
@@ -240,7 +240,7 @@ public class ViewUnitController implements Initializable {
                     AddUnitController unitController = fxmlLoader.getController();
                     media.setId(usrId);
                     unitController.setNameMedia(media);
-                    unitController.lblContent.setText("UNIT DETAILS");
+                    unitController.lblContent.setText("Detalle Unit");
                     unitController.btnUpdate.setVisible(true);
                     unitController.btnSave.setVisible(true);
                     unitController.unitId = selectedUnit.getUnitId();
@@ -265,11 +265,11 @@ public class ViewUnitController implements Initializable {
         unit.unitDetails.clear();
         unit.unitName = tfSearch.getText().trim();
         tblViewUnit.setItems(unit.unitDetails);
-        clmUnitId.setCellValueFactory(new PropertyValueFactory<>("unitId"));
-        clmUnitName.setCellValueFactory(new PropertyValueFactory<>("unitName"));
-        clmUnitDescription.setCellValueFactory(new PropertyValueFactory<>("unitDescription"));
-        clmUnitCreator.setCellValueFactory(new PropertyValueFactory<>("creatorName"));
-        clmUnitCreateDate.setCellValueFactory(new PropertyValueFactory<>("dateOfCreation"));
+        clmUnitId.setCellValueFactory(new PropertyValueFactory<>("UnitId"));
+        clmUnitName.setCellValueFactory(new PropertyValueFactory<>("UnitName"));
+        clmUnitDescription.setCellValueFactory(new PropertyValueFactory<>("UnitDescripcion"));
+        clmUnitCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
+        clmUnitCreateDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         unitGetway.searchView(unit);
 
     }

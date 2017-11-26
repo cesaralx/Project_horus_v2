@@ -120,12 +120,12 @@ public class ViewBrandController implements Initializable {
         brands.brandDitails.clear();
         brands.brandName = tfSearch.getText();
         tblBrand.setItems(brands.brandDitails);
-        tblCollumId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        tblCollumName.setCellValueFactory(new PropertyValueFactory<>("brandName"));
-        tblCollumSupplyer.setCellValueFactory(new PropertyValueFactory<>("supplyerName"));
-        tblCollumDescription.setCellValueFactory(new PropertyValueFactory<>("brandComment"));
-        tblCollumCreator.setCellValueFactory(new PropertyValueFactory<>("creatorId"));
-        tblClmDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        tblCollumId.setCellValueFactory(new PropertyValueFactory<>("MarcaID"));
+        tblCollumName.setCellValueFactory(new PropertyValueFactory<>("MarcaNombre"));
+        tblCollumSupplyer.setCellValueFactory(new PropertyValueFactory<>("ProveedorId"));
+        tblCollumDescription.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
+        tblCollumCreator.setCellValueFactory(new PropertyValueFactory<>("CreatorId"));
+        tblClmDate.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         brandsGetway.searchView(brands);
 
     }
@@ -144,7 +144,7 @@ public class ViewBrandController implements Initializable {
             AddBrandController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblHeader.setText("Add Brand");
+            supplyerController.lblHeader.setText("Agregar Marca");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -172,8 +172,8 @@ public class ViewBrandController implements Initializable {
         ListBrands selectedBrand = tblBrand.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Login Now");
-        alert.setHeaderText("Confirm");
-        alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+        alert.setHeaderText("Confirmacion");
+        alert.setContentText("Estas seguro de eliminar este item \n click en ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -242,7 +242,7 @@ public class ViewBrandController implements Initializable {
                 AddBrandController addBrandController = fxmlLoader.getController();
                 media.setId(usrId);
                 addBrandController.setMedia(media);
-                addBrandController.lblHeader.setText("Brand Details");
+                addBrandController.lblHeader.setText("Detalle marca");
                 addBrandController.btnUpdate.setVisible(true);
                 addBrandController.btnAddBrand.setVisible(false);
                 addBrandController.brandId = selectedBrand.getId();

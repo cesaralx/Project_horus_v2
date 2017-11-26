@@ -16,9 +16,6 @@ import javafx.stage.Stage;
 import media.userNameMedia;
 import DAL.Customer;
 
-/**
- * Created by rifat on 8/12/15.
- */
 public class AddCustomerController implements Initializable {
     @FXML
     private TextField tfCustomerName;

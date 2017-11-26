@@ -122,7 +122,7 @@ public class AddBrandController implements Initializable {
         cbSupplyer.getItems().clear();
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+db+".Supplyer order by SupplyerName");
+            pst = con.prepareStatement("select * from proveedor order by ProveedorNombre");
             rs = pst.executeQuery();
             while (rs.next()) {
                 supplyerName = rs.getString(2);
@@ -167,9 +167,9 @@ public class AddBrandController implements Initializable {
                 && cbSupplyer.getPromptText().isEmpty()) {
             
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("error");
-            alert.setHeaderText("Error : null found ");
-            alert.setContentText("Please full all requre field");
+            alert.setTitle("Error");
+            alert.setHeaderText("Error : no completo ");
+            alert.setContentText("Por favor llena todos los campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             
@@ -202,7 +202,7 @@ public class AddBrandController implements Initializable {
             AddSupplyerController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblCaption.setText("Add Item");
+            supplyerController.lblCaption.setText("Agregar Item");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             supplyerController.addSupplyerStage(nStage);
