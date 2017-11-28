@@ -1,5 +1,6 @@
 package Getway;
 
+import DAL.RMA;
 import DAL.SellCart;
 import List.ListSold;
 import dataBase.DBConnection;
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 
 public class SellCartGerway {
 
@@ -34,10 +37,10 @@ public class SellCartGerway {
             pst.setString(1, sellCart.sellID);
             pst.setString(2, sellCart.customerID);
             pst.setString(3, sellCart.productID);
-            pst.setString(4, sellCart.pursesPrice);
-            pst.setString(5, sellCart.sellPrice);
+            pst.setDouble(4, Double.parseDouble(sellCart.pursesPrice));
+            pst.setDouble(5, Double.parseDouble(sellCart.sellPrice));
             pst.setString(6, sellCart.quantity);
-            pst.setString(7, sellCart.totalPrice);
+            pst.setDouble(7, Double.parseDouble(sellCart.totalPrice));
             pst.setString(8, sellCart.warrentyVoidDate);
             pst.setString(9, sellCart.sellerID);
             pst.setString(10, LocalDateTime.now().toString());
@@ -142,6 +145,35 @@ public class SellCartGerway {
             rs.close();
         } catch (SQLException ex) {
             Logger.getLogger(SellCartGerway.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+       public void update(SellCart sellCart) {
+           con = dbCon.geConnection();
+        try {
+            pst = con.prepareStatement("update venta set VentaId =?,ClienteId=?,"
+                    + "ProductoId=?,MonederoPrecio=?,VentaPecio=?,Cantidad=?,PrecioTotal=?,"
+                    + "FechaLimiteGarantia=?,VendedorId=?,VendedorFecha=? WHERE VentaId = ?");
+            pst.setString(1, sellCart.sellID);
+            pst.setString(2, sellCart.customerID);
+            pst.setString(3, sellCart.productID);
+            pst.setDouble(4, Double.parseDouble(sellCart.pursesPrice));
+            pst.setDouble(5, Double.parseDouble(sellCart.sellPrice));
+            pst.setString(6, sellCart.quantity);
+            pst.setDouble(7, Double.parseDouble(sellCart.totalPrice));
+            pst.setString(8, sellCart.warrentyVoidDate);
+            pst.setString(9, sellCart.sellerID);
+            pst.setString(10, LocalDateTime.now().toString());
+            pst.executeUpdate();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado correcto");
+            alert.setContentText("Actualizado correctamente");
+            alert.initStyle(StageStyle.UNDECORATED);
+            alert.showAndWait();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

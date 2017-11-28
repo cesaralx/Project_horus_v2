@@ -16,9 +16,13 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
@@ -40,6 +44,8 @@ public class HomeController implements Initializable {
     private Label lblTotalSupplyer;
     @FXML
     private Label lblTotalEmployee;
+    @FXML
+    PieChart pcAll;
     
     DBConnection dbCon = new DBConnection();
     Connection con;
@@ -68,7 +74,30 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         valueCount();
         totalCount();
+        getPieData();
     }    
+    
+    public void getPieData() {
+        ObservableList<PieChart.Data> pieChartData
+                = FXCollections.observableArrayList(
+                        new PieChart.Data("Total Productos", 60),
+                        new PieChart.Data("Valor del stock", 20),
+                        new PieChart.Data("Total de venta", 25),
+                        new PieChart.Data("Valor de ventas", 25),
+                        new PieChart.Data("Total de empleados", 25),
+                        new PieChart.Data("Total de proveedores", 15));
+        pieChartData.forEach(data ->
+        data.nameProperty().bind(
+                Bindings.concat(
+                        data.getName(), " ", data.pieValueProperty()
+                )
+        )
+);
+        pcAll.setAnimated(true);
+        pcAll.setTitle("Datos Generales");
+        pcAll.setData(pieChartData);
+
+    }
     
     public void valueCount(){
         con = dbCon.geConnection();

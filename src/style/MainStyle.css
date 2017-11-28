@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Jun 13, 2015, 12:29:52 AM
-    Author     : rifat
+    Created on : Nov 26, 2017, 12:29:52 AM
+    Author     : alexi
 */
 
 /*******************************************************************************
@@ -397,7 +397,8 @@ AnchorPane{
  
 .menu-item:pressed
 {
-    -fx-background-color: #EA5444;
+    /*-fx-background-color: #EA5444;*/
+    -fx-background-color: #00BFFF;
     -fx-text-fill: white;
 }
  
@@ -441,7 +442,8 @@ StoreComboBox{
 }
 .toggle-button{
     -fx-border-width: 0px 0px 2px 0px;
-    -fx-border-color: #EA5444;
+    /*-fx-border-color: #EA5444;*/
+    -fx-border-color: #00BFFF;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     -fx-background-color: none;
@@ -452,7 +454,8 @@ StoreComboBox{
     -fx-cursor:hand;
 }
 .toggle-button:hover{
-    -fx-background-color: #EA5444;
+    /*-fx-background-color: #EA5444;*/
+    -fx-background-color: #00BFFF;
     -fx-border-color: #212121;
     -fx-border-width: 0px 0px 3px 0px;
     -fx-text-fill: white;

@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import media.userNameMedia;
 
 /**
  * FXML Controller class
@@ -24,6 +25,9 @@ import javafx.fxml.Initializable;
 public class LogFileController implements Initializable {
     
     logger log = new logger();
+
+    
+    
     
     @FXML
     JFXTextArea taLog;
@@ -34,7 +38,7 @@ public class LogFileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+       
     }    
     
     @FXML

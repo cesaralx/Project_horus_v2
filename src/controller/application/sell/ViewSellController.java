@@ -82,6 +82,7 @@ public class ViewSellController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tblSellView.setOnMouseClicked((MouseEvent event) -> {
+            sellCartGerway.update(sellCart);
             System.out.println("Clicked");
         });
     }

@@ -62,8 +62,8 @@ public class UsersGetway {
                 con.close();
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Exico :");
-                alert.setHeaderText("Exito");
+                alert.setTitle("Correcto :");
+                alert.setHeaderText("Correcto");
                 alert.setContentText("Usuario " + users.userName + " Agregado correctamente");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
@@ -73,7 +73,7 @@ public class UsersGetway {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error :");
                 alert.setHeaderText("Error");
-                alert.setContentText("Usuario " + users.userName + " No se a agregado correctamente");
+                alert.setContentText("Usuario " + users.userName + " no se a agregado");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
             } catch (FileNotFoundException e) {
@@ -200,7 +200,7 @@ public class UsersGetway {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR :");
                 alert.setHeaderText("ERROR : Existe el nombre");
-                alert.setContentText("User name " + users.userName + " Ya en uso");
+                alert.setContentText("User name " + users.userName + " ya en uso");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 return isUniqName;

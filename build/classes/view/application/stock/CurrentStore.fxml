@@ -21,15 +21,15 @@
                <center>
                   <TableView fx:id="tblViewCurrentStore" editable="true" onMouseClicked="#tblViewCurrentStoreOnClick" onScroll="#tblViewCurrentStoreOnScroll" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: none; -fx-border-color: none;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
                     <columns>
-                      <TableColumn fx:id="tblClmProductId" prefWidth="150.0" text="ID" />
-                      <TableColumn fx:id="tblClmProductName" prefWidth="150.0" text="Nombre" />
-                        <TableColumn fx:id="tblClmProductquantity" prefWidth="100.0" text="Cantidad" />
+                      <TableColumn fx:id="tblClmProductId" prefWidth="113.0" text="ID" />
+                      <TableColumn fx:id="tblClmProductName" prefWidth="163.0" text="Nombre" />
+                        <TableColumn fx:id="tblClmProductquantity" prefWidth="95.0" text="Cantidad" />
                         <TableColumn fx:id="tblClmProductUnit" prefWidth="75.0" text="Unit" />
                         <TableColumn fx:id="tblClmProductRMA" prefWidth="100.0" text="Devolucion" />
-                        <TableColumn fx:id="tblClmProductSupplyer" prefWidth="150.0" text="Proveedor" />
-                        <TableColumn fx:id="tblClmProductBrand" prefWidth="100.0" text="Marca" />
-                        <TableColumn fx:id="tblClmProductCatagory" prefWidth="100.0" text="Categoria" />
-                        <TableColumn fx:id="tblClmProductPursesPrice" prefWidth="150.0" text="Purses Price" />
+                        <TableColumn fx:id="tblClmProductSupplyer" prefWidth="141.0" text="Proveedor" />
+                        <TableColumn fx:id="tblClmProductBrand" prefWidth="103.0" text="Marca" />
+                        <TableColumn fx:id="tblClmProductCatagory" prefWidth="101.0" text="Categoria" />
+                        <TableColumn fx:id="tblClmProductPursesPrice" prefWidth="184.0" text="Purses Price" />
                         <TableColumn fx:id="tblClmProductSellPrice" prefWidth="150.0" text="Sell Price" />
                         <TableColumn fx:id="tblClmProductdate" prefWidth="100.0" text="Date" />
                         <TableColumn fx:id="tblClmProductAddBy" prefWidth="75.0" text="Add By" />

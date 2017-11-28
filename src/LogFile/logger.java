@@ -7,6 +7,7 @@ package LogFile;
 
 
 import LogFile.listaLog;
+import controller.ApplicationController;
 import java.io.FileNotFoundException;
 import java.io.*;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.logging.*;
 import java.util.stream.Stream;
+import media.userNameMedia;
 
 /**
  *
@@ -23,8 +25,12 @@ public class logger {
     listaLog listLog = new listaLog();
     Logger logger = Logger.getLogger(logger.class.getName());
     FileHandler fh;
+    
+    private userNameMedia usrNameMedia;
+    private String user;
 
     public logger()  {
+        
         System.setProperty("java.util.logging.SimpleFormatter.format", 
             "%1$tY-%1$tm-%1$td, %1$tH:%1$tM:%1$tS, %4$-6s, %5$s%6$s%n");
         try {
@@ -42,11 +48,34 @@ public class logger {
             fh.setFormatter(formatter);
     }
     
+    private void checkUser() throws IOException{
+        try{
+            checkUsrFile();
+        }catch (NullPointerException n) {
+            user=null;
+        }
+        if (user == null || "".equals(user)){
+            user="NULL";
+        }
+    }
+    
+    private void checkUsrFile() throws FileNotFoundException, IOException{
+    try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+ "/usr.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                user = line;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 
     public void wirteLogInfo(String mensaje) throws IOException {
         try {
+            checkUser();
             // aqui se escribe el string que le pasemos como parametro
-            logger.info(String.format("%s,", mensaje ));
+            logger.info(String.format("%s,%s", mensaje,user ));
         } catch (SecurityException e) {
             e.printStackTrace();
         }

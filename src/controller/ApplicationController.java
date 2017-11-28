@@ -7,6 +7,7 @@ package controller;
 
 import DAL.Users;
 import Getway.UsersGetway;
+import LogFile.logger;
 import controller.application.EmployeController;
 import controller.application.SellController;
 import controller.application.SettingsController;
@@ -134,11 +135,17 @@ public class ApplicationController implements Initializable {
 
     Users users = new Users();
     UsersGetway usersGetway = new UsersGetway();
+    
+    logger log = new logger();
 
     private userNameMedia usrNameMedia;
 
     public userNameMedia getUsrNameMedia() {
         return usrNameMedia;
+    }
+    
+    public String getUsrName() {
+        return usrName;
     }
 
     public void setUsrNameMedia(userNameMedia usrNameMedia) {
@@ -243,6 +250,7 @@ public class ApplicationController implements Initializable {
 
     @FXML
     private void btnStoreOnClick(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Entrando en almacen");
         sotreActive();
         StockController sc = new StockController();
         userNameMedia nm = new userNameMedia();
@@ -263,6 +271,7 @@ public class ApplicationController implements Initializable {
 
     @FXML
     private void btnEmplopyeOnClick(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Entrando en empleados");
         employeeActive();
         EmployeController ec = new EmployeController();
         userNameMedia nm = new userNameMedia();

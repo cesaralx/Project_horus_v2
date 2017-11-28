@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -46,6 +47,7 @@
                                     </Label>
                                     <Text fx:id="txtOrgAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="Organization Address" textAlignment="CENTER" wrappingWidth="647.7294921875" />
                                     <Text fx:id="txtorgPhoneNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="Org. Phone Number" textAlignment="CENTER" wrappingWidth="647.7294921875" />
+                                    <PieChart fx:id="pcAll" prefWidth="500.0" />
                                  </children>
                               </VBox>
                               <GridPane layoutX="158.0" layoutY="144.0" prefHeight="193.0" prefWidth="358.0">

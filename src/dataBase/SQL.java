@@ -153,10 +153,22 @@ public class SQL {
     }
 
     public String getName(String id, String name, String tableName){
+        String campo = tableName;
+        if (tableName.equals("marcas")) {
+            campo = "marca";  
+        }
+        if (tableName.equals("devolucion"))
+        {
+            campo = "Devoluion";
+        }
+        if (tableName.equals("productos")) {
+            campo = "";
+            
+        }
 
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from "+tableName+" where "+tableName+"Id=?");
+            pst = con.prepareStatement("select * from "+tableName+" where "+campo+"Id=?");
             pst.setString(1, id);
             rs = pst.executeQuery();
             while (rs.next()){
@@ -232,7 +244,7 @@ public class SQL {
     public String getDayes(String rmaDayes, String id){
         con = dbCon.geConnection();;
         try {
-            pst = con.prepareStatement("select * from devolucion where DevolucionId=?");
+            pst = con.prepareStatement("select * from devolucion where DevoluionId=?");
             pst.setString(1, id);
             rs = pst.executeQuery();
             while(rs.next()){

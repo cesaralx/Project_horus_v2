@@ -158,8 +158,8 @@ public class NewSellController implements Initializable {
     private void mbtnCustomerOnClicked(MouseEvent event) {
         customer.customerName = tfCustomerSearch.getText().trim();
         tblCustomerSortView.setItems(customer.customerList);
-        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("ClienteNombre"));
-        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("ClienteContNo"));
+        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
+        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("CustomerContNo"));
         customerGetway.searchView(customer);
     }
 
@@ -173,8 +173,8 @@ public class NewSellController implements Initializable {
     private void tfCustomerSearchOnKeyReleased(KeyEvent event) {
         customer.customerName = tfCustomerSearch.getText().trim();
         tblCustomerSortView.setItems(customer.customerList);
-        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("ClienteNombre"));
-        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("ClienteContNo"));
+        tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
+        tblClmCustomerPhoneNo.setCellValueFactory(new PropertyValueFactory<>("CustomerContNo"));
         customerGetway.searchView(customer);
     }
 

@@ -17,7 +17,10 @@ import dataBase.DBConnection;
 import dataBase.DBProperties;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -143,9 +146,17 @@ public class LoginController1 implements Initializable {
         });
 
     }
+    
+    private void crearUserFile(String usr) throws FileNotFoundException, UnsupportedEncodingException{
+        PrintWriter writer = new PrintWriter(System.getProperty("user.dir")+ "/usr.txt", "UTF-8");
+        writer.println(usr);
+        writer.close();
+        
+    }
 
     private void completeLogin(ActionEvent event) throws IOException {
 //        btnLogin.getScene().getWindow().hide();
+        log.wirteLogInfo("Iniciando proceso de validacion");
         imgProgress.setVisible(false);
             
         DBConnection dbCon = new DBConnection();
@@ -169,6 +180,8 @@ public class LoginController1 implements Initializable {
                     pst.setString(2, txtPassword.getText());
                     rs = pst.executeQuery();
                     if (rs.next()) {
+                        crearUserFile(rs.getString(2));
+                        log.wirteLogInfo("Password correcto");
                         userNameMedia usrNameMedia = new userNameMedia(rs.getString(1), rs.getString(2));
                         ApplicationController apControl = loader.getController();
                         apControl.setUsrNameMedia(usrNameMedia);
@@ -203,10 +216,11 @@ public class LoginController1 implements Initializable {
 //            alert.setContentText("Make sure your mysql is Start properly, \n");
 //            alert.initStyle(StageStyle.UNDECORATED);
 //            alert.showAndWait();
+            log.wirteLogInfo("Servidor no encontrado");
             TrayNotification tn = new TrayNotification();
             tn.setNotificationType(NotificationType.ERROR);
-            tn.setTitle("Error: Server Not Found");
-            tn.setMessage("Make sure your SQL server is Start properly, \ntry Again");
+            tn.setTitle("Error: Servidor no encontrado");
+            tn.setMessage("Asegurate de que SQL server este ejecutandose \nE intena de nuevo");
             tn.setAnimationType(AnimationType.FADE);
             tn.showAndDismiss(Duration.seconds(2));
         }
@@ -237,6 +251,7 @@ public class LoginController1 implements Initializable {
     private void hlDbOnAction(ActionEvent event) {
         Parent root = null;
         try {
+            log.wirteLogInfo("Iniciando menu de configuracion de BD");
             root = FXMLLoader.load(getClass().getResource("/view/Server.fxml"));
             Scene scene = new Scene(root);
             Stage nStage = new Stage();
@@ -255,6 +270,7 @@ public class LoginController1 implements Initializable {
         con = dbCon.geConnection();
         if (con != null) {
             try {
+                log.wirteLogInfo("Verificando si existe administrador");
                 pst = con.prepareStatement("SELECT top 1 UsuarioId FROM usuario "); 
 //        pst = con.prepareStatement("SELECT UsuarioId FROM usuario ORDER BY UsuarioId ASC OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY  "); 
                 rs = pst.executeQuery();
@@ -290,7 +306,8 @@ public class LoginController1 implements Initializable {
 
     }
 
-    private void loadRegistration() {
+    private void loadRegistration() throws IOException {
+        log.wirteLogInfo("Cargando menu para nuevo registro");
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/view/Registration.fxml"));
