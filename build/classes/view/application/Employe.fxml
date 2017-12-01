@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -36,8 +37,11 @@
                            <children>
                               <Label fx:id="lblView" layoutX="14.0" layoutY="7.0" text="Label">
                                  <font>
-                                    <Font size="32.0" />
+                                    <Font name="System Bold" size="32.0" />
                                  </font>
+                                 <effect>
+                                    <Reflection fraction="0.43" topOpacity="0.22" />
+                                 </effect>
                               </Label>
                            </children>
                         </AnchorPane>
@@ -49,10 +53,10 @@
                            <children>
                               <MenuBar layoutX="39.0" layoutY="13.0">
                                 <menus>
-                                  <Menu mnemonicParsing="false" text="Employee">
+                                  <Menu mnemonicParsing="false" text="Empleados">
                                     <items>
-                                      <MenuItem fx:id="btnAddEmployee" mnemonicParsing="false" onAction="#btnAddEmployeeOnClick" text="Add Employee" />
-                                          <MenuItem fx:id="btnViewEmployee" mnemonicParsing="false" onAction="#btnViewEmployeeOnAction" text="View Employee" />
+                                      <MenuItem fx:id="btnAddEmployee" mnemonicParsing="false" onAction="#btnAddEmployeeOnClick" text="Agregar Empleados" />
+                                          <MenuItem fx:id="btnViewEmployee" mnemonicParsing="false" onAction="#btnViewEmployeeOnAction" text="Ver Empleados" />
                                     </items>
                                        <graphic>
                                           <ImageView fx:id="ivEmployeIcon" fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />

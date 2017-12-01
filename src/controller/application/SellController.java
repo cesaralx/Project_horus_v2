@@ -7,6 +7,7 @@ package controller.application;
 
 import controller.application.sell.ViewCustomerController;
 import controller.application.sell.ViewSellController;
+import controller.application.stock.CurrentStoreController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +28,7 @@ import media.userNameMedia;
  * @author rifat
  */
 public class SellController implements Initializable {
+    private String usrId;
 
     @FXML
     private ToggleButton tbtnSell;
@@ -34,6 +36,8 @@ public class SellController implements Initializable {
     private ToggleButton tbtnCustomer;
     @FXML
     private ToggleButton tbtnReports;
+    @FXML
+    private ToggleButton tbtPedidos;
     @FXML
     private Label lblPathInfo;
     @FXML
@@ -97,5 +101,25 @@ public class SellController implements Initializable {
     private void tbtnReportsOnAction(ActionEvent event) throws IOException {
 
     }
+    
+    @FXML
+    private void tbnPedidos(ActionEvent event) throws IOException{
+               lblPathInfo.setText("Pedidos");
+        CurrentStoreController asc = new CurrentStoreController();
+        userNameMedia media = new userNameMedia();
+        FXMLLoader fXMLLoader = new FXMLLoader();
+        fXMLLoader.load(getClass().getResource("/view/application/stock/CurrentStore.fxml").openStream());
+        media.setId(usrId);
+        CurrentStoreController currentStoreController = fXMLLoader.getController();
+        currentStoreController.setMedia(nameMedia);
+        currentStoreController.viewDetails();
+        currentStoreController.showDetails();
+        currentStoreController.apCombobox.getStylesheets().add("/style/StoreCombobox.css");
+        currentStoreController.settingPermission();
+        spMainContent.getChildren().clear();
+        spMainContent.getChildren().add(fXMLLoader.getRoot());
+    }
+
+    
 
 }

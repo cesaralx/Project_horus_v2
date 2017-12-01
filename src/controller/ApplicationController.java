@@ -384,6 +384,7 @@ public class ApplicationController implements Initializable {
         con = dbCon.geConnection();
 
         try {
+            System.out.println("ID: "+id);
             pst = con.prepareStatement("select * from userpermission where UsuarioId=?");
             pst.setString(1, id);
             rs = pst.executeQuery();

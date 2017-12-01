@@ -30,7 +30,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import media.userNameMedia;
+import tray.animations.AnimationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -46,6 +49,8 @@ public class SettingsController implements Initializable {
     private MenuItem miBackup;
     @FXML
     private MenuItem miLogFile;
+    @FXML
+    private MenuItem miChat;
     @FXML
     private StackPane spSettingContent;
     @FXML
@@ -109,6 +114,29 @@ public class SettingsController implements Initializable {
         spSettingContent.getChildren().clear();
         spSettingContent.getChildren().add(acPane);
         
+    }
+    
+        @FXML
+    private void openChat(ActionEvent event) {
+        TrayNotification tn = new TrayNotification();
+        tn.setTitle("Notificacion");
+        tn.setMessage("Este es un ejemplo de alerta");
+        tn.setAnimationType(AnimationType.FADE);
+        tn.showAndDismiss(Duration.seconds(2));
+        
+        Parent root = null;
+        try {
+//            log.wirteLogInfo("Iniciando menu de configuracion de BD");
+            root = FXMLLoader.load(getClass().getResource("/view/chat/ViewChat.fxml"));
+            Scene scene = new Scene(root);
+            Stage nStage = new Stage();
+            nStage.setScene(scene);
+            nStage.setMaximized(false);
+            nStage.setTitle("Chat - Nice Vaping");
+            nStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

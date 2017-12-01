@@ -7,7 +7,7 @@ package media;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class userNameMedia {
     

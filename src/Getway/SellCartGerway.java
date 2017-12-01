@@ -151,19 +151,20 @@ public class SellCartGerway {
        public void update(SellCart sellCart) {
            con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("update venta set VentaId =?,ClienteId=?,"
+            pst = con.prepareStatement("update venta set ,ClienteId=?,"
                     + "ProductoId=?,MonederoPrecio=?,VentaPecio=?,Cantidad=?,PrecioTotal=?,"
-                    + "FechaLimiteGarantia=?,VendedorId=?,VendedorFecha=? WHERE VentaId = ?");
-            pst.setString(1, sellCart.sellID);
-            pst.setString(2, sellCart.customerID);
-            pst.setString(3, sellCart.productID);
-            pst.setDouble(4, Double.parseDouble(sellCart.pursesPrice));
-            pst.setDouble(5, Double.parseDouble(sellCart.sellPrice));
-            pst.setString(6, sellCart.quantity);
-            pst.setDouble(7, Double.parseDouble(sellCart.totalPrice));
-            pst.setString(8, sellCart.warrentyVoidDate);
-            pst.setString(9, sellCart.sellerID);
-            pst.setString(10, LocalDateTime.now().toString());
+                    + "FechaLimiteGarantia=?,VendedorId=?,VendedorFecha=? WHERE VentaId = ?s");
+            pst.setString(1, sellCart.customerID);
+            pst.setString(2, sellCart.productID);
+            pst.setDouble(3, Double.parseDouble(sellCart.pursesPrice));
+            pst.setDouble(4, Double.parseDouble(sellCart.sellPrice));
+            pst.setString(5, sellCart.quantity);
+            pst.setDouble(6, Double.parseDouble(sellCart.totalPrice));
+            pst.setString(7, sellCart.warrentyVoidDate);
+            pst.setString(8, sellCart.sellerID);
+            pst.setString(9, LocalDateTime.now().toString());
+            pst.setString(10, sellCart.sellID);
+
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");

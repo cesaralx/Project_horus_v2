@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class SucessController implements Initializable {
    

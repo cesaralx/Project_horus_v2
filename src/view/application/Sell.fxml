@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -33,14 +34,18 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                         <Label fx:id="lblPathInfo" text="Venta">
                            <font>
-                              <Font size="32.0" />
+                              <Font name="System Bold" size="32.0" />
                            </font>
+                           <effect>
+                              <Reflection bottomOpacity="0.07" fraction="0.48" topOpacity="0.17" />
+                           </effect>
                         </Label>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <ToggleButton fx:id="tbtnSell" mnemonicParsing="false" onAction="#tbtnSellOnAction" text="Sell" />
-                              <ToggleButton fx:id="tbtnCustomer" mnemonicParsing="false" onAction="#tbtnCustomerOnAction" text="Customer" />
-                              <ToggleButton fx:id="tbtnReports" mnemonicParsing="false" onAction="#tbtnReportsOnAction" text="Reports" visible="false" />
+                              <ToggleButton fx:id="tbtnSell" mnemonicParsing="false" onAction="#tbtnSellOnAction" text="Venta" />
+                              <ToggleButton fx:id="tbtPedidos" mnemonicParsing="false" onAction="#tbnPedidos" text="Pedidos" />
+                              <ToggleButton fx:id="tbtnCustomer" mnemonicParsing="false" onAction="#tbtnCustomerOnAction" text="Cliente" />
+                              <ToggleButton fx:id="tbtnReports" mnemonicParsing="false" onAction="#tbtnReportsOnAction" text="Reportes" />
                            </children>
                         </HBox>
                      </children>

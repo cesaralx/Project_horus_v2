@@ -1,5 +1,11 @@
-2017-11-27, 19:31:11, INFO  , Iniciando sesion,cesar
-2017-11-27, 19:31:11, INFO  , Es valido: true,cesar
-2017-11-27, 19:31:14, INFO  , Iniciando proceso de validacion,cesar
-2017-11-27, 19:31:15, INFO  , Password correcto,cesar
-2017-11-27, 19:31:19, INFO  , Entrando en almacen,cesar
+2017-11-30, 22:21:44, INFO  , Iniciando sesion,cesar
+2017-11-30, 22:21:44, INFO  , Es valido: true,cesar
+2017-11-30, 22:21:47, INFO  , Iniciando proceso de validacion,cesar
+2017-11-30, 22:21:47, INFO  , Password correcto,ventas
+2017-11-30, 22:21:50, INFO  , Entrando en almacen,ventas
+2017-11-30, 22:22:02, INFO  , Iniciando sesion,ventas
+2017-11-30, 22:22:02, INFO  , Es valido: true,ventas
+2017-11-30, 22:22:05, INFO  , Iniciando proceso de validacion,ventas
+2017-11-30, 22:22:05, INFO  , Password correcto,cesar
+2017-11-30, 22:22:09, INFO  , Entrando en almacen,cesar
+2017-11-30, 22:22:13, INFO  , Entrando en empleados,cesar

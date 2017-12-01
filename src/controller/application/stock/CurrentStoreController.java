@@ -48,7 +48,7 @@ import javafx.scene.layout.AnchorPane;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class CurrentStoreController implements Initializable {
 
@@ -148,7 +148,7 @@ public class CurrentStoreController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+showDetails();
     }
 
     @FXML
@@ -322,8 +322,7 @@ public class CurrentStoreController implements Initializable {
     }
 
     public void viewDetails() {
-        System.out.println("CLCKED");
-        tblViewCurrentStore.setItems(productCurrent.currentProductList);
+     tblViewCurrentStore.setItems(productCurrent.currentProductList);
         tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         tblClmProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         tblClmProductquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -468,7 +467,12 @@ public class CurrentStoreController implements Initializable {
 
     @FXML
     private void btnRefreshOnACtion(ActionEvent event) {
-        productCurrent.currentProductList.clear();
+        showDetails();
+
+    }
+    
+    public void showDetails(){
+                productCurrent.currentProductList.clear();
         tfSearch.clear();
         cbSoteViewRMA.getItems().clear();
         cbSoteViewSupplyer.getItems().clear();
@@ -494,7 +498,6 @@ public class CurrentStoreController implements Initializable {
         tblClmProductAddBy.setCellValueFactory(new PropertyValueFactory<>("user"));
         tblClmProductdate.setCellValueFactory(new PropertyValueFactory<>("date"));
         currentProductGetway.view(productCurrent);
-
     }
 
     @FXML

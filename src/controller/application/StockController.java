@@ -123,6 +123,7 @@ public class StockController implements Initializable {
         CurrentStoreController currentStoreController = fXMLLoader.getController();
         currentStoreController.setMedia(userId);
         currentStoreController.viewDetails();
+        currentStoreController.showDetails();
         currentStoreController.apCombobox.getStylesheets().add("/style/StoreCombobox.css");
         currentStoreController.settingPermission();
         StackPane acPane = fXMLLoader.getRoot();
@@ -222,7 +223,7 @@ public class StockController implements Initializable {
     public void settingPermission(){
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from userpermission where Idi=?");
+            pst = con.prepareStatement("select * from userpermission where UsuarioId=?");
             pst.setString(1, usrId);
             rs = pst.executeQuery();
             while(rs.next()){

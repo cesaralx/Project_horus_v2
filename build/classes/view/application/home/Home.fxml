@@ -109,7 +109,6 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
-                        <Button fx:id="jbntNotificacion" mnemonicParsing="false" onAction="#cancelAction" text="Notificacion" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -118,7 +117,10 @@
             <Insets left="20.0" right="20.0" />
          </padding>
          <bottom>
-            <AnchorPane prefHeight="85.0" prefWidth="683.0" style="-fx-border-color: ff4e3c; -fx-border-width: 5px 0px 0px 0px; -fx-bo: ;" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="85.0" prefWidth="683.0" style="-fx-border-color: ff4e3c; -fx-border-width: 5px 0px 0px 0px; -fx-bo: ;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="jbntNotificacion" layoutX="735.0" layoutY="15.0" mnemonicParsing="false" onAction="#cancelAction" text="Chat" />
+               </children></AnchorPane>
          </bottom>
       </BorderPane>
    </children>

@@ -8,6 +8,7 @@ package controller.application.home;
 import Getway.CurrentProductGetway;
 import dataBase.DBConnection;
 import dataBase.DBProperties;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,11 +22,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
 import tray.notification.TrayNotification;
@@ -114,13 +119,36 @@ public class HomeController implements Initializable {
         }
     }
     
-        @FXML
+//        @FXML
+//    private void cancelAction(ActionEvent event) {
+//        TrayNotification tn = new TrayNotification();
+//        tn.setTitle("Notificacion");
+//        tn.setMessage("Este es un ejemplo de alerta");
+//        tn.setAnimationType(AnimationType.FADE);
+//        tn.showAndDismiss(Duration.seconds(2));
+//    }
+    
+    @FXML
     private void cancelAction(ActionEvent event) {
         TrayNotification tn = new TrayNotification();
         tn.setTitle("Notificacion");
         tn.setMessage("Este es un ejemplo de alerta");
         tn.setAnimationType(AnimationType.FADE);
         tn.showAndDismiss(Duration.seconds(2));
+        
+        Parent root = null;
+        try {
+//            log.wirteLogInfo("Iniciando menu de configuracion de BD");
+            root = FXMLLoader.load(getClass().getResource("/view/chat/ViewChat.fxml"));
+            Scene scene = new Scene(root);
+            Stage nStage = new Stage();
+            nStage.setScene(scene);
+            nStage.setMaximized(false);
+            nStage.setTitle("Chat - Nice Vaping");
+            nStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     public void totalCount(){
