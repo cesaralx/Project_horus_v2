@@ -29,7 +29,7 @@ import media.userNameMedia;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class EmployeePermissionController implements Initializable {
 
@@ -141,7 +141,11 @@ public class EmployeePermissionController implements Initializable {
 
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("UPDATE userpermission SET AddProducto=?,AddProveedor=?,AddMarca=?,AddCategoria=?,AddUnit=?,AddCliente=?,UpFechaProductp=?,UpFechaProveedor=?,UpFechaMarca=?,UpFechaCatagoria=?,UpFechaUnit=?,UpFechaCliente=?,VentaProducto=?,ProveerDescuento=?,ManejoEmpleados=?,ManejoEmpresa=?,CambiarPassword=?,ManejoDevolucion=? WHERE UsuarioId=?");
+            pst = con.prepareStatement("UPDATE userpermission SET AddProducto=?,AddProveedor=?,"
+                    + "AddMarca=?,AddCategoria=?,AddUnit=?,AddCliente=?,UpFechaProductp=?,"
+                    + "UpFechaProveedor=?,UpFechaMarca=?,UpFechaCatagoria=?,UpFechaUnit=?,UpFechaCliente=?,"
+                    + "VentaProducto=?,ProveerDescuento=?,ManejoEmpleados=?,ManejoEmpresa=?,"
+                    + "CambiarPassword=?,ManejoDevolucion=? WHERE UsuarioId=?");
 //            pst.setString(1, id);
             pst.setInt(1, addProduct);
             pst.setInt(2, addSupplyer);
@@ -165,9 +169,9 @@ public class EmployeePermissionController implements Initializable {
 
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess");
-            alert.setContentText("Permission change successfully");
+            alert.setTitle("Completo");
+            alert.setHeaderText("Completado");
+            alert.setContentText("Permisos actualizados");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -214,7 +218,7 @@ public class EmployeePermissionController implements Initializable {
 
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from userpermission where Idi=?");
+            pst = con.prepareStatement("select * from userpermission where UsuarioId=?");
             pst.setString(1, id);
             rs = pst.executeQuery();
             while (rs.next()) {

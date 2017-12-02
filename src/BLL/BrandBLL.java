@@ -83,9 +83,9 @@ public class BrandBLL {
             pst.setString(2, brands.supplyrId);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("in not uniq");
+//                System.out.println("in not uniq");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Sucess");
+                alert.setTitle("Ejecutado");
                 alert.setHeaderText("ERROR : usado");
                 alert.setContentText("Marca" + "  '" + brands.brandName + "' " + "ya en uso!");
                 alert.initStyle(StageStyle.UNDECORATED);

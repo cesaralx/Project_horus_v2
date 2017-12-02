@@ -46,17 +46,17 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="MySQL host :" GridPane.rowIndex="1" />
-                        <Label text="MySQL Port:" GridPane.rowIndex="2" />
-                        <Label text="MySQL UserName :" GridPane.rowIndex="4" />
-                        <Label text="MySQL Password :" GridPane.rowIndex="5" />
-                        <TextField fx:id="tfHost" text="localhost" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="thPort" text="3306" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="SQL host :" GridPane.rowIndex="1" />
+                        <Label text="SQL Port:" GridPane.rowIndex="2" />
+                        <Label text="SQL UserName :" GridPane.rowIndex="4" />
+                        <Label text="SQL Password :" GridPane.rowIndex="5" />
+                        <TextField fx:id="tfHost" promptText="Host" text="localhost" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="thPort" promptText="Puerto" text="49679" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="lablServerStatus" text="Server off" GridPane.columnIndex="1" />
-                        <Label text="MySQL Database :" GridPane.rowIndex="3" />
-                        <TextField fx:id="tfDBName" text="storekeeper" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="tfUserName" text="root" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <PasswordField fx:id="pfPassword" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="SQL Database :" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfDBName" text="horus_v2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfUserName" text="cesar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="pfPassword" text="alexaltair360Q" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                           <buttons>
                             <Button fx:id="btnConnect" mnemonicParsing="false" onAction="#btnConnectOnAction" text="Conectar" />

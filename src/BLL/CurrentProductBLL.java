@@ -47,7 +47,6 @@ public class CurrentProductBLL {
     }
 
     public boolean isUniqName(CurrentProduct currentProduct) {
-        System.out.println("WE ARE IS IS UNIT NAME");
         boolean isUniqname = false;
         try {
             pst = con.prepareStatement("select * from productos where ProductoId=?");
@@ -56,8 +55,8 @@ public class CurrentProductBLL {
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : Not Uniq");
-                alert.setContentText("Product id" + "  '" + currentProduct.productId + "' " + "id not Uniq");
+                alert.setHeaderText("ERROR : No unico");
+                alert.setContentText("ID Producto" + "  '" + currentProduct.productId + "' " + "no es unico");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 
@@ -71,7 +70,6 @@ public class CurrentProductBLL {
     }
 
     public boolean isUpdate(CurrentProduct currentProduct) {
-        System.out.println("WE ARE IS IS UPDTE");
         boolean isUpdate = false;
         try {
             pst = con.prepareStatement("select * from productos where Id=? and ProductoId=? and ProductoNombre=? and Cantidad=? and Descripcion=? and ProveedorId=? and MarcaID=? "
@@ -125,8 +123,8 @@ public class CurrentProductBLL {
         if (currentProduct.productId.isEmpty() || currentProduct.sellPrice.isEmpty() || currentProduct.quantity.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : Null Found");
-                alert.setContentText("Please fill requrer field");
+                alert.setHeaderText("ERROR : Null");
+                alert.setContentText("Por favor llena todos los campos");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
             

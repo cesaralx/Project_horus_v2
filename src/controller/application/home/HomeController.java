@@ -6,6 +6,7 @@
 package controller.application.home;
 
 import Getway.CurrentProductGetway;
+import LogFile.logger;
 import dataBase.DBConnection;
 import dataBase.DBProperties;
 import java.io.IOException;
@@ -38,7 +39,7 @@ import tray.notification.TrayNotification;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class HomeController implements Initializable {
     @FXML
@@ -71,6 +72,8 @@ public class HomeController implements Initializable {
     
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
+    
+    logger log = new logger();
 
     /**
      * Initializes the controller class.
@@ -79,18 +82,22 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         valueCount();
         totalCount();
-        getPieData();
+        try {
+            getPieData();
+        } catch (IOException ex) {
+        }
     }    
     
-    public void getPieData() {
+    public void getPieData() throws IOException {
+        log.wirteLogInfo("Cargando datos inicio");
         ObservableList<PieChart.Data> pieChartData
                 = FXCollections.observableArrayList(
-                        new PieChart.Data("Total Productos", 60),
-                        new PieChart.Data("Valor del stock", 20),
-                        new PieChart.Data("Total de venta", 25),
-                        new PieChart.Data("Valor de ventas", 25),
-                        new PieChart.Data("Total de empleados", 25),
-                        new PieChart.Data("Total de proveedores", 15));
+                        new PieChart.Data("Total Productos", Double.valueOf(lblTotalItem.getText()) ),
+                        new PieChart.Data("Valor del stock", Double.valueOf(lblStockValue.getText())),
+                        new PieChart.Data("Total de venta", Double.valueOf(lblTotalSell.getText())),
+                        new PieChart.Data("Valor de ventas", Double.valueOf(lblSellValue.getText())),
+                        new PieChart.Data("Total de empleados", Double.valueOf(lblTotalEmployee.getText())),
+                        new PieChart.Data("Total de proveedores", Double.valueOf(lblTotalSupplyer.getText())));
         pieChartData.forEach(data ->
         data.nameProperty().bind(
                 Bindings.concat(

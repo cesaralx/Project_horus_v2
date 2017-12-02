@@ -32,7 +32,6 @@ public class SellCartBLL {
     }
 
     public void updateCurrentQuentity(SellCart sellCart) {
-        System.out.println("In Update");
         int oQ = Integer.parseInt(sellCart.oldQuentity);
         int nQ = Integer.parseInt(sellCart.quantity);
         int uQ = (oQ - nQ);
@@ -47,7 +46,7 @@ public class SellCartBLL {
         } catch (SQLException ex) {
             Logger.getLogger(SellCartBLL.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Update Complate");
+        System.out.println("Update Complete");
     }
 
 }

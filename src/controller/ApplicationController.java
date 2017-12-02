@@ -161,10 +161,10 @@ public class ApplicationController implements Initializable {
     Image menuImageRed = new Image("/icon/menuRed.png");
     Image image;
 
-    String defultStyle = "-fx-border-width: 0px 0px 0px 5px;"
+    String defultStyle = "-fx-border-width: 0px 0px 0px 5px:"
             + "-fx-border-color:none";
 
-    String activeStyle = "-fx-border-width: 0px 0px 0px 5px;"
+    String activeStyle = "-fx-border-width: 0px 0px 0px 5px:"
             + "-fx-border-color:#FF4E3C";
 
     Image home = new Image("/icon/home.png");
@@ -215,6 +215,7 @@ public class ApplicationController implements Initializable {
 
     @FXML
     private void btnLogOut(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Cerrando sesion...");
         acContent.getChildren().clear();
         acContent.getChildren().add(FXMLLoader.load(getClass().getResource("/view/Login_1.fxml")));
         acDashBord.getChildren().clear();
@@ -231,7 +232,8 @@ public class ApplicationController implements Initializable {
     }
 
     @FXML
-    public void btnHomeOnClick(ActionEvent event){
+    public void btnHomeOnClick(ActionEvent event) throws IOException{
+        log.wirteLogInfo("Entrando en home");
         homeActive();
         FXMLLoader fxmlLoader = new FXMLLoader();
         try {
@@ -293,6 +295,7 @@ public class ApplicationController implements Initializable {
 
     @FXML
     private void btnSettingsOnClick(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Entrando en configuración");
         settingsActive();
         //inithilize Setting Controller
         SettingsController settingController = new SettingsController();
@@ -322,7 +325,8 @@ public class ApplicationController implements Initializable {
     }
 
     @FXML
-    private void btnAboutOnClick(ActionEvent event) {
+    private void btnAboutOnClick(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Entrando en acerca de ");
 
         try {
             aboutActive();
@@ -341,7 +345,8 @@ public class ApplicationController implements Initializable {
     }
 
     @FXML
-    private void btnSellOnClick(ActionEvent event) {
+    private void btnSellOnClick(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Entrando en ventas");
         sellActive();
         SellController controller = new SellController();
         userNameMedia nm = new userNameMedia();

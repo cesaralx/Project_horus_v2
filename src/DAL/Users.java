@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import java.sql.*;
 
 
-public class Users {
+public class Users extends Person{
 
     public ObservableList<String> allUser = FXCollections.observableArrayList();
 

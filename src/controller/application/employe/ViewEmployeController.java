@@ -54,6 +54,7 @@ import List.ListEmployee;
 
 import DAL.Users;
 import controller.RegistrationController;
+import controller.application.settings.PassChangeController;
 import dataBase.DBProperties;
 import java.util.Optional;
 
@@ -264,7 +265,35 @@ public class ViewEmployeController implements Initializable {
     }
 
     @FXML
-    private void hlChangePasswordOnAction(ActionEvent event) {
+    private void hlChangePasswordOnAction(ActionEvent event) throws IOException {
+        
+        usersGetway.selectedView(users);
+        id = users.id;
+        
+        PassChangeController addSupplyerController = new PassChangeController();
+        userNameMedia media = new userNameMedia();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/view/application/settings/PassChange.fxml"));
+        try {
+            fxmlLoader.load();
+            Parent parent = fxmlLoader.getRoot();
+            Scene scene = new Scene(parent);
+            scene.setFill(new Color(0, 0, 0, 0));
+            PassChangeController supplyerController = fxmlLoader.getController();
+            media.setId(id);
+            supplyerController.setNameMedia(nameMedia);
+//            supplyerController.setMedia(media);
+//            supplyerController.lblCaption.setText("Agrega proveedor");
+//            supplyerController.btnUpdate.setVisible(false);
+            Stage nStage = new Stage();
+//            supplyerController.addSupplyerStage(nStage);
+            nStage.setScene(scene);
+            nStage.initModality(Modality.APPLICATION_MODAL);
+            nStage.initStyle(StageStyle.TRANSPARENT);
+            nStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

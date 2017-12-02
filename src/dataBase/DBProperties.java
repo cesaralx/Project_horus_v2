@@ -6,7 +6,7 @@
 package dataBase;
 
 
-import Horus_Vaping.StoreKeeper;
+import Horus_Vaping.NiceVaping;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -38,9 +38,9 @@ public class DBProperties {
             properties.store(output, null);
             output.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(StoreKeeper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NiceVaping.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(StoreKeeper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NiceVaping.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

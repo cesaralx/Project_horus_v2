@@ -1,21 +1,15 @@
-2017-11-29, 19:36:19, INFO  , Termino ciclo,cesar
-2017-11-29, 19:36:19, INFO  , Salio true,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Actual = a siguiente true,cesar
-2017-11-29, 19:36:19, INFO  , Actual es distinto de null,cesar
-2017-11-29, 19:36:19, INFO  , Entro,cesar
-2017-11-29, 19:33:10, INFO  , Entrando en almacen,cesar
-2017-11-29, 19:32:42, INFO  , Entrando en empleados,cesar
-2017-11-29, 19:32:14, INFO  , Password correcto,cesar
-2017-11-29, 19:32:14, INFO  , Iniciando proceso de validacion,cesar
-2017-11-29, 19:32:11, INFO  , Es valido: true,cesar
-2017-11-29, 19:32:11, INFO  , Iniciando sesion,cesar
+2017-12-02, 00:39:21, INFO  , Entrando en configuración,ventas
+2017-12-02, 00:39:17, INFO  , Cargando datos inicio,ventas
+2017-12-02, 00:39:17, INFO  , Entrando en home,ventas
+2017-12-02, 00:39:17, INFO  , Password correcto,ventas
+2017-12-02, 00:39:17, INFO  , Iniciando proceso de validacion,cesar
+2017-12-02, 00:39:14, INFO  , Es valido: true,cesar
+2017-12-02, 00:39:14, INFO  , Iniciando sesion,cesar
+2017-12-02, 00:39:08, INFO  , Cerrando sesion...,cesar
+2017-12-02, 00:38:44, INFO  , Entrando en configuración,cesar
+2017-12-02, 00:38:40, INFO  , Cargando datos inicio,cesar
+2017-12-02, 00:38:40, INFO  , Entrando en home,cesar
+2017-12-02, 00:38:40, INFO  , Password correcto,cesar
+2017-12-02, 00:38:40, INFO  , Iniciando proceso de validacion,cesar
+2017-12-02, 00:38:37, INFO  , Es valido: true,cesar
+2017-12-02, 00:38:37, INFO  , Iniciando sesion,cesar

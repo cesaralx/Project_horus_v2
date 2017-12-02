@@ -50,8 +50,8 @@ public class CustomerBLL {
             while (rs.next()){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : used");
-                alert.setContentText("This Customer name or phone number already exist");
+                alert.setHeaderText("ERROR : usado");
+                alert.setContentText("Este nombre o telefono ya esta registrado");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 

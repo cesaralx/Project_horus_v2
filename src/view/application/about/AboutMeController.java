@@ -15,13 +15,13 @@ import javafx.scene.image.ImageView;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class AboutMeController implements Initializable {
     @FXML
     private ImageView imgMyImg;
     
-    Image image = new Image("/image/Horus_logo_v1.png");
+    Image image = new Image("/icons/niceVaping_logo_v1.png");
 
     /**
      * Initializes the controller class.

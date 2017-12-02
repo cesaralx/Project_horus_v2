@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.application.about.AboutMeController">
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.application.about.AboutMeController">
    <children>
       <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -17,22 +18,34 @@
                <children>
                   <AnchorPane prefHeight="517.0" prefWidth="689.0">
                      <children>
-                        <Label layoutX="197.0" layoutY="195.0" prefHeight="35.0" prefWidth="297.0" text="K M Rifat ul alom">
+                        <Label layoutX="247.0" layoutY="229.0" prefHeight="43.0" prefWidth="178.0" text="Nice Vaping" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="29.0" />
                            </font>
+                           <effect>
+                              <Glow />
+                           </effect>
                         </Label>
-                        <Label layoutX="145.0" layoutY="237.0" text="Atish Dipankar University Of Science and Technology">
+                        <Label layoutX="202.0" layoutY="272.0" text="NiceVaping Mexico, Guadalajara, Jalisco ">
                            <font>
                               <Font size="15.0" />
                            </font>
+                           <effect>
+                              <Blend mode="DARKEN" opacity="0.62" />
+                           </effect>
                         </Label>
-                        <Label layoutX="156.0" layoutY="259.0" text="Department: CSE, Batch: D-16, Student ID: 121-0320-401" />
-                        <Label layoutX="264.0" layoutY="284.0" text="M@il me :" />
-                        <Label layoutX="184.0" layoutY="307.0" text="Find me on facebook :" />
-                        <Hyperlink layoutX="341.0" layoutY="280.0" text="kmrifat@gmail.com" />
-                        <Hyperlink layoutX="341.0" layoutY="303.0" text="facebook.com/kmrifat" />
-                        <ImageView fx:id="imgMyImg" fitHeight="162.0" fitWidth="153.0" layoutX="265.0" layoutY="23.0" pickOnBounds="true" smooth="false" />
+                        <Label layoutX="233.0" layoutY="294.0" text="Un lugar para vapear sin malos habitos">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <effect>
+                              <Blend mode="DIFFERENCE" opacity="0.18" />
+                           </effect></Label>
+                        <Label layoutX="269.0" layoutY="314.0" text="Email :" />
+                        <Label layoutX="247.0" layoutY="337.0" text="Facebook :" />
+                        <Hyperlink layoutX="327.0" layoutY="311.0" text="ventas@nicevaping.com" />
+                        <Hyperlink layoutX="327.0" layoutY="334.0" text="facebook.com/nicevaping" />
+                        <ImageView fx:id="imgMyImg" fitHeight="219.0" fitWidth="317.0" layoutX="181.0" layoutY="8.0" pickOnBounds="true" smooth="false" />
                      </children>
                   </AnchorPane>
                </children>

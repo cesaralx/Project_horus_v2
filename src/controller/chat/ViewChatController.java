@@ -73,7 +73,7 @@ public class ViewChatController implements Initializable {
 
             try {
                 while ((message = reader.readLine()) != null) {
-                    ta_chat.appendText("Recibido: " + message + "\n");
+                    ta_chat.appendText("Recibido:" + message + "\n");
                     data = message.split(":");
 
                     for (String token : data) {
@@ -186,7 +186,7 @@ public class ViewChatController implements Initializable {
         Thread starter = new Thread(new ServerStart());
         starter.start();
         
-        ta_chat.appendText("Server started...\n");
+        ta_chat.appendText("Servicio iniciado...\n");
     }                                       
 
      @FXML
@@ -201,12 +201,12 @@ public class ViewChatController implements Initializable {
         tellEveryone("Server:is stopping and all users will be disconnected.\n:Chat");
         
         ta_chat.setText("");
-        ta_chat.appendText("Server stopping... \n");
+        ta_chat.appendText("Deteniendo servicio... \n");
     }                                     
 
     @FXML
     private void b_usersActionPerformed(ActionEvent evt) {                                        
-       ta_chat.appendText("\n Online users : \n");
+       ta_chat.appendText("\n Usuario en linea: \n");
         for (String current_user : users)
         {
             ta_chat.appendText(current_user);

@@ -84,11 +84,11 @@ public class CatagoryBLL {
             pst.setString(3, catagory.supplyerId);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("in not uniq");
+//                System.out.println("in not uniq");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : used");
-                alert.setContentText("Catagory" + "  '" + catagory.catagoryName + "' " + "Already exist");
+                alert.setHeaderText("ERROR : usada");
+                alert.setContentText("Categoria" + "  '" + catagory.catagoryName + "' " + "ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 

@@ -6,7 +6,7 @@
 package dataBase;
 
 
-import Horus_Vaping.StoreKeeper;
+import Horus_Vaping.NiceVaping;
 import controller.RegistrationController;
 import java.io.File;
 import java.io.FileInputStream;
@@ -145,9 +145,9 @@ public class ServerController implements Initializable {
                 error_alert.show();
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(StoreKeeper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NiceVaping.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(StoreKeeper.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NiceVaping.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
         }

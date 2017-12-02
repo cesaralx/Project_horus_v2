@@ -30,6 +30,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import DAL.Users;
+import LogFile.logger;
 import dataBase.DBProperties;
 import java.util.Optional;
 import javafx.scene.control.Alert;
@@ -39,7 +40,7 @@ import javafx.stage.StageStyle;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class RegistrationController implements Initializable {
 
@@ -69,6 +70,8 @@ public class RegistrationController implements Initializable {
     
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
+    
+    logger log = new logger();
 
     private Stage stage;
 
@@ -111,7 +114,8 @@ public class RegistrationController implements Initializable {
     }
 
     @FXML
-    private void btnRegistration(ActionEvent event) {
+    private void btnRegistration(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Registrando nueva cuenta");
         SQL sql = new SQL();
         if (isValidCondition()) {
             users.userName = tfUserName.getText();

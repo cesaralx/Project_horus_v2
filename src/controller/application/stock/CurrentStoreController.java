@@ -443,7 +443,7 @@ showDetails();
     public void settingPermission() {
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from userpermission where Idi=?");
+            pst = con.prepareStatement("select * from userpermission where UsuarioId=?");
             pst.setString(1, usrId);
             rs = pst.executeQuery();
             while (rs.next()) {

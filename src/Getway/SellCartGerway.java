@@ -151,9 +151,9 @@ public class SellCartGerway {
        public void update(SellCart sellCart) {
            con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("update venta set ,ClienteId=?,"
+            pst = con.prepareStatement("update venta set ClienteId=?,"
                     + "ProductoId=?,MonederoPrecio=?,VentaPecio=?,Cantidad=?,PrecioTotal=?,"
-                    + "FechaLimiteGarantia=?,VendedorId=?,VendedorFecha=? WHERE VentaId = ?s");
+                    + "FechaLimiteGarantia=?,VendedorId=?,VendedorFecha=? WHERE VentaId = ?");
             pst.setString(1, sellCart.customerID);
             pst.setString(2, sellCart.productID);
             pst.setDouble(3, Double.parseDouble(sellCart.pursesPrice));

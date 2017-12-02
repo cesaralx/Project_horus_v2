@@ -209,7 +209,7 @@ public class DBModel {
 //                    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;");
 //            pst.execute();
             
-            System.out.println("Create Database Sucessfuly");
+            System.out.println("Base de datos creada!");
 
         } catch (SQLException ex) {
             System.err.println(ex);

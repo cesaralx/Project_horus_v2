@@ -77,11 +77,10 @@ public class RmaBLL {
             pst.setString(2, rma.rmaDays);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("in not uniq");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : used");
-                alert.setContentText("RMA" + "  '" + rma.rmaName +"/"+ rma.rmaDays + "' " + "Already exist");
+                alert.setHeaderText("ERROR : usado");
+                alert.setContentText("Devolucion" + "  '" + rma.rmaName +"/"+ rma.rmaDays + "' " + "ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 

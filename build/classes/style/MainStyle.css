@@ -296,7 +296,7 @@ AnchorPane{
 }
 .table-view:focused .table-row-cell:filled:focused:selected:hover {
     -fx-background-color: #EA5444;
-    -fx-background-insets: 0,1 1 1 1 0;
+    -fx-background-insets: 0,1s 1 1 1 0;
 }
 .table-row-cell:filled:selected:focused, .table-row-cell:filled:selected {
     -fx-background-color: #EA5444;
