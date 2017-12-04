@@ -29,16 +29,16 @@
                         <TableColumn fx:id="tblClmProductSupplyer" prefWidth="141.0" text="Proveedor" />
                         <TableColumn fx:id="tblClmProductBrand" prefWidth="103.0" text="Marca" />
                         <TableColumn fx:id="tblClmProductCatagory" prefWidth="101.0" text="Categoria" />
-                        <TableColumn fx:id="tblClmProductPursesPrice" prefWidth="184.0" text="Purses Price" />
-                        <TableColumn fx:id="tblClmProductSellPrice" prefWidth="150.0" text="Sell Price" />
-                        <TableColumn fx:id="tblClmProductdate" prefWidth="100.0" text="Date" />
-                        <TableColumn fx:id="tblClmProductAddBy" prefWidth="75.0" text="Add By" />
-                        <TableColumn fx:id="tblClmProductdescription" prefWidth="202.0" text="Description" />
+                        <TableColumn fx:id="tblClmProductPursesPrice" prefWidth="184.0" text="Precio Compra" />
+                        <TableColumn fx:id="tblClmProductSellPrice" prefWidth="150.0" text="Precio Venta" />
+                        <TableColumn fx:id="tblClmProductdate" prefWidth="100.0" text="Fecha" />
+                        <TableColumn fx:id="tblClmProductAddBy" prefWidth="75.0" text="Agregado por" />
+                        <TableColumn fx:id="tblClmProductdescription" prefWidth="202.0" text="Descripción" />
                     </columns>
                      <contextMenu>
                         <ContextMenu>
                           <items>
-                            <MenuItem fx:id="miSellSelected" mnemonicParsing="false" onAction="#miSellSelectedOnAction" text="Sell It" />
+                            <MenuItem fx:id="miSellSelected" mnemonicParsing="false" onAction="#miSellSelectedOnAction" text="Vender" />
                           </items>
                         </ContextMenu>
                      </contextMenu>
@@ -50,6 +50,7 @@
                         <Button fx:id="btnAddNew" mnemonicParsing="false" onAction="#btnAddNewOnAction" text="Agregar nuevo" />
                         <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Actualizar" />
                         <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Eliminar" />
+                        <Button mnemonicParsing="false" onAction="#miSellSelectedOnAction" text="Generar Venta" />
                      </children>
                      <BorderPane.margin>
                         <Insets right="20.0" />

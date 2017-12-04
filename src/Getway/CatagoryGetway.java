@@ -23,7 +23,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
- * @author rifat
+ * @author alexi
  */
 public class CatagoryGetway {
 

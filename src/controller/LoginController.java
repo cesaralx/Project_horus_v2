@@ -43,7 +43,7 @@ import javafx.stage.StageStyle;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class LoginController implements Initializable {
 

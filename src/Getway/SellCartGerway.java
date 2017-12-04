@@ -39,7 +39,7 @@ public class SellCartGerway {
             pst.setString(3, sellCart.productID);
             pst.setDouble(4, Double.parseDouble(sellCart.pursesPrice));
             pst.setDouble(5, Double.parseDouble(sellCart.sellPrice));
-            pst.setString(6, sellCart.quantity);
+            pst.setInt(6, Integer.parseInt(sellCart.quantity));
             pst.setDouble(7, Double.parseDouble(sellCart.totalPrice));
             pst.setString(8, sellCart.warrentyVoidDate);
             pst.setString(9, sellCart.sellerID);
@@ -158,7 +158,7 @@ public class SellCartGerway {
             pst.setString(2, sellCart.productID);
             pst.setDouble(3, Double.parseDouble(sellCart.pursesPrice));
             pst.setDouble(4, Double.parseDouble(sellCart.sellPrice));
-            pst.setString(5, sellCart.quantity);
+            pst.setInt(5, Integer.parseInt(sellCart.quantity));
             pst.setDouble(6, Double.parseDouble(sellCart.totalPrice));
             pst.setString(7, sellCart.warrentyVoidDate);
             pst.setString(8, sellCart.sellerID);

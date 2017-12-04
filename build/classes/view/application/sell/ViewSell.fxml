@@ -24,7 +24,7 @@
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btnSellOrder" mnemonicParsing="false" onAction="#btnSellOrderOnAction" text="Generar Venta" />
-                  <Button mnemonicParsing="false" text="Reemplazar" />
+                  <Button mnemonicParsing="false" text="Reemplazar" visible="false" />
                </children>
             </HBox>
          </bottom>
@@ -35,11 +35,11 @@
                   <TableColumn fx:id="tblClmProductId" prefWidth="75.0" text="Producto ID" />
                 <TableColumn fx:id="tblClmCustomerName" prefWidth="125.0" text="Nombre Cliente" />
                   <TableColumn fx:id="tblClmSoldDate" prefWidth="75.0" text="Fecha Venta" />
-                  <TableColumn fx:id="tblClmPursrsPrice" prefWidth="75.0" text="Purses Price" />
+                  <TableColumn fx:id="tblClmPursrsPrice" prefWidth="75.0" text="Precio Compra" />
                   <TableColumn fx:id="tblClmSellPrice" prefWidth="92.0" text="Precio Venta" />
                   <TableColumn fx:id="tblClmQuantity" prefWidth="99.0" text="Cantidad" />
                   <TableColumn fx:id="tblClmTotalPrice" prefWidth="103.0" text="Precio Total" />
-                  <TableColumn fx:id="tblClmWarrenty" prefWidth="75.0" text="RMA" />
+                  <TableColumn fx:id="tblClmWarrenty" prefWidth="75.0" text="Devolución" />
                   <TableColumn fx:id="tblClmSoldBy" prefWidth="113.0" text="Vendido por" />
               </columns>
                <columnResizePolicy>

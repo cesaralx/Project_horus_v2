@@ -9,6 +9,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -161,8 +162,8 @@
                                                                   <Circle fx:id="circleImgUsr" fill="#88a6c3" layoutX="100.0" layoutY="49.0" radius="46.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
                                                                   <Label fx:id="lblUsrNamePopOver" alignment="CENTER" layoutY="107.0" prefHeight="15.0" prefWidth="196.0" text="UserName" />
                                                                   <Label fx:id="lblFullName" alignment="CENTER" layoutX="2.0" layoutY="129.0" prefHeight="15.0" prefWidth="196.0" text="Full Name" />
-                                                                  <Label fx:id="lblRoleAs" alignment="CENTER" layoutX="3.0" layoutY="148.0" prefHeight="15.0" prefWidth="196.0" text="Role" />
-                                                                  <Hyperlink fx:id="hlEditUpdateAccount" alignment="CENTER" layoutX="3.0" layoutY="163.0" onAction="#hlUpdateAccount" prefHeight="23.0" prefWidth="194.0" text="Edit/Update" />
+                                                                  <Label fx:id="lblRoleAs" alignment="CENTER" layoutX="3.0" layoutY="148.0" prefHeight="15.0" prefWidth="196.0" text="Role" visible="false" />
+                                                                  <Hyperlink fx:id="hlEditUpdateAccount" alignment="CENTER" layoutX="3.0" layoutY="163.0" onAction="#hlUpdateAccount" prefHeight="23.0" prefWidth="194.0" text="Edit/Update" visible="false" />
                                                                   <Button fx:id="btnLogOut" layoutX="3.0" layoutY="184.0" mnemonicParsing="false" onAction="#btnLogOut" prefHeight="40.0" prefWidth="196.0" text="logOut" />
                                                                </children>
                                                             </AnchorPane>
@@ -207,10 +208,13 @@
                                     </HBox>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Text fill="#cc3535" layoutX="-89.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nice Vaping" wrappingWidth="191.41162109375">
+                                          <Text fill="#cc3535" layoutX="11.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nice Vaping" wrappingWidth="191.41162109375">
                                              <font>
                                                 <Font name="System Bold Italic" size="21.0" />
                                              </font>
+                                             <effect>
+                                                <Glow level="0.69" />
+                                             </effect>
                                           </Text>
                                        </children>
                                     </AnchorPane>

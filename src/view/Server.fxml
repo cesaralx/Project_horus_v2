@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -19,10 +20,13 @@
          <top>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Configuracion BD" textFill="#463939">
+                  <Label text="Configuración BD" textFill="#463939">
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font>
+                     <effect>
+                        <Glow level="0.51" />
+                     </effect>
                   </Label>
                </children>
             </HBox>

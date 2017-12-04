@@ -17,7 +17,7 @@
               <columns>
                 <TableColumn fx:id="tblClmName" prefWidth="104.0" text="Nombre" />
                 <TableColumn fx:id="tblClmContNo" prefWidth="124.0" text="Cont. No" />
-                  <TableColumn fx:id="tblClmAddres" prefWidth="137.0" text="Direccion" />
+                  <TableColumn fx:id="tblClmAddres" prefWidth="137.0" text="Dirección" />
                   <TableColumn fx:id="tblClmDate" prefWidth="123.0" text="Fecha antiguedad" />
                   <TableColumn fx:id="tblClmAddBy" prefWidth="128.0" text="Agregado por" />
                   <TableColumn fx:id="tblClmTotalBuy" prefWidth="146.0" text="Total compra" />

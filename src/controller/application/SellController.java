@@ -25,7 +25,7 @@ import media.userNameMedia;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class SellController implements Initializable {
     private String usrId;

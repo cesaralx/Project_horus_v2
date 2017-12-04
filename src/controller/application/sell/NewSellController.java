@@ -36,6 +36,7 @@ import DAL.SellCart;
 import Getway.SellCartGerway;
 import List.ListCustomer;
 import List.ListPreSell;
+import LogFile.logger;
 import custom.CustomTf;
 import custom.RandomIdGenarator;
 import java.time.LocalDateTime;
@@ -124,6 +125,8 @@ public class NewSellController implements Initializable {
     private Button btnClearSelected;
     @FXML
     private Label lblSellId;
+    
+    logger log = new logger();
 
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
@@ -237,7 +240,7 @@ public class NewSellController implements Initializable {
     }
 
     @FXML
-    private void btnSellOnAction(ActionEvent event) {
+    private void btnSellOnAction(ActionEvent event) throws IOException {
         if(!tblSellPreList.getItems().isEmpty()){
             System.out.println(lblSellId.getText());
             int indexs = tblSellPreList.getItems().size();
@@ -258,11 +261,12 @@ public class NewSellController implements Initializable {
                 System.out.println("Old Quentity:" + tblSellPreList.getSelectionModel().getSelectedItem().getOldQuantity());
             }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Soled");
-            alert.setContentText("Soled Sucessfuly");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Venta");
+            alert.setContentText("Venta Creada");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
+            log.wirteLogInfo("Venta creada");
 
            tblSellPreList.getItems().clear();
            lblTotal.setText(null);
@@ -396,7 +400,7 @@ public class NewSellController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERROR");
-            alert.setContentText("Please fill all requre field");
+            alert.setContentText("Por favor llena todos los campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             return isNotNull;

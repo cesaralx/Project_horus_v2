@@ -91,6 +91,16 @@ public class modeloLog {
         return part1;
     }
     
+     public String getUsuario() {
+        String[] parts = getLineaLog().split(",");
+        String part1 = parts[0]; // fecha
+        String part2 = parts[1]; // hora
+        String part3 = parts[2]; // tipo
+        String part4 = parts[3]; // accion
+        String part5 = parts[4]; // usuario
+        return part5;
+    }
+    
     
 }
 

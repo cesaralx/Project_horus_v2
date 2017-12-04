@@ -24,7 +24,7 @@
                   <Label text="Proveedor :" />
                   <ComboBox fx:id="cbSupplyer" onAction="#cbSupplyerOnAction" onMouseClicked="#cbSupplyerOnClick" prefHeight="31.0" prefWidth="402.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
                   <Label text="Nombre marca :" GridPane.rowIndex="2" />
-                  <Label text="Descripcion :" GridPane.rowIndex="4" />
+                  <Label text="Descripción :" GridPane.rowIndex="4" />
                   <TextField fx:id="tfBrandName" GridPane.columnSpan="4" GridPane.rowIndex="3">
                      <opaqueInsets>
                         <Insets />

@@ -21,7 +21,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
- * @author rifat
+ * @author alexi
  */
 public class CurrentProductGetway {
 
@@ -61,7 +61,7 @@ public class CurrentProductGetway {
 
         } catch (SQLException ex) {
             Logger.getLogger(CurrentProduct.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Too Many Connection");
+            System.out.println("Muchas Conexiones");
         }
 
     }
@@ -504,8 +504,8 @@ public class CurrentProductGetway {
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Correcto");
-                alert.setHeaderText("WARNING : ");
-                alert.setContentText("This product has been  soled you can't delete it");
+                alert.setHeaderText("Alerta ");
+                alert.setContentText("Este producto ya ha sido vendido no puedes eliminarlo");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 

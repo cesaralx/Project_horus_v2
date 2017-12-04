@@ -53,10 +53,10 @@
                                     <Label text="User Name :" GridPane.columnSpan="2" />
                                     <Label text="Nombre Completo :" GridPane.rowIndex="2" />
                                     <Label text="Email :" GridPane.rowIndex="4" />
-                                    <Label text="Telefono :" GridPane.rowIndex="6" />
+                                    <Label text="Teléfono :" GridPane.rowIndex="6" />
                                     <Label text="Salario :" GridPane.rowIndex="8" />
                                     <Label text="Password :" GridPane.rowIndex="10" />
-                                    <Label text="Direccion :" GridPane.rowIndex="12" />
+                                    <Label text="Dirección :" GridPane.rowIndex="12" />
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5">
                                        <children>
                                           <Button fx:id="btnAttachImage" layoutX="51.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnAttachImageOnAction" prefHeight="25.0" prefWidth="149.0" text="Agregar Imagen" />

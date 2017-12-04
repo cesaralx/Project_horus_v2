@@ -20,7 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
- * @author rifat
+ * @author alexi
  */
 public class SupplyerGetway {
 
@@ -48,9 +48,9 @@ public class SupplyerGetway {
                 con.close();
                 pst.close();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Sucess");
-                alert.setHeaderText("Sucess : save sucess");
-                alert.setContentText("Supplier" + "  '" + supplyer.supplyerName + "' " + "Added successfully");
+                alert.setTitle("Correcto");
+                alert.setHeaderText("Correcto : guardado");
+                alert.setContentText("Proveedor" + "  '" + supplyer.supplyerName + "' " + "Agregado correctamente");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 
@@ -141,7 +141,6 @@ public class SupplyerGetway {
     }
 
     public void update(Orders supplyer) {
-        System.out.println("we are in update");
         con = dbCon.geConnection();
         try {
             pst = con.prepareStatement("select * from proveedor where ProveedorId=? and ProveedorNombre=?");
@@ -149,7 +148,6 @@ public class SupplyerGetway {
             pst.setString(2, supplyer.supplyerName);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("Into the loop");
                 updateNow(supplyer);
                 rs.close();
                 pst.close();
@@ -160,7 +158,6 @@ public class SupplyerGetway {
             con.close();
             pst.close();
             if (isUniqSupplyerName(supplyer)) {
-                System.out.println("Out of the loop");
                 updateNow(supplyer);
                 rs.close();
                 con.close();
@@ -183,9 +180,9 @@ public class SupplyerGetway {
             rs = pst.executeQuery();
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : Action Denied");
-                alert.setContentText("This supplier provide some brands, please delete these brand first! Is that nessary to delete this supplyer ? \nif not you can update supplyer as much you can");
+                alert.setTitle("Correcto");
+                alert.setHeaderText("ERROR : Acción denegada");
+                alert.setContentText("Este provvedor tiene algunas marcas, por favor elimina las marcas primero!");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 
@@ -212,8 +209,8 @@ public class SupplyerGetway {
             while (rs.next()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Sucess");
-                alert.setHeaderText("ERROR : Action Denied");
-                alert.setContentText("Supplier" + "  '" + supplyer.supplyerName + "' " + "Already exist");
+                alert.setHeaderText("ERROR :  Acción denegada");
+                alert.setContentText("Proveedor" + "  '" + supplyer.supplyerName + "' " + "Ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 
@@ -242,9 +239,9 @@ public class SupplyerGetway {
             con.close();
             pst.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Updated : Updated sucess");
-            alert.setContentText("Supplier" + "  '" + supplyer.supplyerName + "' " + "Updated successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Update : Actualización correcta");
+            alert.setContentText("Proveedor" + "  '" + supplyer.supplyerName + "' " + "Actualizado correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -256,7 +253,6 @@ public class SupplyerGetway {
     public void deleteParmanently(Orders supplyer) {
         con = dbCon.geConnection();
         try {
-            System.out.println("and i am hear");
             con = dbCon.geConnection();
             pst = con.prepareCall("delete from proveedor where ProveedorId=?");
             pst.setString(1, supplyer.id);
@@ -292,7 +288,7 @@ public class SupplyerGetway {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("WARNING");
             alert.setHeaderText("WARNING : ");
-            alert.setContentText("This Supplier supplied  '" + rs.getString(2) + "' brand \n delete brand first");
+            alert.setContentText("Este proveedor tiene  '" + rs.getString(2) + "' marca \n Elimina la marca primero");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
                 return isNotUse;

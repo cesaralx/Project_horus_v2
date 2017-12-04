@@ -31,21 +31,23 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                        <Label fx:id="lblPathInfo" text="Venta">
-                           <font>
-                              <Font name="System Bold" size="32.0" />
-                           </font>
-                           <effect>
-                              <Reflection bottomOpacity="0.07" fraction="0.48" topOpacity="0.17" />
-                           </effect>
-                        </Label>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="lblPathInfo" layoutX="28.0" layoutY="7.0" text="Venta">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection bottomOpacity="0.07" fraction="0.48" topOpacity="0.17" />
+                                 </effect>
+                              </Label>
+                           </children></AnchorPane>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
                               <ToggleButton fx:id="tbtnSell" mnemonicParsing="false" onAction="#tbtnSellOnAction" text="Venta" />
-                              <ToggleButton fx:id="tbtPedidos" mnemonicParsing="false" onAction="#tbnPedidos" text="Pedidos" />
                               <ToggleButton fx:id="tbtnCustomer" mnemonicParsing="false" onAction="#tbtnCustomerOnAction" text="Cliente" />
                               <ToggleButton fx:id="tbtnReports" mnemonicParsing="false" onAction="#tbtnReportsOnAction" text="Reportes" />
+                              <ToggleButton fx:id="tbtPedidos" mnemonicParsing="false" onAction="#tbnPedidos" text="Pedidos" visible="false" />
                            </children>
                         </HBox>
                      </children>

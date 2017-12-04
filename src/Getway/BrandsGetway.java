@@ -23,7 +23,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
- * @author rifat
+ * @author alexi
  */
 public class BrandsGetway {
 
@@ -52,9 +52,9 @@ public class BrandsGetway {
             con.close();
             pst.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess : save sucess");
-            alert.setContentText("Brand" + "  '" + brands.brandName + "' " + "Added successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : guardado");
+            alert.setContentText("Marca" + "  '" + brands.brandName + "' " + "Agregada");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             
@@ -118,7 +118,7 @@ public class BrandsGetway {
         con = dbCon.geConnection();
 
         brands.brandDitails.clear();
-        System.out.println("name :" + brands.brandName);
+        System.out.println("nombre :" + brands.brandName);
 
         try {
             con = dbCon.geConnection();
@@ -172,9 +172,9 @@ public class BrandsGetway {
             con.close();
             pst.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Update : update sucess ");
-            alert.setContentText("Update" + "  '" + brands.brandName + "' " + "Added successfully");
+            alert.setTitle("Correcto");
+            alert.setHeaderText("Correcto : actualización ");
+            alert.setContentText("Actualización" + "  '" + brands.brandName + "' " + "Correcta");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             
@@ -193,8 +193,8 @@ public class BrandsGetway {
             while(rs.next()){
                Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("ERROE : Already exist ");
-            alert.setContentText("Brand" + "  '" + brands.brandName + "' " + "Already exist");
+            alert.setHeaderText("ERROR : Ya existe ");
+            alert.setContentText("Marca" + "  '" + brands.brandName + "' " + "Ya existe");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
                 return inNotUse;

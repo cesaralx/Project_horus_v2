@@ -54,18 +54,18 @@
               </rowConstraints>
                <children>
                   <Label text="ID Producto :" />
-                  <RadioButton fx:id="rbStatic" mnemonicParsing="false" onAction="#rbStaticOnAction" onMouseClicked="#rbStaticOnClicked" text="Estatico" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="rbStatic" mnemonicParsing="false" onAction="#rbStaticOnAction" onMouseClicked="#rbStaticOnClicked" text="Unico" GridPane.columnIndex="1" />
                   <RadioButton fx:id="rbSeq" mnemonicParsing="false" onAction="#rbSeqOnAction" onMouseClicked="#rbSeqOnClick" text="Secuencial" GridPane.columnIndex="2" />
                   <Label text="Nombre :" GridPane.columnSpan="2" GridPane.rowIndex="2" />
                   <Label text="Cantidad :" GridPane.rowIndex="4" />
                   <Label text="Pecio de compra:" GridPane.rowIndex="6" />
                   <Label text="Precio de venta :" GridPane.rowIndex="8" />
-                  <Label text="Descripcion :" GridPane.rowIndex="10" />
+                  <Label text="Descripción :" GridPane.rowIndex="10" />
                   <Label text="Proveído por:" GridPane.columnIndex="4" />
                   <Label text="Marca :" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                   <Label text="Categoria :" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <Label text="Unit :" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <Label text="Politica devolucion" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                  <Label text="Politica devolución" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="8" />
                   <Label text="Fecha :" GridPane.columnIndex="4" GridPane.rowIndex="10" />
                   <TextField fx:id="tfProductId" GridPane.columnSpan="3" GridPane.rowIndex="1" />
                   <TextField fx:id="tfProductName" GridPane.columnSpan="3" GridPane.rowIndex="3" />

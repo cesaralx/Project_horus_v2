@@ -22,7 +22,7 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class UsersGetway {
 

@@ -71,7 +71,7 @@ public class PassChangeController implements Initializable {
 
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
-        userName = nameMedia.getUsrName();
+//        userName = nameMedia.getUsrName();
         this.nameMedia = nameMedia;
     }
 
@@ -134,7 +134,7 @@ public class PassChangeController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERROR ");
-            alert.setContentText("Invalid password");
+            alert.setContentText("Password invalido");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
         }
@@ -144,6 +144,8 @@ public class PassChangeController implements Initializable {
         boolean conDitionValid = true;
         con = dbCon.geConnection();
         try {
+            System.err.println(pfCurrentPass.getText());
+            System.err.println(userId);
             pst = con.prepareStatement("select * from usuario where UsuarioId=? and Password=?");
             pst.setString(1, userId);
             pst.setString(2, pfCurrentPass.getText());
@@ -155,7 +157,7 @@ public class PassChangeController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERROR ");
-            alert.setContentText("Invalid password");
+            alert.setContentText("Password Invalido");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             conDitionValid = false;
@@ -177,7 +179,7 @@ public class PassChangeController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERROR ");
-            alert.setContentText("New Password what you enterd are not matched");
+            alert.setContentText("Escribe el passowrd igual en ambos campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 

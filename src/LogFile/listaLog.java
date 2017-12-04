@@ -290,5 +290,62 @@ public class listaLog {
         n2.setAnterior(aux.getAnterior());
         n2.setSiguiente(aux.getSiguiente());
     }
+    
+    public void quickSort() {
+        modeloLog actual = inicio;
+        modeloLog head = lastNode(actual);
+        _quickSort(actual, head);
+    }
+
+/* A recursive implementation of quicksort for linked list */ 
+    void _quickSort(modeloLog l,modeloLog h) { 
+        if(h!=null && l!=h && l!=h.siguiente ){ 
+            modeloLog temp = partition(l,h); 
+            _quickSort(l,temp.anterior); 
+            _quickSort(temp.siguiente,h); 
+        } 
+    }
+
+     modeloLog partition(modeloLog l, modeloLog h) {
+// set pivot as h element 
+        String x = h.getUsuario();
+// similar to i = l-1 for array implementation 
+        modeloLog i = l.anterior;
+// Similar to "for (int j = l; j <= h- 1; j++)" 
+        for (modeloLog j = l; j != h; j = j.siguiente) {
+            int compare = j.getUsuario().compareTo(x);
+            if (compare < 0) {
+// Similar to i++ for array 
+                i = (i == null) ? l : i.siguiente;
+                
+                modeloLog temp = new modeloLog();
+                temp.setLineaLog(i.getLineaLog());
+                
+                i.setLineaLog(j.getLineaLog());
+                
+                j.setLineaLog(temp.getLineaLog());
+
+            }
+        }
+        
+        i = (i == null) ? l : i.siguiente;
+        modeloLog temp = new modeloLog();
+        
+        temp.setLineaLog(i.getLineaLog());
+
+        i.setLineaLog(h.getLineaLog());
+
+        h.setLineaLog(temp.getLineaLog());
+
+
+        return i;
+    }
+
+// A utility function to find last node of linked list 
+     modeloLog lastNode(modeloLog node){ 
+         while(node.siguiente!=null) 
+             node = node.siguiente; 
+         return node; 
+     }
         
 }

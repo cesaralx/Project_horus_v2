@@ -89,6 +89,7 @@ public class logger {
             e.printStackTrace();
         }
     }
+
     
     public void readFile() throws FileNotFoundException, IOException {
 
@@ -117,14 +118,15 @@ public class logger {
         listLog.visualizar();
         listLog.generarLogOrdenado();
         // refresh info del log
-        
-
+    }
+    
+        public void orderByQuickSort() throws FileNotFoundException, IOException {
+        listLog.quickSort();
+        System.out.println("Despues de ordenar");
+        listLog.visualizar();
+        listLog.generarLogOrdenado();
+        // refresh info del log
     }
         
-            
-   
-    
-    
-    
 
 }

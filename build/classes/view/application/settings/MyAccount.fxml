@@ -18,7 +18,7 @@
                   <TextField fx:id="tfFullName" layoutX="20.0" layoutY="63.0" prefHeight="25.0" prefWidth="210.0" promptText="Nombre Completo" />
                   <TextField fx:id="tfContractNumber" layoutX="20.0" layoutY="104.0" prefHeight="25.0" prefWidth="210.0" promptText="Numero de contacto" />
                   <TextField fx:id="tfEmailAddress" layoutX="21.0" layoutY="147.0" prefHeight="25.0" prefWidth="210.0" promptText="Direccion Email" />
-                  <TextArea fx:id="taAddress" layoutX="21.0" layoutY="197.0" prefHeight="115.0" prefWidth="355.0" promptText="Direccion" text="Address&#10;&#10;&#10;" />
+                  <TextArea fx:id="taAddress" layoutX="21.0" layoutY="197.0" prefHeight="115.0" prefWidth="355.0" promptText="Dirección" text="Dirección&#10;&#10;&#10;" />
                   <Button fx:id="btnSave" layoutX="310.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Guardar" />
                   <Hyperlink fx:id="hlChangePassword" layoutX="21.0" layoutY="324.0" onAction="#hlChangePasswordOnClick" text="Cambiar Password" />
                   <Rectangle fx:id="retImage" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="152.0" layoutX="238.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="144.0" />

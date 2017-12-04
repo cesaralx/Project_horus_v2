@@ -43,9 +43,10 @@
                                       <MenuItem fx:id="miOrganize" mnemonicParsing="false" onAction="#miOrganizeOnAction" text="Detalles" />
                                     </items>
                                   </Menu>
-                                    <Menu fx:id="miChat" mnemonicParsing="false" onAction="#openChat" text="Chat">
+                                    <Menu fx:id="miChat" mnemonicParsing="false" text="Chat">
                                       <items>
-                                        <MenuItem mnemonicParsing="false" text="Abrir Chat" />
+                                        <MenuItem mnemonicParsing="false" onAction="#openChat" text="Servidor" />
+                                          <MenuItem mnemonicParsing="false" onAction="#openChatClient" text="Cliente" />
                                       </items>
                                     </Menu>
                                   <Menu mnemonicParsing="false" text="Data Backup" visible="false">

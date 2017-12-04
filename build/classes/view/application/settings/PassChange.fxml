@@ -36,9 +36,9 @@
                   <Label text="Password Actual :" GridPane.columnIndex="1" GridPane.columnSpan="2" />
                   <Label text="Nuevo Password :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label text="Re-Escribe Password :" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <PasswordField fx:id="pfCurrentPass" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <PasswordField fx:id="pfNewPass" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <PasswordField fx:id="pfRePass" onAction="#pfOnAction" onKeyReleased="#pfNewPassWordMatch" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                  <PasswordField fx:id="pfCurrentPass" promptText="actual" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="pfNewPass" promptText="nuevo" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <PasswordField fx:id="pfRePass" onAction="#pfOnAction" onKeyReleased="#pfNewPassWordMatch" promptText="nuevo" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                   <Button fx:id="btnClrCurrentPf" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" stylesheets="@../../../style/btnOnText.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                   <Button fx:id="btnClrRePass" layoutX="312.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" stylesheets="@../../../style/btnOnText.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
                   <Button fx:id="btnClrNewPass" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" stylesheets="@../../../style/btnOnText.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
@@ -51,7 +51,7 @@
                   <Font size="29.0" />
                </font>
             </Text>
-            <Button fx:id="btnChangePass" layoutX="142.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnChangePassOnAction" text="s" />
+            <Button fx:id="btnChangePass" layoutX="142.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnChangePassOnAction" text="Guardar" />
          </children>
          <effect>
             <Shadow />

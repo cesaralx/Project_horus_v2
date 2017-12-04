@@ -42,7 +42,7 @@ import media.userNameMedia;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class StockController implements Initializable {
     @FXML
@@ -184,7 +184,7 @@ public class StockController implements Initializable {
 
     @FXML
     private void btnUnitOnAction(ActionEvent event) throws IOException {
-        lblHeader.setText("Unit");
+        lblHeader.setText("Unidad");
         ViewUnitController vuc = new ViewUnitController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fXMLLoader = new FXMLLoader();

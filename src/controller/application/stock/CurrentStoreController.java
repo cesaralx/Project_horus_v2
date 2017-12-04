@@ -279,7 +279,7 @@ showDetails();
         if (!tblViewCurrentStore.getSelectionModel().isEmpty()) {
             viewSelected();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("Seleccion vacia");
         }
     }
 
@@ -510,9 +510,7 @@ showDetails();
             pst.setString(1, rmaName);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("in the loop" + rs.getString(1));
                 rmaID = rs.getString(1);
-                System.out.println("Print rma id" + rmaID);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CurrentStoreController.class.getName()).log(Level.SEVERE, null, ex);
@@ -525,9 +523,9 @@ showDetails();
     @FXML
     private void tblViewCurrentStoreOnScroll(ScrollEvent event) {
         if (event.isInertia()) {
-            System.out.println("ALT DOWN");
+            System.out.println("Tecla Alt");
         } else {
-            System.out.println("Noting");
+            System.out.println("no");
         }
     }
 

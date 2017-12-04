@@ -61,7 +61,7 @@ import java.util.Optional;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewEmployeController implements Initializable {
 
@@ -240,9 +240,9 @@ public class ViewEmployeController implements Initializable {
     @FXML
     private void btnDeleteOnAction(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Employee");
-        alert.setHeaderText("Are You sure ?");
-        alert.setContentText("Are you sure to remove this employee \n Click OK to confirm");
+        alert.setTitle("Borrar Empleado");
+        alert.setHeaderText("Estas seguro ?");
+        alert.setContentText("Estas seguro de remover el empleado \n Click OK para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -258,17 +258,21 @@ public class ViewEmployeController implements Initializable {
     @FXML
     private void cbOnAction(ActionEvent event) {
         if (cbStatus.isSelected()) {
-            cbStatus.setText("Active");
+            cbStatus.setText("Activo");
         } else {
-            cbStatus.setText("Deactive");
+            cbStatus.setText("Desactivo");
         }
     }
 
     @FXML
     private void hlChangePasswordOnAction(ActionEvent event) throws IOException {
         
-        usersGetway.selectedView(users);
-        id = users.id;
+        String idU;
+            UsersGetway usersGetway1 = new UsersGetway();  
+                 userNameMedia nameMedia2 = new userNameMedia();
+
+        usersGetway1.selectedView(users);
+        idU = users.id;
         
         PassChangeController addSupplyerController = new PassChangeController();
         userNameMedia media = new userNameMedia();
@@ -280,8 +284,8 @@ public class ViewEmployeController implements Initializable {
             Scene scene = new Scene(parent);
             scene.setFill(new Color(0, 0, 0, 0));
             PassChangeController supplyerController = fxmlLoader.getController();
-            media.setId(id);
-            supplyerController.setNameMedia(nameMedia);
+            media.setId(idU);
+            supplyerController.setNameMedia(media);
 //            supplyerController.setMedia(media);
 //            supplyerController.lblCaption.setText("Agrega proveedor");
 //            supplyerController.btnUpdate.setVisible(false);
@@ -299,8 +303,10 @@ public class ViewEmployeController implements Initializable {
 
     @FXML
     private void hlViewPermissionOnAction(ActionEvent event) throws IOException {
+        String idU;
+     userNameMedia nameMedia2 = new userNameMedia();
         usersGetway.selectedView(users);
-        id = users.id;
+        idU = users.id;
 
         EmployeePermissionController pcc = new EmployeePermissionController();
         userNameMedia usrID = new userNameMedia();
@@ -312,8 +318,8 @@ public class ViewEmployeController implements Initializable {
         Scene scene = new Scene(root);
         scene.setFill(new Color(0, 0, 0, 0));
         EmployeePermissionController PermissionController = loader.getController();
-        nameMedia.setId(id);
-        PermissionController.setMedia(nameMedia);
+        nameMedia2.setId(idU);
+        PermissionController.setMedia(nameMedia2);
         PermissionController.checqPermission();
         Stage nStage = new Stage();
         nStage.setScene(scene);

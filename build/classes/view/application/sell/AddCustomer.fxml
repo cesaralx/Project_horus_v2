@@ -39,8 +39,8 @@
               </rowConstraints>
                <children>
                   <Label text="Nombre Cliente" GridPane.columnSpan="2" />
-                  <Label text="Numero de contacto" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Label text="Direccion" GridPane.rowIndex="6" />
+                  <Label text="Número de contacto" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Label text="Dirección" GridPane.rowIndex="6" />
                   <TextField fx:id="tfCustomerName" GridPane.columnSpan="4" GridPane.rowIndex="1" />
                   <TextArea fx:id="taCustomerContact" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="3" />
                   <TextArea fx:id="taCustomerAddress" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="7" GridPane.rowSpan="3" />
@@ -48,7 +48,7 @@
                   <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Actualizar" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
                </children>
             </GridPane>
-            <Label fx:id="lblCustomerContent" alignment="CENTER" layoutX="5.0" layoutY="21.0" prefHeight="29.0" prefWidth="448.0" text="CONTENT">
+            <Label fx:id="lblCustomerContent" alignment="CENTER" layoutX="5.0" layoutY="21.0" prefHeight="29.0" prefWidth="448.0" text="CLIENTE">
                <font>
                   <Font size="24.0" />
                </font>

@@ -57,7 +57,7 @@ import tray.notification.TrayNotification;
 
 /**
  *
- * @author danml
+ * @author alexi
  */
 public class LoginController1 implements Initializable {
 

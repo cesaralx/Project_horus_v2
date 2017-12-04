@@ -47,7 +47,7 @@
                            <children>
                               <Label text="User Name :" />
                               <Label text="Nombre Completo:" GridPane.rowIndex="2" />
-                              <Label text="Numero de telefono :" GridPane.rowIndex="4" />
+                              <Label text="Numero de teléfono :" GridPane.rowIndex="4" />
                               <Label text="Email :" GridPane.rowIndex="6" />
                               <Label text="Salario :" GridPane.rowIndex="8" />
                               <Label text="Empleado desde :" GridPane.rowIndex="10" />
@@ -65,7 +65,7 @@
                                     <Button fx:id="btnAttachImage" layoutX="48.0" layoutY="141.0" mnemonicParsing="false" onAction="#btnAttachImageOnAction" text="Agregar Imagen" />
                                  </children>
                               </AnchorPane>
-                              <Label text="Direccion :" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <Label text="Dirección :" GridPane.columnIndex="3" GridPane.rowIndex="8" />
                               <TextArea fx:id="taAddress" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="9" GridPane.rowSpan="3" />
                               <Button fx:id="btnClrFulNametf" layoutX="167.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" stylesheets="@../../../style/btnOnText.css" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
                               <Button fx:id="btnClrPhonetf" layoutX="10.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" stylesheets="@../../../style/btnOnText.css" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
@@ -77,13 +77,13 @@
                                  <children>
                                     <Button fx:id="btnUpdate" layoutX="37.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Actualizar" />
                                     <Button fx:id="btnDelete" layoutX="215.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Eliminar" />
-                                    <Hyperlink layoutX="45.0" layoutY="52.0" onAction="#hlViewUpdateHistory" text="actualizar historial" />
+                                    <Hyperlink layoutX="45.0" layoutY="52.0" onAction="#hlViewUpdateHistory" text="actualizar historial" visible="false" visited="true" />
                                  </children>
                               </AnchorPane>
                               <Hyperlink fx:id="hlChangePassword" onAction="#hlChangePasswordOnAction" text="Cambiar password" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="12" />
                               <Hyperlink fx:id="hlViewPermission" onAction="#hlViewPermissionOnAction" text="Ver permisos" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="13" />
                               <Label text="Status" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                              <CheckBox fx:id="cbStatus" mnemonicParsing="false" onAction="#cbOnAction" text="Active" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                              <CheckBox fx:id="cbStatus" mnemonicParsing="false" onAction="#cbOnAction" text="Activo" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
                               <Label fx:id="lblCreator" text="Creator" GridPane.rowIndex="15" />
                               <TextField fx:id="tfCreatedBy" editable="false" GridPane.columnSpan="2" GridPane.rowIndex="13" />
                            </children>

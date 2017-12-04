@@ -35,7 +35,7 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="lblView" layoutX="14.0" layoutY="7.0" text="Label">
+                              <Label fx:id="lblView" layoutX="35.0" layoutY="7.0" text="Label">
                                  <font>
                                     <Font name="System Bold" size="32.0" />
                                  </font>

@@ -64,7 +64,7 @@
                   <Glow level="0.48" />
                </effect>
             </Label>
-            <Label layoutX="359.0" layoutY="67.0" text="Inicio de sesion..." textFill="WHITE">
+            <Label layoutX="359.0" layoutY="67.0" text="Inicio de sesión..." textFill="WHITE">
                <font>
                   <Font name="Roboto Light" size="18.0" />
                </font>
@@ -73,7 +73,7 @@
                </effect>
             </Label>
             <Separator layoutX="350.0" layoutY="93.0" opacity="0.9" prefWidth="150.0" />
-            <JFXButton fx:id="bntServer" buttonType="RAISED" layoutX="745.0" layoutY="555.0" onAction="#hlDbOnAction" ripplerFill="#e47c7c" style="-fx-background-color: #00718A;" text="Configuracion" textFill="WHITE" />
+            <JFXButton fx:id="bntServer" buttonType="RAISED" layoutX="745.0" layoutY="555.0" onAction="#hlDbOnAction" ripplerFill="#e47c7c" style="-fx-background-color: #00718A;" text="Configuración" textFill="WHITE" />
             <ImageView fitHeight="128.0" fitWidth="200.0" layoutX="691.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/niceVaping_logo_v1.png" />

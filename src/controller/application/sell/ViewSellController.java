@@ -8,6 +8,7 @@ package controller.application.sell;
 import DAL.SellCart;
 import Getway.SellCartGerway;
 import List.ListSold;
+import LogFile.logger;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,7 +36,7 @@ import media.userNameMedia;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewSellController implements Initializable{
     
@@ -43,6 +44,8 @@ public class ViewSellController implements Initializable{
     
     SellCart sellCart = new SellCart();
     SellCartGerway sellCartGerway = new SellCartGerway();
+    
+    logger log = new logger();
     
     String userId;
     @FXML
@@ -81,14 +84,15 @@ public class ViewSellController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tblSellView.setOnMouseClicked((MouseEvent event) -> {
-            sellCartGerway.update(sellCart);
-            System.out.println("Clicked");
-        });
+//        tblSellView.setOnMouseClicked((MouseEvent event) -> {
+//            sellCartGerway.update(sellCart);
+//            System.out.println("Clicked");
+//        });
     }
 
     @FXML
-    private void btnSellOrderOnAction(ActionEvent event) {
+    private void btnSellOrderOnAction(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Generando nueva venta");
         System.out.println(userId);
         NewSellController acc = new NewSellController();
         userNameMedia media = new userNameMedia();

@@ -5,7 +5,9 @@
  */
 package controller.chat;
 
+import LogFile.logger;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -39,6 +41,9 @@ public class ViewChatController implements Initializable {
     public Button b_users;
     @FXML
     public Button b_clear;
+    
+    logger log = new logger();
+
 
     /**
      * Initializes the controller class.
@@ -73,11 +78,11 @@ public class ViewChatController implements Initializable {
 
             try {
                 while ((message = reader.readLine()) != null) {
-                    ta_chat.appendText("Recibido:" + message + "\n");
+                    ta_chat.setText(ta_chat.getText() + "Recibido:" + message + "\n");
                     data = message.split(":");
 
                     for (String token : data) {
-                        ta_chat.appendText(token + "\n");
+                        ta_chat.setText(ta_chat.getText() + token + "\n");
                     }
 
                     if (data[2].equals(connect)) {
@@ -89,12 +94,12 @@ public class ViewChatController implements Initializable {
                     } else if (data[2].equals(chat)) {
                         tellEveryone(message);
                     } else {
-                        ta_chat.appendText("Sin condiciones conocidas. \n");
+                        ta_chat.setText(ta_chat.getText() + "Sin condiciones conocidas. \n");
                     }
                 }//while 
             } //try
             catch (Exception ex) {
-                ta_chat.appendText("Conexion perdida. \n");
+                ta_chat.setText(ta_chat.getText() + "Conexion perdida. \n");
                 ex.printStackTrace();
                 clientOutputStreams.remove(client);
             }//catch 
@@ -118,12 +123,12 @@ public class ViewChatController implements Initializable {
 
                     Thread listener = new Thread(new ClientHandler(clientSock, writer));
                     listener.start();
-                    ta_chat.appendText("Conexion establecida. \n");
+                    ta_chat.setText(ta_chat.getText() + "Conexion establecida. \n");
                 }//while
             }//try
             catch (Exception ex)
             {
-                ta_chat.appendText("Error al realizar la conexión. \n");
+                ta_chat.setText(ta_chat.getText() + "Error al realizar la conexión. \n");
             }
         }//Run
     }//ServerStart
@@ -169,28 +174,32 @@ public class ViewChatController implements Initializable {
             {
                 PrintWriter writer = (PrintWriter) it.next();
 		writer.println(message);
-		ta_chat.appendText("Sending: " + message + "\n");
+		ta_chat.setText(ta_chat.getText() + "Sending: " + message + "\n");
                 writer.flush();
+//                ta_chat.requestFocus();
+//                ta_chat.end();
 //                ta_chat.setCaretPosition(ta_chat.getDocument().getLength());
                 
             } 
             catch (Exception ex) 
             {
-		ta_chat.appendText("Error telling everyone. \n");
+		ta_chat.setText(ta_chat.getText() + "Error telling everyone. error\n");
             }
         } 
     }//tellEveryone
     
     @FXML
-     private void b_startActionPerformed(ActionEvent evt) {                                        
+     private void b_startActionPerformed(ActionEvent evt) throws IOException {   
+         log.wirteLogInfo("Servicio iniciado");
         Thread starter = new Thread(new ServerStart());
         starter.start();
         
-        ta_chat.appendText("Servicio iniciado...\n");
+        ta_chat.setText(ta_chat.getText() + "Servicio iniciado...\n");
     }                                       
 
      @FXML
-    private void b_endActionPerformed(ActionEvent evt) {                                      
+    private void b_endActionPerformed(ActionEvent evt) throws IOException {  
+        log.wirteLogWarning("Deteniendo servicio");
         // TODO add your handling code here:
         try 
         {
@@ -201,21 +210,23 @@ public class ViewChatController implements Initializable {
         tellEveryone("Server:is stopping and all users will be disconnected.\n:Chat");
         
         ta_chat.setText("");
-        ta_chat.appendText("Deteniendo servicio... \n");
+        ta_chat.setText(ta_chat.getText() + "Deteniendo servicio... \n");
     }                                     
 
     @FXML
-    private void b_usersActionPerformed(ActionEvent evt) {                                        
-       ta_chat.appendText("\n Usuario en linea: \n");
+    private void b_usersActionPerformed(ActionEvent evt) throws IOException {  
+        log.wirteLogInfo("Mostrando usuarios");
+       ta_chat.setText(ta_chat.getText() + "\n Usuario en linea: \n");
         for (String current_user : users)
         {
-            ta_chat.appendText(current_user);
-            ta_chat.appendText("\n");
+            ta_chat.setText(ta_chat.getText() + current_user);
+            ta_chat.setText(ta_chat.getText() + "\n");
         } 
     }                                       
 
     @FXML
-    private void b_clearActionPerformed(ActionEvent evt) {                                        
+    private void b_clearActionPerformed(ActionEvent evt) throws IOException {    
+        log.wirteLogWarning("Limpiando pantalla");
        ta_chat.setText("");
     }   
     

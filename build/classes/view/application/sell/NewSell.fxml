@@ -100,7 +100,7 @@
                               <Label text="En Stock :" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <TextField fx:id="tfSellPrice" onKeyReleased="#tfSellPriceOnAction" GridPane.columnSpan="3" GridPane.rowIndex="8" />
                               <Label text="Precio de Venta:" GridPane.rowIndex="7" />
-                              <Label text="Purses Price :" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Precio compra :" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                               <Label fx:id="lblPursesPrice" text="is" GridPane.columnIndex="2" GridPane.rowIndex="7" />
                               <Label text="Costo Total :" GridPane.columnIndex="3" GridPane.rowIndex="16" />
                               <Label fx:id="lblTotal" GridPane.columnIndex="5" GridPane.rowIndex="16">
@@ -108,8 +108,8 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <Label text="Costo Items:" GridPane.rowIndex="9" />
-                              <Label text="Total Items" GridPane.rowIndex="10" />
+                              <Label text="Costo productos :" GridPane.rowIndex="9" />
+                              <Label text="Total productos :" GridPane.rowIndex="10" />
                               <Label fx:id="lblNetCost" text="50000" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9" />
                               <Label fx:id="lblTotalItems" text="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="10" />
                               <Label text="Proveedor" GridPane.columnIndex="4" />

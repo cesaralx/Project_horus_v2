@@ -48,7 +48,7 @@ public class RmaGetway {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText("Correcto : guardado correctamente");
-            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Agregado correctamente");
+            alert.setContentText("Devolución" + "  '" + rma.rmaName + "' " + "Agregada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -99,7 +99,7 @@ public class RmaGetway {
 
     public void searchView(RMA rma) {
         rma.rmaDetails.clear();
-        System.out.println("name :" + rma.rmaName);
+        System.out.println("nombre :" + rma.rmaName);
         try {
             con = dbCon.geConnection();
             pst = con.prepareCall("select * from devolucion where DevoluionNombre like ? or DevoluionDias like ? ORDER BY DevoluionNombre");
@@ -135,7 +135,7 @@ public class RmaGetway {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText("Correcto : guardado correcto");
-            alert.setContentText("Unit" + "  '" + rma.rmaName + "' " + "Actualizado correctamente");
+            alert.setContentText("Devolución" + "  '" + rma.rmaName + "' " + "Actualizada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -147,7 +147,6 @@ public class RmaGetway {
     public void delete(RMA rma) {
         con = dbCon.geConnection();
         try {
-            System.out.println("and i am hear");
             con = dbCon.geConnection();
             pst = con.prepareCall("delete from devolucion where DevoluionId=?");
             pst.setString(1, rma.id);

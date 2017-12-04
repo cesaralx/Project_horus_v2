@@ -26,7 +26,7 @@ import media.userNameMedia;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class EmployeController implements Initializable {
     @FXML

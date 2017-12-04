@@ -5,6 +5,7 @@
  */
 package controller.application;
 
+import LogFile.logger;
 import controller.application.settings.MyAccountController;
 import controller.application.settings.OrgSettingController;
 import dataBase.DBConnection;
@@ -33,12 +34,13 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import media.userNameMedia;
 import tray.animations.AnimationType;
+import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class SettingsController implements Initializable {
     @FXML
@@ -60,20 +62,16 @@ public class SettingsController implements Initializable {
     Connection con;
     PreparedStatement pst;
     ResultSet rs;
+    logger log = new logger();
     
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
     
     private String userID;
-    
-    userNameMedia usrMedia;
-    
-    
+    userNameMedia usrMedia;    
     @FXML
     public BorderPane bpSettings;
-    
-    
-
+ 
     public userNameMedia getUsrMedia() {
         return usrMedia;
     }
@@ -117,22 +115,49 @@ public class SettingsController implements Initializable {
     }
     
         @FXML
-    private void openChat(ActionEvent event) {
+    private void openChat(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Abriendo servidor chat");
         TrayNotification tn = new TrayNotification();
-        tn.setTitle("Notificacion");
-        tn.setMessage("Este es un ejemplo de alerta");
-        tn.setAnimationType(AnimationType.FADE);
-        tn.showAndDismiss(Duration.seconds(2));
+            tn.setTitle("Chat");
+            tn.setMessage("Mostrando servidor");
+            tn.setAnimationType(AnimationType.POPUP);
+            tn.setNotificationType(NotificationType.NOTICE);
+            tn.showAndDismiss(Duration.seconds(1));
         
         Parent root = null;
         try {
-//            log.wirteLogInfo("Iniciando menu de configuracion de BD");
             root = FXMLLoader.load(getClass().getResource("/view/chat/ViewChat.fxml"));
             Scene scene = new Scene(root);
             Stage nStage = new Stage();
             nStage.setScene(scene);
             nStage.setMaximized(false);
             nStage.setTitle("Chat - Nice Vaping");
+            nStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+        
+    @FXML
+    private void openChatClient(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Mostrando cliente chat");
+       TrayNotification tn = new TrayNotification();
+        tn.setTitle("Chat");
+        tn.setMessage("Mostrando cliente");
+        tn.setNotificationType(NotificationType.NOTICE);
+        tn.setAnimationType(AnimationType.POPUP);
+        tn.showAndDismiss(Duration.seconds(1));
+
+        Parent root = null;
+        try {
+//            log.wirteLogInfo("Iniciando menu de configuracion de BD");
+            root = FXMLLoader.load(getClass().getResource("/view/chat/ViewChatClient.fxml"));
+            Scene scene = new Scene(root);
+            Stage nStage = new Stage();
+            nStage.setScene(scene);
+            nStage.setMaximized(false);
+            nStage.setTitle("Chat Cliente - Nice Vaping");
             nStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -166,7 +191,8 @@ public class SettingsController implements Initializable {
     }
     
             @FXML
-    private void openLogFile(ActionEvent event) {
+    private void openLogFile(ActionEvent event) throws IOException {
+        log.wirteLogInfo("Mostrando log");
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/view/logFile.fxml"));
@@ -184,7 +210,7 @@ public class SettingsController implements Initializable {
     public void settingPermission(){
         con = dbCon.geConnection();
         try {
-            pst = con.prepareStatement("select * from userpermission where Idi=?");
+            pst = con.prepareStatement("select * from userpermission where UsuarioId=?");
             pst.setString(1, userID);
             rs = pst.executeQuery();
             while(rs.next()){

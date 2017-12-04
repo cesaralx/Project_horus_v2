@@ -23,7 +23,7 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class UnitGetway {
 
@@ -53,7 +53,7 @@ public class UnitGetway {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText("Correcto : guardado");
-            alert.setContentText("Unit" + "  '" + unit.unitName + "' " + "Agregada correctamente");
+            alert.setContentText("Unidad" + "  '" + unit.unitName + "' " + "Agregada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -141,7 +141,6 @@ public class UnitGetway {
             pst.setString(2, unit.unitName);
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("Into the loop");
                 updateNow(unit);
                 return;
             }
@@ -149,7 +148,6 @@ public class UnitGetway {
             con.close();
             rs.close();
             if (isUniqName(unit)) {
-                System.out.println("Out of the loop");
                 updateNow(unit);
             }
 
@@ -171,7 +169,7 @@ public class UnitGetway {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText("Correcto : actualizado");
-            alert.setContentText("Unit" + "  '" + unit.unitName + "' " + "Actualizado correctamente");
+            alert.setContentText("Unidad" + "  '" + unit.unitName + "' " + "Actualizada correctamente");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -197,7 +195,7 @@ public class UnitGetway {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR");
                 alert.setHeaderText("ERROR : Ya existe");
-                alert.setContentText("Unit" + "  '" + unit.unitName + "' " + "Ya existe");
+                alert.setContentText("Unidad" + "  '" + unit.unitName + "' " + "Ya existe");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 
@@ -240,7 +238,7 @@ public class UnitGetway {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR");
                 alert.setHeaderText("ERROR : usado");
-                alert.setContentText("Esta unit esta usada '" + rs.getString(2) + "' producto \n borra el producto primero");
+                alert.setContentText("Esta unidad esta usada '" + rs.getString(2) + "' producto \n borra el producto primero");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
 

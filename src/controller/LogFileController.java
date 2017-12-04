@@ -15,7 +15,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.util.Duration;
 import media.userNameMedia;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -59,6 +63,12 @@ public class LogFileController implements Initializable {
             }
         }
         log.readFile();
+                TrayNotification tn = new TrayNotification();
+            tn.setTitle("Log");
+            tn.setMessage("Log mostrado");
+            tn.setAnimationType(AnimationType.POPUP);
+            tn.setNotificationType(NotificationType.SUCCESS);
+            tn.showAndDismiss(Duration.seconds(1));
     }
     
         
@@ -96,15 +106,20 @@ public class LogFileController implements Initializable {
         }
     }
     
-        @FXML
+    @FXML
     private void orderByTipo(ActionEvent e) throws IOException {
         taLog.clear();
-       
+
         log.orderByTipo();
-        readLogOrdenado(System.getProperty("user.dir")+ "/logOrdenado.log");
-        
-        
-        
+        readLogOrdenado(System.getProperty("user.dir") + "/logOrdenado.log");
+    }
+    
+    @FXML
+    private void orderByUser(ActionEvent e) throws IOException {
+        taLog.clear();
+
+        log.orderByQuickSort();
+        readLogOrdenado(System.getProperty("user.dir") + "/logOrdenado.log");
     }
     
     
