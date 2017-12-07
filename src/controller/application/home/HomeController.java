@@ -5,7 +5,7 @@
  */
 package controller.application.home;
 
-import Getway.CurrentProductGetway;
+import Actions.CurrentProductGetway;
 import LogFile.logger;
 import dataBase.DBConnection;
 import dataBase.DBProperties;

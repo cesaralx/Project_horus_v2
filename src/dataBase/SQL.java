@@ -25,7 +25,7 @@ import javafx.scene.control.Label;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class SQL {
     
@@ -57,7 +57,6 @@ public class SQL {
             pst.setString(8, password);
             pst.setString(9, "1");
             if(imagePath!=null){
-                System.out.println("I am hear");
                 InputStream is;
                 try {
                     is = new FileInputStream(new File(imagePath));

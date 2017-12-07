@@ -15,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.logging.*;
 import java.util.stream.Stream;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  *

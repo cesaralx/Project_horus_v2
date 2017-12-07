@@ -23,7 +23,7 @@
                <columns>
                   <TableColumn fx:id="clmUnitId" prefWidth="75.0" text="ID" visible="false" />
                   <TableColumn fx:id="clmUnitName" prefWidth="212.0" text="Nombre" />
-                  <TableColumn fx:id="clmUnitDescription" prefWidth="200.0" text="Descripcion" />
+                  <TableColumn fx:id="clmUnitDescription" prefWidth="200.0" text="Descripción" />
                   <TableColumn fx:id="clmUnitCreator" prefWidth="157.0" text="Creado por" />
                   <TableColumn fx:id="clmUnitCreateDate" prefWidth="156.0" text="Fecha" />
                </columns>
@@ -65,7 +65,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="tfSearch" onKeyReleased="#tfSearchOnKeyResele" promptText="Buscar Unit" />
+                        <TextField fx:id="tfSearch" onKeyReleased="#tfSearchOnKeyResele" promptText="Buscar Unidad" />
                      </children>
                   </GridPane>
                   <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshOnAction" prefHeight="31.0" prefWidth="34.0" />

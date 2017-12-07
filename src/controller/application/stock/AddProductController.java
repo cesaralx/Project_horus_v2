@@ -12,9 +12,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-import BLL.CurrentProductBLL;
-import DAL.CurrentProduct;
-import Getway.CurrentProductGetway;
+import Basics.CurrentProductBasics;
+import Models.CurrentProduct;
+import Actions.CurrentProductGetway;
 import dataBase.DBConnection;
 import dataBase.DBProperties;
 import dataBase.SQL;
@@ -45,12 +45,12 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class AddProductController implements Initializable {
 
@@ -70,7 +70,7 @@ public class AddProductController implements Initializable {
     private userNameMedia nameMedia;
 
     CurrentProduct currentProduct = new CurrentProduct();
-    CurrentProductBLL currentProductBLL = new CurrentProductBLL();
+    CurrentProductBasics currentProductBLL = new CurrentProductBasics();
     CurrentProductGetway currentProductGetway = new CurrentProductGetway();
     SQL sql = new SQL();
 
@@ -529,7 +529,7 @@ public class AddProductController implements Initializable {
     }
 
     public void btnAddCatagoryOnAction(ActionEvent actionEvent) {
-        AddCatagoryController addCatagoryController = new AddCatagoryController();
+        AddCategoryController addCatagoryController = new AddCategoryController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/view/application/stock/AddCategory.fxml"));
@@ -538,10 +538,10 @@ public class AddProductController implements Initializable {
             Parent parent = fxmlLoader.getRoot();
             Scene scene = new Scene(parent);
             scene.setFill(new Color(0, 0, 0, 0));
-            AddCatagoryController catagoryController = fxmlLoader.getController();
+            AddCategoryController catagoryController = fxmlLoader.getController();
             media.setId(usrId);
             catagoryController.setMedia(media);
-            catagoryController.lblHeaderContent.setText("Agrega Item");
+            catagoryController.lblHeaderContent.setText("Agrega Categoria");
             catagoryController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);

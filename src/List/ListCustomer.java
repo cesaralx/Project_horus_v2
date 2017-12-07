@@ -7,7 +7,7 @@ package List;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class ListCustomer {
     

@@ -38,12 +38,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.StageStyle;
 import javax.imageio.ImageIO;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class OrgSettingController implements Initializable {
 
@@ -129,7 +129,7 @@ public class OrgSettingController implements Initializable {
                 new FileChooser.ExtensionFilter("PNG (Portable Network Graphics)", "*.png")
         );
 
-        fileChooser.setTitle("Choise a Image File");
+        fileChooser.setTitle("Elige una imagen");
 
         file = fileChooser.showOpenDialog(null);
 
@@ -220,9 +220,9 @@ public class OrgSettingController implements Initializable {
 
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Update");
-            alert.setHeaderText("Update ");
-            alert.setContentText("Update Sucessfully");
+            alert.setTitle("Actualizacion");
+            alert.setHeaderText("Actualizacion ");
+            alert.setContentText("Actualizacion correcta");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
         } catch (SQLException ex) {
@@ -258,9 +258,9 @@ public class OrgSettingController implements Initializable {
             pst.setString(6, userId);
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Update");
-            alert.setHeaderText("Sucess ");
-            alert.setContentText("Insert Data Sucessfuly");
+            alert.setTitle("Actualizacion");
+            alert.setHeaderText("Correcto ");
+            alert.setContentText("Informacion insertada");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -284,9 +284,9 @@ public class OrgSettingController implements Initializable {
 
             pst.executeUpdate();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Update");
-            alert.setHeaderText("Sucess ");
-            alert.setContentText("Update sucessfuly");
+            alert.setTitle("Actualizacion");
+            alert.setHeaderText("Actualizacion ");
+            alert.setContentText("Actualizacion correcta");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 

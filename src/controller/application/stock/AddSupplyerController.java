@@ -5,7 +5,7 @@
  */
 package controller.application.stock;
 
-import Getway.SupplyerGetway;
+import Actions.SupplyerGetway;
 import custom.EffectUtility;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,15 +19,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import media.userNameMedia;
-import DAL.Orders;
+import UserLogged.userNameMedia;
+import Models.Orders;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class AddSupplyerController implements Initializable {
 
@@ -101,7 +101,7 @@ public class AddSupplyerController implements Initializable {
                 || taSupplyerAddress.getText().trim().isEmpty()
                 || taSupplyerAddress.getText().trim().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("error");
+            alert.setTitle("Error");
             alert.setHeaderText("ERROR : no enocntrado");
             alert.setContentText("Por favor llena todos los campos");
             alert.initStyle(StageStyle.UNDECORATED);

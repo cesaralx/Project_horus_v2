@@ -5,8 +5,8 @@
  */
 package controller.application.stock;
 
-import BLL.SupplyerBLL;
-import Getway.SupplyerGetway;
+import Basics.SupplyerBasics;
+import Actions.SupplyerGetway;
 import custom.History;
 
 import java.io.IOException;
@@ -32,14 +32,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import List.ListSupplyer;
-import DAL.Orders;
+import Models.Orders;
 import java.util.Optional;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewSupplyerController implements Initializable {
     @FXML
@@ -47,7 +47,7 @@ public class ViewSupplyerController implements Initializable {
     SQL sql = new SQL();
     Orders supplyer = new Orders();
     SupplyerGetway supplyerGetway = new SupplyerGetway();
-    SupplyerBLL supplyerBLL = new SupplyerBLL();
+    SupplyerBasics supplyerBLL = new SupplyerBasics();
     History history = new History();
 
     private String usrId;
@@ -169,7 +169,7 @@ public class ViewSupplyerController implements Initializable {
             AddSupplyerController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblCaption.setText("Agregar Item");
+            supplyerController.lblCaption.setText("Agregar Proveedor");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             supplyerController.addSupplyerStage(nStage);
@@ -190,7 +190,7 @@ public class ViewSupplyerController implements Initializable {
         if(tblSupplyer.getSelectionModel().getSelectedItem() != null){
             viewDetails();
         }else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
 
     }
@@ -198,7 +198,6 @@ public class ViewSupplyerController implements Initializable {
     private void viewDetails() {
         if(!tblSupplyer.getSelectionModel().isEmpty()){
             ListSupplyer selectedSupplyer = tblSupplyer.getSelectionModel().getSelectedItem();
-            System.out.println("ID is");
             System.out.println(selectedSupplyer.getSupplyerId());
             String items = selectedSupplyer.getSupplyerId();
             if (!items.equals(null)) {
@@ -229,7 +228,7 @@ public class ViewSupplyerController implements Initializable {
                 }
             }
         }else {
-            System.out.println("empty Selection");
+            System.out.println("vacio");
         }
 
 
@@ -252,18 +251,17 @@ public class ViewSupplyerController implements Initializable {
 
     @FXML
     private void mbDeleteItem(ActionEvent event) {
-        System.out.println("clicked to delete");
+        System.out.println("norrando");
         acContent.setOpacity(0.5);
         ListSupplyer selectedSupplyer = tblSupplyer.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Login Now");
-        alert.setHeaderText("Confirm");
-        alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+        alert.setTitle("Confirmacion");
+        alert.setHeaderText("Confirmacion");
+        alert.setContentText("Estas seguro de eliminarlo \n click ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             supplyer.id = selectedSupplyer.getSupplyerId();
-            System.out.println(supplyer.id+ "On hear");
             supplyerBLL.delete(supplyer);
             tblSupplyer.getItems().clear();
             showDetails();

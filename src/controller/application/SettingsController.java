@@ -32,7 +32,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
@@ -200,7 +200,7 @@ public class SettingsController implements Initializable {
             Stage nStage = new Stage();
             nStage.setScene(scene);
             nStage.setMaximized(false);
-            nStage.setTitle("LogFile viewer -Nice Vaping");
+            nStage.setTitle("LogFile visor -Nice Vaping");
             nStage.show();
         } catch (IOException e) {
             e.printStackTrace();

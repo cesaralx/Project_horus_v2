@@ -24,8 +24,8 @@ import java.util.logging.Logger;
 import javafx.beans.binding.BooleanBinding;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import media.userNameMedia;
-import DAL.Users;
+import UserLogged.userNameMedia;
+import Models.Users;
 import dataBase.DBProperties;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
@@ -33,7 +33,7 @@ import javafx.stage.StageStyle;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class PassChangeController implements Initializable {
 
@@ -110,7 +110,7 @@ public class PassChangeController implements Initializable {
             }
 
         } else {
-            System.out.println("ddd");
+            System.out.println("no coincide");
         }
 
     }
@@ -129,7 +129,7 @@ public class PassChangeController implements Initializable {
     @FXML
     private void pfNewPassWordMatch(KeyEvent event) {
         if (pfNewPass.getText().matches(pfRePass.getText())) {
-            System.out.println("Match");
+            System.out.println("coincide");
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
@@ -151,7 +151,6 @@ public class PassChangeController implements Initializable {
             pst.setString(2, pfCurrentPass.getText());
             rs = pst.executeQuery();
             while (rs.next()) {
-                System.out.println("Old Password Match");
                 return conDitionValid;
             }
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -172,14 +171,14 @@ public class PassChangeController implements Initializable {
     private boolean isPasswordMatch() {
         boolean passMatch;
         if (pfNewPass.getText().matches(pfRePass.getText())) {
-            System.out.println("New Password match");
+            System.out.println("New Password coincide");
             passMatch = true;
 
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
             alert.setHeaderText("ERROR ");
-            alert.setContentText("Escribe el passowrd igual en ambos campos");
+            alert.setContentText("Escribe el password igual en ambos campos");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
 
@@ -199,9 +198,9 @@ public class PassChangeController implements Initializable {
 
             
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucess");
-            alert.setHeaderText("Sucess ");
-            alert.setContentText("Update Password Sucessfuly");
+            alert.setTitle("Actualizacion");
+            alert.setHeaderText("Actualizacion ");
+            alert.setContentText("Actualizacion correcta");
             alert.initStyle(StageStyle.UNDECORATED);
             alert.showAndWait();
             

@@ -20,10 +20,10 @@
                <children>
                   <Label text="Nombre Proveedor:" GridPane.columnSpan="2" />
                   <TextField fx:id="tfSupplyerName" GridPane.columnSpan="4" GridPane.rowIndex="1" />
-                  <Label text="Numero de contacto:" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Label text="Direccion :" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                  <Label text="Número de contacto:" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Label text="Dirección :" GridPane.columnSpan="2" GridPane.rowIndex="6" />
                   <TextArea fx:id="taSupplyerAddress" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="7" GridPane.rowSpan="3" />
-                  <Label text="Descripcion :" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                  <Label text="Descripción :" GridPane.columnSpan="2" GridPane.rowIndex="10" />
                   <TextArea fx:id="taSupplyerDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="11" GridPane.rowSpan="3" />
                   <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="15" GridPane.valignment="CENTER" />
                   <TextArea fx:id="taContactNumbers" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="3" />

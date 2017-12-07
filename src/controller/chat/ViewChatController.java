@@ -199,11 +199,10 @@ public class ViewChatController implements Initializable {
 
      @FXML
     private void b_endActionPerformed(ActionEvent evt) throws IOException {  
-        log.wirteLogWarning("Deteniendo servicio");
-        // TODO add your handling code here:
+        log.wirteLogWarning("Deteniendo servicio...");
         try 
         {
-            Thread.sleep(5000);                 //5000 milliseconds is five second.
+            Thread.sleep(1000);                 //1000 milliseconds is five second.
         } 
         catch(InterruptedException ex) {Thread.currentThread().interrupt();}
         

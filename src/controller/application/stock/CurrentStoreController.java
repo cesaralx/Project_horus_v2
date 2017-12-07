@@ -5,9 +5,9 @@
  */
 package controller.application.stock;
 
-import BLL.CurrentProductBLL;
-import DAL.CurrentProduct;
-import Getway.CurrentProductGetway;
+import Basics.CurrentProductBasics;
+import Models.CurrentProduct;
+import Actions.CurrentProductGetway;
 import controller.application.sell.NewSellController;
 import controller.application.sell.ViewCustomerController;
 import java.io.IOException;
@@ -31,7 +31,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import List.ListProduct;
 import controller.application.SettingsController;
 import dataBase.DBConnection;
@@ -54,7 +54,7 @@ public class CurrentStoreController implements Initializable {
 
     CurrentProduct productCurrent = new CurrentProduct();
     CurrentProductGetway currentProductGetway = new CurrentProductGetway();
-    CurrentProductBLL currentProductBLL = new CurrentProductBLL();
+    CurrentProductBasics currentProductBLL = new CurrentProductBasics();
     
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
@@ -286,14 +286,14 @@ showDetails();
     @FXML
     private void btnDeleteOnAction(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Login Now");
+        alert.setTitle("Confirmacion");
         alert.setHeaderText("Confirmacion");
         alert.setContentText("Estas seguro de eliminar esto \n click ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             String item = tblViewCurrentStore.getSelectionModel().getSelectedItem().getId();
-            System.out.println("Product id" + item);
+            System.out.println("Producto id eliminar " + item);
             productCurrent.id = item;
             currentProductBLL.delete(productCurrent);
             btnRefreshOnACtion(event);
@@ -308,7 +308,7 @@ showDetails();
             if (!tblViewCurrentStore.getSelectionModel().isEmpty()) {
                 viewSelected();
             } else {
-                System.out.println("EMPTY SELECTION");
+                System.out.println("vacio");
             }
         } else {
             tblViewCurrentStore.setOnMouseClicked(new EventHandler<MouseEvent>() {

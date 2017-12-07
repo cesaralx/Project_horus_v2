@@ -17,7 +17,7 @@
                <columns>
                   <TableColumn fx:id="clmRMAId" prefWidth="75.0" text="ID" visible="false" />
                   <TableColumn fx:id="clmRMAName" prefWidth="218.0" text="Mercancia retornada" />
-                  <TableColumn fx:id="clmRMADayes" prefWidth="148.0" text="Dias" />
+                  <TableColumn fx:id="clmRMADayes" prefWidth="148.0" text="Días" />
                   <TableColumn fx:id="clmRMADiscription" prefWidth="176.0" text="Descripcion" />
                   <TableColumn fx:id="clmRMACreator" prefWidth="106.0" text="Creado por" />
                   <TableColumn fx:id="clmRMADate" prefWidth="87.0" text="Fecha" />

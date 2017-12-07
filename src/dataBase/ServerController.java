@@ -41,7 +41,7 @@ import javafx.stage.StageStyle;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ServerController implements Initializable {
 
@@ -128,7 +128,7 @@ public class ServerController implements Initializable {
                 con.close();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Servidor conectado correctamente");
-                alert.setHeaderText("Login now");
+                alert.setHeaderText("Conectado");
                 alert.setContentText("Servidor ha sido conectado correctamente \n para inciar sesion haz click en ok");
                 alert.initStyle(StageStyle.UNDECORATED);
                 Optional<ButtonType> result = alert.showAndWait();

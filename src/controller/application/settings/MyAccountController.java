@@ -5,7 +5,7 @@
  */
 package controller.application.settings;
 
-import Getway.UsersGetway;
+import Actions.UsersGetway;
 import dataBase.DBConnection;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -43,15 +43,15 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javax.imageio.ImageIO;
-import media.userNameMedia;
-import DAL.Users;
+import UserLogged.userNameMedia;
+import Models.Users;
 import dataBase.DBProperties;
 import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class MyAccountController implements Initializable {
 
@@ -147,7 +147,7 @@ public class MyAccountController implements Initializable {
             rs = pst.executeQuery();
             while (rs.next()) {
                 if (rs.getInt("ChangeOwnPass") != 0) {
-                    System.out.println("Puedes cambiar tu password");
+                    System.out.println("Puedes cambiar tu password!!");
 
                     PassChangeController pcc = new PassChangeController();
                     userNameMedia nameMedia = new userNameMedia();
@@ -222,7 +222,6 @@ public class MyAccountController implements Initializable {
 
         if (file != null) {
             if (file.length() < 6000000) {
-                System.out.print("Condition ok");
                 System.out.println(file.length());
                 BufferedImage bufferedImage = ImageIO.read(file);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
@@ -251,11 +250,11 @@ public class MyAccountController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR");
                 alert.setHeaderText("ERROR ");
-                alert.setContentText("Please Fill all requere fields");
+                alert.setContentText("Por favor llena todos los campos");
                 alert.initStyle(StageStyle.UNDECORATED);
         } else {
             notNull = true;
-            System.out.println("Not Null");
+            System.out.println("no es null");
         }
         return notNull;
     }

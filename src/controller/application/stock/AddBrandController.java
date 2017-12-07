@@ -5,7 +5,7 @@
  */
 package controller.application.stock;
 
-import BLL.BrandBLL;
+import Basics.BrandBasics;
 import dataBase.DBConnection;
 
 import java.io.IOException;
@@ -33,9 +33,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
-import DAL.Brands;
-import Getway.BrandsGetway;
+import UserLogged.userNameMedia;
+import Models.Brands;
+import Actions.BrandsGetway;
 import dataBase.DBProperties;
 import javafx.scene.control.Alert;
 
@@ -51,7 +51,7 @@ public class AddBrandController implements Initializable {
 
     Brands brands = new Brands();
     BrandsGetway brandsGetway = new BrandsGetway();
-    BrandBLL brandBLL = new BrandBLL();
+    BrandBasics brandBLL = new BrandBasics();
 
     public String brandId;
     private String usrId;
@@ -202,7 +202,7 @@ public class AddBrandController implements Initializable {
             AddSupplyerController supplyerController = fxmlLoader.getController();
             media.setId(usrId);
             supplyerController.setMedia(media);
-            supplyerController.lblCaption.setText("Agregar Item");
+            supplyerController.lblCaption.setText("Agregar Proveedor");
             supplyerController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             supplyerController.addSupplyerStage(nStage);

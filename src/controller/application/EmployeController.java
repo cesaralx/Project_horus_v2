@@ -21,7 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class

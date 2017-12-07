@@ -38,8 +38,8 @@
                <columns>
                   <TableColumn fx:id="clmSUpplyerId" prefWidth="59.0" text="ID" visible="false" />
                   <TableColumn fx:id="clmSupplyerName" prefWidth="103.0" text="Proveedores" />
-                  <TableColumn fx:id="clmSupplyerPhoneNumber" prefWidth="145.0" text="Numero de Contacto" />
-                  <TableColumn fx:id="clmSupplyerAddress" prefWidth="126.0" sortable="false" text="Direccion" />
+                  <TableColumn fx:id="clmSupplyerPhoneNumber" prefWidth="145.0" text="Número de Contacto" />
+                  <TableColumn fx:id="clmSupplyerAddress" prefWidth="126.0" sortable="false" text="Dirección" />
                   <TableColumn fx:id="clmSupplyerJoining" prefWidth="202.0" text="Proveedor desde" />
                   <TableColumn fx:id="clmSupplyerDescription" prefWidth="175.0" text="Descripcion" />
                </columns>

@@ -5,9 +5,9 @@
  */
 package controller.application.sell;
 
-import DAL.SellCart;
-import Getway.SellCartGerway;
-import List.ListSold;
+import Models.SellCart;
+import Actions.SellCartGerway;
+import List.ListSell;
 import LogFile.logger;
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +32,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  *
@@ -51,7 +51,7 @@ public class ViewSellController implements Initializable{
     @FXML
     private Button btnSellOrder;
     @FXML
-    private TableView<ListSold> tblSellView;
+    private TableView<ListSell> tblSellView;
     @FXML
     private TableColumn<Object, Object> tblClmSellId;
     @FXML

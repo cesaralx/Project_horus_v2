@@ -5,7 +5,7 @@
  */
 package controller.application.employe;
 
-import Getway.UsersGetway;
+import Actions.UsersGetway;
 import dataBase.DBConnection;
 
 import java.net.URL;
@@ -26,7 +26,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import custom.*;
 
 import java.awt.image.BufferedImage;
@@ -52,7 +52,7 @@ import javax.imageio.ImageIO;
 
 import List.ListEmployee;
 
-import DAL.Users;
+import Models.Users;
 import controller.RegistrationController;
 import controller.application.settings.PassChangeController;
 import dataBase.DBProperties;
@@ -190,7 +190,7 @@ public class ViewEmployeController implements Initializable {
                 new FileChooser.ExtensionFilter("PNG (Portable Network Graphics)", "*.png")
         );
 
-        fileChooser.setTitle("Choise a Image File");
+        fileChooser.setTitle("Elige una imagen");
 
         file = fileChooser.showOpenDialog(null);
 
@@ -260,7 +260,7 @@ public class ViewEmployeController implements Initializable {
         if (cbStatus.isSelected()) {
             cbStatus.setText("Activo");
         } else {
-            cbStatus.setText("Desactivo");
+            cbStatus.setText("Inactivo");
         }
     }
 
@@ -333,7 +333,6 @@ public class ViewEmployeController implements Initializable {
         String emp = "Empleados";
         History history = new History();
         history.viewText(emp, tfUserName.getText(), name);
-        System.out.println("view");
     }
 
     public void setselectedView() {
@@ -357,10 +356,10 @@ public class ViewEmployeController implements Initializable {
             tfCreatedBy.setText(lblCreator.getText());
             if (users.status.matches("1")) {
                 cbStatus.setSelected(true);
-                cbStatus.setText("Active");
+                cbStatus.setText("Activo");
             } else if (users.status.matches("0")) {
                 cbStatus.setSelected(false);
-                cbStatus.setText("Deactive");
+                cbStatus.setText("Inactivo");
             }
             if (users.id.matches("1")) {
                 btnUpdate.setVisible(false);

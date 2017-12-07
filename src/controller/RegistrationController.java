@@ -5,7 +5,7 @@
  */
 package controller;
 
-import Getway.UsersGetway;
+import Actions.UsersGetway;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -29,7 +29,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import DAL.Users;
+import Models.Users;
 import LogFile.logger;
 import dataBase.DBProperties;
 import java.util.Optional;

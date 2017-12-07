@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleStringProperty;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class ListCatagory {
     public String id;

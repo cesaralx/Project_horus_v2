@@ -5,8 +5,8 @@
  */
 package controller.application.stock;
 
-import BLL.RmaBLL;
-import Getway.RmaGetway;
+import Basics.RmaBasics;
+import Actions.RmaGetway;
 import dataBase.DBConnection;
 
 import java.io.IOException;
@@ -34,8 +34,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import List.ListRma;
-import media.userNameMedia;
-import DAL.RMA;
+import UserLogged.userNameMedia;
+import Models.RMA;
 import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -43,13 +43,13 @@ import javafx.scene.control.ButtonType;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewRMAController implements Initializable {
 
     RMA rma = new RMA();
     RmaGetway rmaGetway = new RmaGetway();
-    RmaBLL rmaBLL = new RmaBLL();
+    RmaBasics rmaBLL = new RmaBasics();
 
     private String usrId;
     private String rmaId;
@@ -119,7 +119,7 @@ public class ViewRMAController implements Initializable {
         if (!tblViewRMA.getSelectionModel().isEmpty()) {
             viewDetails();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
     }
 
@@ -130,9 +130,9 @@ public class ViewRMAController implements Initializable {
             String rmaName = selectedRMA.getRmaName();
             rmaId = selectedRMA.getRamId();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Login Now");
-            alert.setHeaderText("Confirm");
-            alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+            alert.setTitle("Confirmación");
+            alert.setHeaderText("Confirmación");
+            alert.setContentText("AEstas seguro de eliminarlo \n click ok para confirmar");
             alert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -142,7 +142,7 @@ public class ViewRMAController implements Initializable {
             }
 
         } else {
-            System.out.println("NULL SELECTED");
+            System.out.println("NULL");
         }
     }
 
@@ -237,7 +237,7 @@ public class ViewRMAController implements Initializable {
                 }
             }
         } else {
-            System.out.println("empty Selection");
+            System.out.println("vacio");
         }
 
     }

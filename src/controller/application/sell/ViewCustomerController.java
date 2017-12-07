@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Getway.CustomerGetway;
+import Actions.CustomerGetway;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -31,8 +31,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
-import DAL.Customer;
+import UserLogged.userNameMedia;
+import Models.Customer;
 import List.ListCustomer;
 import controller.RegistrationController;
 import java.util.Optional;
@@ -135,7 +135,7 @@ public class ViewCustomerController implements Initializable {
         if (tblCustomer.getSelectionModel().getSelectedItem() != null) {
             selectedView();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
     }
 
@@ -144,8 +144,8 @@ public class ViewCustomerController implements Initializable {
         if (tblCustomer.getSelectionModel().getSelectedItem() != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("");
-            alert.setHeaderText("CONFIRM");
-            alert.setContentText("Are You Sure to Delete this item??");
+            alert.setHeaderText("Confirmación");
+            alert.setContentText("Estas seguro de elimarlo?");
             alert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -158,7 +158,7 @@ public class ViewCustomerController implements Initializable {
             }
             
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
 
     }
@@ -190,7 +190,7 @@ public class ViewCustomerController implements Initializable {
                 AddCustomerController addCustomerController = fXMLLoader.getController();
                 media.setId(userId);
                 addCustomerController.setNameMedia(nameMedia);
-                addCustomerController.lblCustomerContent.setText("Customer Details");
+                addCustomerController.lblCustomerContent.setText("Detalles de cliente");
                 addCustomerController.btnSave.setVisible(false);
                 addCustomerController.customerId = listCustomer.getId();
                 addCustomerController.viewDetails();
@@ -210,7 +210,6 @@ public class ViewCustomerController implements Initializable {
         if(event.getClickCount() == 2){
             selectedView();
         }else{
-            System.out.println("CLICK");
         }
     }
 

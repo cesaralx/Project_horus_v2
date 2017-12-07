@@ -5,17 +5,17 @@
  */
 package controller.application.stock;
 
-import BLL.UnitBLL;
+import Basics.UnitBasics;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Getway.UnitGetway;
+import Actions.UnitGetway;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import custom.*;
 import dataBase.DBConnection;
 import java.sql.Connection;
@@ -25,18 +25,18 @@ import javafx.beans.binding.BooleanBinding;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-import DAL.Unit;
+import Models.Unit;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class AddUnitController implements Initializable {
 
     Unit unit = new Unit();
     UnitGetway unitGetway = new UnitGetway();
-    UnitBLL unitBLL = new UnitBLL();
+    UnitBasics unitBLL = new UnitBasics();
 
     public String unitId;
     @FXML

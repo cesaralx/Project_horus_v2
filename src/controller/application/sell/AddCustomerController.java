@@ -1,7 +1,7 @@
 package controller.application.sell;
 
-import BLL.CustomerBLL;
-import Getway.CustomerGetway;
+import Basics.CustomerBasics;
+import Actions.CustomerGetway;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -13,8 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import media.userNameMedia;
-import DAL.Customer;
+import UserLogged.userNameMedia;
+import Models.Customer;
 
 public class AddCustomerController implements Initializable {
     @FXML
@@ -46,7 +46,7 @@ public class AddCustomerController implements Initializable {
     
     Customer customer = new Customer();
     CustomerGetway customerGetway = new CustomerGetway();
-    CustomerBLL customerBLL = new CustomerBLL();
+    CustomerBasics customerBLL = new CustomerBasics();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

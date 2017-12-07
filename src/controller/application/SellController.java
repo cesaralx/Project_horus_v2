@@ -20,7 +20,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class

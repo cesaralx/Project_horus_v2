@@ -5,7 +5,7 @@
  */
 package controller.application.stock;
 
-import BLL.BrandBLL;
+import Basics.BrandBasics;
 import dataBase.DBConnection;
 
 import java.io.IOException;
@@ -31,9 +31,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import media.userNameMedia;
-import DAL.Brands;
-import Getway.BrandsGetway;
+import UserLogged.userNameMedia;
+import Models.Brands;
+import Actions.BrandsGetway;
 import List.ListBrands;
 import java.util.Optional;
 
@@ -53,7 +53,7 @@ public class ViewBrandController implements Initializable {
     SQL sql = new SQL();
     Brands brands = new Brands();
     BrandsGetway brandsGetway = new BrandsGetway();
-    BrandBLL brandBLL = new BrandBLL();
+    BrandBasics brandBLL = new BrandBasics();
 
     private userNameMedia media;
 
@@ -162,7 +162,7 @@ public class ViewBrandController implements Initializable {
         if (tblBrand.getSelectionModel().getSelectedItem() != null) {
             viewDetails();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
 
     }
@@ -171,14 +171,13 @@ public class ViewBrandController implements Initializable {
     private void btnDeleteOnAction(Event event) {
         ListBrands selectedBrand = tblBrand.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Login Now");
+        alert.setTitle("Confirmacion");
         alert.setHeaderText("Confirmacion");
         alert.setContentText("Estas seguro de eliminar este item \n click en ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             brands.id = selectedBrand.getId();
-            System.out.println(brands.id + "On hear");
             brandBLL.delete(brands);
             tblBrand.getItems().clear();
             showDetails();

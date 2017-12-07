@@ -5,7 +5,7 @@
  */
 package controller;
 
-import DAL.Users;
+import Models.Users;
 import LogFile.logger;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -50,7 +50,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;

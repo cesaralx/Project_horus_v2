@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class BackupController implements Initializable {
 

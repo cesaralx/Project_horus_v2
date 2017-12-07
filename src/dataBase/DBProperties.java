@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class DBProperties {
     Properties properties = new Properties();
@@ -50,7 +50,6 @@ public class DBProperties {
             properties.load(inputStream);
             return properties.getProperty("db");
         } catch (IOException e) {
-            System.out.println("DDDD");
         }
         return "";
     }

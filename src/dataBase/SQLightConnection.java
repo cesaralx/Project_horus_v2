@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class SQLightConnection {
 

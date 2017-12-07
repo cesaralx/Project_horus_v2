@@ -5,9 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
-/**
- * Created by rifat on 8/7/15.
- */
+
 public class CellFactories {
 
     public  Callback<TableColumn, TableCell> cellFactoryCheckBox = new Callback<TableColumn, TableCell>() {

@@ -35,7 +35,7 @@ public class NiceVaping extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/view/Login_1.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Vienvenido a to Nice Vaping ");
+            primaryStage.setTitle("Vienvenido a Nice Vaping ");
             primaryStage.getIcons().add(new Image("/image/icon.png"));
             primaryStage.setMaximized(false);
             primaryStage.setMinHeight(500.0);

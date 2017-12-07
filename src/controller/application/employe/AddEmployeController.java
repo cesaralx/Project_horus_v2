@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Getway.UsersGetway;
+import Actions.UsersGetway;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javax.imageio.ImageIO;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 import custom.*;
 import dataBase.DBConnection;
 import java.sql.Connection;
@@ -33,7 +33,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.binding.BooleanBinding;
-import DAL.Users;
+import Models.Users;
 import dataBase.DBProperties;
 
 /**
@@ -133,7 +133,7 @@ public class AddEmployeController implements Initializable {
                 new FileChooser.ExtensionFilter("PNG (Portable Network Graphics)", "*.png")
         );
 
-        fileChooser.setTitle("Choise a Image File");
+        fileChooser.setTitle("Elige una imagen");
 
         file = fileChooser.showOpenDialog(null);
 

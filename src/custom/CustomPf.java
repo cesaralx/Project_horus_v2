@@ -13,7 +13,7 @@ import javafx.scene.input.KeyEvent;
 
 /**
  *
- * @author Rifat
+ * @author alexi
  */
 public class CustomPf {
     public void clearPassFieldByButton(PasswordField value, Button btn){

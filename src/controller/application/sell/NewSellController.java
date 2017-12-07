@@ -5,15 +5,15 @@
  */
 package controller.application.sell;
 
-import BLL.SellCartBLL;
+import Basics.SellCartBasics;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import DAL.CurrentProduct;
-import Getway.CurrentProductGetway;
-import Getway.CustomerGetway;
+import Models.CurrentProduct;
+import Actions.CurrentProductGetway;
+import Actions.CustomerGetway;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,10 +30,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
-import DAL.Customer;
-import DAL.SellCart;
-import Getway.SellCartGerway;
+import UserLogged.userNameMedia;
+import Models.Customer;
+import Models.SellCart;
+import Actions.SellCartGerway;
 import List.ListCustomer;
 import List.ListPreSell;
 import LogFile.logger;
@@ -139,7 +139,7 @@ public class NewSellController implements Initializable {
     CurrentProductGetway currentProductGetway = new CurrentProductGetway();
     SellCart sellCart = new SellCart();
     SellCartGerway sellCartGerway = new SellCartGerway();
-    SellCartBLL scbll = new SellCartBLL();
+    SellCartBasics scbll = new SellCartBasics();
     CustomTf ctf = new CustomTf();
 
     ObservableList<ListPreSell> preList = FXCollections.observableArrayList();
@@ -258,7 +258,7 @@ public class NewSellController implements Initializable {
                 sellCart.warrentyVoidDate = tblSellPreList.getSelectionModel().getSelectedItem().getWarrentyVoidDate();
                 sellCart.sellerID = userId;
                 scbll.sell(sellCart);
-                System.out.println("Old Quentity:" + tblSellPreList.getSelectionModel().getSelectedItem().getOldQuantity());
+                System.out.println("Cantidad antes:" + tblSellPreList.getSelectionModel().getSelectedItem().getOldQuantity());
             }
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
@@ -271,9 +271,9 @@ public class NewSellController implements Initializable {
            tblSellPreList.getItems().clear();
            lblTotal.setText(null);
 
-            System.out.println("Customer ID: " + customerId);
+            System.out.println("ID empleado: " + customerId);
         }else{
-            System.out.println("EMPTY");
+            System.out.println("vacio");
         }
 
     }
@@ -302,7 +302,6 @@ public class NewSellController implements Initializable {
             String currentQuentity = lblCurrentQuantity.getText();
             int currentQuentiInt = Integer.parseInt(currentQuentity);
             if (givenQinInt > currentQuentiInt) {
-                System.out.println("BIG");
                 tfQuantity.clear();
                 lblNetCost.setText("0.0");
             } else {
@@ -318,7 +317,6 @@ public class NewSellController implements Initializable {
 
     @FXML
     private void tfSellPriceOnAction(KeyEvent event) {
-        System.out.println("PRESSES");
 
         if (!tfSellPrice.getText().isEmpty()) {
             String quentity = tfQuantity.getText();
@@ -371,11 +369,10 @@ public class NewSellController implements Initializable {
     @FXML
     private void btnClearSelectedOnAction(ActionEvent event) {
         if(tblSellPreList.getItems().size() != 0){
-            System.out.println("Clicked");
         tblSellPreList.getItems().removeAll(tblSellPreList.getSelectionModel().getSelectedItems());
         sumTotalCost();
         }else{
-            System.out.println("EMPTY");
+            System.out.println("vacio");
         }
         
 

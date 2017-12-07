@@ -5,8 +5,8 @@
  */
 package controller;
 
-import DAL.Users;
-import Getway.UsersGetway;
+import Models.Users;
+import Actions.UsersGetway;
 import LogFile.logger;
 import controller.application.EmployeController;
 import controller.application.SellController;
@@ -50,7 +50,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import media.userNameMedia;
+import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class

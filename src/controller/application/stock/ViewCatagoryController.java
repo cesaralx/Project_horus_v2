@@ -5,7 +5,7 @@
  */
 package controller.application.stock;
 
-import BLL.CatagoryBLL;
+import Basics.CategoryBasics;
 import custom.CellFactories;
 import dataBase.DBConnection;
 
@@ -31,16 +31,16 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import media.userNameMedia;
-import DAL.Catagory;
-import Getway.CatagoryGetway;
+import UserLogged.userNameMedia;
+import Models.Catagory;
+import Actions.CatagoryGetway;
 import List.ListCatagory;
 import java.util.Optional;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewCatagoryController implements Initializable {
 
@@ -54,7 +54,7 @@ public class ViewCatagoryController implements Initializable {
     Catagory catagory = new Catagory();
     CellFactories cellFactories = new CellFactories();
     CatagoryGetway catagoryGetway = new CatagoryGetway();
-    CatagoryBLL catagoryBLL = new CatagoryBLL();
+    CategoryBasics catagoryBLL = new CategoryBasics();
 
     private userNameMedia media;
     @FXML
@@ -128,13 +128,13 @@ public class ViewCatagoryController implements Initializable {
         if (event.getClickCount() == 2) {
             viewDetails();
         } else {
-            System.out.println("CLICKED");
+            System.out.println("click 2 veces");
         }
     }
 
     @FXML
     private void btnAddOnAction(ActionEvent event) {
-        AddCatagoryController addCatagoryController = new AddCatagoryController();
+        AddCategoryController addCatagoryController = new AddCategoryController();
         userNameMedia media = new userNameMedia();
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/view/application/stock/AddCategory.fxml"));
@@ -143,10 +143,10 @@ public class ViewCatagoryController implements Initializable {
             Parent parent = fxmlLoader.getRoot();
             Scene scene = new Scene(parent);
             scene.setFill(new Color(0, 0, 0, 0));
-            AddCatagoryController catagoryController = fxmlLoader.getController();
+            AddCategoryController catagoryController = fxmlLoader.getController();
             media.setId(usrId);
             catagoryController.setMedia(media);
-            catagoryController.lblHeaderContent.setText("Agregar Item");
+            catagoryController.lblHeaderContent.setText("Agregar Categoria");
             catagoryController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -163,7 +163,7 @@ public class ViewCatagoryController implements Initializable {
         if (tblCatagory.getSelectionModel().getSelectedItem() != null) {
             viewDetails();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
     }
 
@@ -171,14 +171,13 @@ public class ViewCatagoryController implements Initializable {
     private void btnDeleteOnAction(ActionEvent event) {
         ListCatagory selectedCatagory = tblCatagory.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Login Now");
-        alert.setHeaderText("Confirm");
-        alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+        alert.setTitle("Confirmación");
+        alert.setHeaderText("Confirmación");
+        alert.setContentText("estas seguro de eliminarlo \n click ok para confirmar");
         alert.initStyle(StageStyle.UNDECORATED);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             catagory.id = selectedCatagory.getId();
-            System.out.println(catagory.id + "On hear");
             catagoryBLL.delete(catagory);
             tblCatagory.getItems().clear();
             showDetails();
@@ -221,11 +220,10 @@ public class ViewCatagoryController implements Initializable {
     private void viewDetails() {
         if (!tblCatagory.getSelectionModel().isEmpty()) {
             ListCatagory selectedCatagory = tblCatagory.getSelectionModel().getSelectedItem();
-            System.out.println("ID is");
             System.out.println(selectedCatagory.getCreatorId());
             String items = selectedCatagory.getId();
             if (!items.equals(null)) {
-                AddCatagoryController addCatagoryController = new AddCatagoryController();
+                AddCategoryController addCatagoryController = new AddCategoryController();
                 userNameMedia media = new userNameMedia();
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/view/application/stock/AddCategory.fxml"));
@@ -234,7 +232,7 @@ public class ViewCatagoryController implements Initializable {
                     Parent parent = fxmlLoader.getRoot();
                     Scene scene = new Scene(parent);
                     scene.setFill(new Color(0, 0, 0, 0));
-                    AddCatagoryController catagoryController = fxmlLoader.getController();
+                    AddCategoryController catagoryController = fxmlLoader.getController();
                     media.setId(usrId);
                     catagoryController.setMedia(media);
                     catagoryController.lblHeaderContent.setText("Detalle Categoria");
@@ -252,7 +250,7 @@ public class ViewCatagoryController implements Initializable {
                 }
             }
         } else {
-            System.out.println("empty Selection");
+            System.out.println("vacio");
         }
 
     }

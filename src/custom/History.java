@@ -23,14 +23,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class History {
     
     public void writeText(String Catagorys,String nameOrId, String userName){
-        System.out.println("Hited");
         try {
-            String content = "Update By    :" + userName + "\nUpdate Date\t:" + LocalDate.now().toString() + "\n------------------------";
+            String content = "Actualizado por    :" + userName + "\nFecha\t:" + LocalDate.now().toString() + "\n------------------------";
 
             File file = new File("logs/"+ Catagorys+"_" + nameOrId+"_" +"updateinfo.txt");
             if (!file.exists()) {
@@ -43,7 +42,7 @@ public class History {
 
             bw.close();
 
-            System.out.println("Done");
+            System.out.println("Terminado");
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,8 +1,5 @@
 package List;
 
-/**
- * Created by rifat on 8/6/15.
- */
 public class ListProduct {
     public String id;
     public String productId;

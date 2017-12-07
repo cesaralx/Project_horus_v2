@@ -1,27 +1,171 @@
-2017-12-03, 22:06:32, INFO  , Iniciando sesion,cesar
-2017-12-03, 22:07:09, INFO  , Mostrando log,cesar
-2017-12-03, 22:07:08, INFO  , Entrando en configuración,cesar
-2017-12-03, 22:07:06, INFO  , Entrando en almacen,cesar
-2017-12-03, 22:07:04, INFO  , Cargando datos inicio,cesar
-2017-12-03, 22:07:04, INFO  , Entrando en home,cesar
-2017-12-03, 22:07:04, INFO  , Password correcto,cesar
-2017-12-03, 22:06:32, INFO  , Es valido: true,cesar
-2017-12-03, 22:06:49, INFO  , Iniciando proceso de validacion,cesar
-2017-12-03, 22:06:46, INFO  , Es valido: true,cesar
-2017-12-03, 22:06:46, INFO  , Iniciando sesion,cesar
-2017-12-03, 22:06:41, INFO  , Cerrando sesion...,cesar
-2017-12-03, 22:06:39, INFO  , Entrando en ventas,cesar
-2017-12-03, 22:06:37, INFO  , Entrando en almacen,cesar
-2017-12-03, 22:06:36, INFO  , Cargando datos inicio,cesar
-2017-12-03, 22:06:35, INFO  , Entrando en home,cesar
-2017-12-03, 22:06:35, INFO  , Password correcto,cesar
-2017-12-03, 22:06:35, INFO  , Iniciando proceso de validacion,cesar
-2017-12-03, 22:07:04, INFO  , Iniciando proceso de validacion,ventas
-2017-12-03, 22:06:53, INFO  , Entrando en ventas,ventas
-2017-12-03, 22:06:51, INFO  , Entrando en almacen,ventas
-2017-12-03, 22:06:50, INFO  , Cargando datos inicio,ventas
-2017-12-03, 22:06:50, INFO  , Entrando en home,ventas
-2017-12-03, 22:06:50, INFO  , Password correcto,ventas
-2017-12-03, 22:07:01, INFO  , Es valido: true,ventas
-2017-12-03, 22:07:01, INFO  , Iniciando sesion,ventas
-2017-12-03, 22:06:55, INFO  , Cerrando sesion...,ventas
+2017-12-06, 21:32:58, WARNING, Deteniendo servicio,
+2017-12-06, 21:32:33, WARNING, Conectando como anonimo,
+2017-12-06, 21:32:32, INFO  , Mostrando cliente chat,cesar
+2017-12-06, 21:32:20, INFO  , Mostrando cliente chat,cesar
+2017-12-06, 21:32:15, INFO  , Servicio iniciado,cesar
+2017-12-06, 21:32:14, INFO  , Abriendo servidor chat,cesar
+2017-12-06, 21:32:04, INFO  , Termino ciclo,cesar
+2017-12-06, 21:32:04, INFO  , Salio true,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:04, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:04, INFO  , Entro,cesar
+2017-12-06, 21:32:02, INFO  , Termino ciclo,cesar
+2017-12-06, 21:32:02, INFO  , Salio true,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Actual = a siguiente true,cesar
+2017-12-06, 21:32:02, INFO  , Actual es distinto de null,cesar
+2017-12-06, 21:32:02, INFO  , Entro,cesar
+2017-12-06, 21:31:58, INFO  , Mostrando log,cesar
+2017-12-06, 21:31:55, INFO  , Entrando en configuración,cesar
+2017-12-06, 21:31:54, INFO  , Entrando en acerca de ,cesar
+2017-12-06, 21:31:53, INFO  , Entrando en configuración,cesar
+2017-12-06, 21:31:38, INFO  , Entrando en empleados,cesar
+2017-12-06, 21:31:22, INFO  , Entrando en ventas,cesar
+2017-12-06, 21:31:21, INFO  , Entrando en empleados,cesar
+2017-12-06, 21:31:20, INFO  , Entrando en configuración,cesar
+2017-12-06, 21:31:19, INFO  , Entrando en empleados,cesar
+2017-12-06, 21:31:18, INFO  , Entrando en ventas,cesar
+2017-12-06, 21:31:15, INFO  , Entrando en almacen,cesar
+2017-12-06, 21:31:13, INFO  , Cargando datos inicio,cesar
+2017-12-06, 21:31:13, INFO  , Entrando en home,cesar
+2017-12-06, 21:31:13, INFO  , Password correcto,cesar
+2017-12-06, 21:31:13, INFO  , Iniciando proceso de validacion,ventas
+2017-12-06, 21:31:10, INFO  , Es valido: true,ventas
+2017-12-06, 21:31:10, INFO  , Iniciando sesion,ventas

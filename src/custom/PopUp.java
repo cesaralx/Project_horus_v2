@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class PopUp {
     

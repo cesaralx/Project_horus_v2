@@ -5,8 +5,8 @@
  */
 package controller.application.stock;
 
-import BLL.RmaBLL;
-import Getway.RmaGetway;
+import Basics.RmaBasics;
+import Actions.RmaGetway;
 import custom.CustomTf;
 import dataBase.DBConnection;
 import java.net.URL;
@@ -24,13 +24,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import media.userNameMedia;
-import DAL.RMA;
+import UserLogged.userNameMedia;
+import Models.RMA;
 
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class AddRMAController implements Initializable {
 
@@ -40,7 +40,7 @@ public class AddRMAController implements Initializable {
     CustomTf ctf = new CustomTf();
     RMA rma = new RMA();
     RmaGetway rmaGetway = new RmaGetway();
-    RmaBLL rmaBLL = new RmaBLL();
+    RmaBasics rmaBLL = new RmaBasics();
 
     DBConnection dbCon = new DBConnection();
     Connection con;

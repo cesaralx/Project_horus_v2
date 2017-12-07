@@ -5,8 +5,8 @@
  */
 package controller.application.stock;
 
-import BLL.UnitBLL;
-import Getway.UnitGetway;
+import Basics.UnitBasics;
+import Actions.UnitGetway;
 import dataBase.DBConnection;
 
 import java.io.IOException;
@@ -34,8 +34,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import List.ListUnit;
-import media.userNameMedia;
-import DAL.Unit;
+import UserLogged.userNameMedia;
+import Models.Unit;
 import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -43,13 +43,13 @@ import javafx.scene.control.ButtonType;
 /**
  * FXML Controller class
  *
- * @author rifat
+ * @author alexi
  */
 public class ViewUnitController implements Initializable {
 
     Unit unit = new Unit();
     UnitGetway unitGetway = new UnitGetway();
-    UnitBLL unitBLL = new UnitBLL();
+    UnitBasics unitBLL = new UnitBasics();
 
     private String usrId;
     private String creatorId;
@@ -139,7 +139,7 @@ public class ViewUnitController implements Initializable {
             AddUnitController unitController = fxmlLoader.getController();
             media.setId(usrId);
             unitController.setNameMedia(media);
-            unitController.lblContent.setText("Agregar Unit");
+            unitController.lblContent.setText("Agregar Unidad");
             unitController.btnUpdate.setVisible(false);
             Stage nStage = new Stage();
             nStage.setScene(scene);
@@ -156,7 +156,7 @@ public class ViewUnitController implements Initializable {
         if (tblViewUnit.getSelectionModel().getSelectedItem() != null) {
             viewDetails();
         } else {
-            System.out.println("EMPTY SELECTION");
+            System.out.println("vacio");
         }
     }
 
@@ -167,9 +167,9 @@ public class ViewUnitController implements Initializable {
             String unitName = selectedUnit.getUnitName();
             unitId = selectedUnit.getUnitId();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Login Now");
-            alert.setHeaderText("Confirm");
-            alert.setContentText("Are you sure to delete this item \n to Confirm click ok");
+            alert.setTitle("Confirmacion");
+            alert.setHeaderText("Confirmacion");
+            alert.setContentText("Estas seguro de eliminarlo \n click ok para confirmar");
             alert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -181,7 +181,7 @@ public class ViewUnitController implements Initializable {
             }
             
         } else {
-            System.out.println("NULL SELECTED");
+            System.out.println("NULL");
         }
 
     }
@@ -224,7 +224,6 @@ public class ViewUnitController implements Initializable {
     private void viewDetails() {
         if (!tblViewUnit.getSelectionModel().isEmpty()) {
             ListUnit selectedUnit = tblViewUnit.getSelectionModel().getSelectedItem();
-            System.out.println("ID is");
             System.out.println(selectedUnit.getUnitId());
             String items = selectedUnit.getUnitId();
             if (!items.equals(null)) {
@@ -240,7 +239,7 @@ public class ViewUnitController implements Initializable {
                     AddUnitController unitController = fxmlLoader.getController();
                     media.setId(usrId);
                     unitController.setNameMedia(media);
-                    unitController.lblContent.setText("Detalle Unit");
+                    unitController.lblContent.setText("Detalle Unidad");
                     unitController.btnUpdate.setVisible(true);
                     unitController.btnSave.setVisible(true);
                     unitController.unitId = selectedUnit.getUnitId();
@@ -255,7 +254,7 @@ public class ViewUnitController implements Initializable {
                 }
             }
         } else {
-            System.out.println("empty Selection");
+            System.out.println("vacio");
         }
 
     }

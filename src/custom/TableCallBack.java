@@ -6,9 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
-/**
- * Created by rifat on 8/4/15.
- */
+
 public class TableCallBack implements Callback<TableColumn<Object, Object>, TableCell<Object, Object>> {
 
     Callback<TableColumn<Object, Object>, TableCell<Object, Object>> callback = new Callback<TableColumn<Object, Object>, TableCell<Object, Object>>() {

@@ -2,9 +2,7 @@ package List;
 
 import javafx.beans.property.SimpleStringProperty;
 
-/**
- * Created by rifat on 7/31/15.
- */
+
 public class ListRma {
 
     public String ramId;

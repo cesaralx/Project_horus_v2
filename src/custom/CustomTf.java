@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 /**
- * @author Rifat
+ * @author alexi
  */
 public class CustomTf {
 

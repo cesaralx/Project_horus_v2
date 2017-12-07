@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class DBConnection {
 
@@ -49,7 +49,6 @@ public class DBConnection {
         loadPropertiesFile();
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            con = DriverManager.getConnection(url, user, pass);
             con = DriverManager.getConnection(url);
 
         } catch (ClassNotFoundException ex) {
@@ -63,7 +62,6 @@ public class DBConnection {
         loadPropertiesFile();
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            con = DriverManager.getConnection(url, user, pass);
             con = DriverManager.getConnection(url);
             
         } catch (ClassNotFoundException | SQLException ex) {
