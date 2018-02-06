@@ -1,6 +1,6 @@
 package List;
 
-public class ListBrands {
+public class ListBrands{
     public String id;
     public String brandName;
     public String brandComment;
