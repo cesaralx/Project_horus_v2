@@ -12,7 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.input.KeyEvent;
 
 /**
- *
+ * validaciones de campos d password
  * @author alexi
  */
 public class CustomPf {

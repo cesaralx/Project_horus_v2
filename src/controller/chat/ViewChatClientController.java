@@ -67,7 +67,7 @@ public class ViewChatClientController implements Initializable {
      //--------------------------//
 
     /**
-     *
+     * inicia el hilo de escucha
      */
     public void ListenThread() {
         Thread IncomingReader = new Thread(new IncomingReader());
@@ -76,7 +76,7 @@ public class ViewChatClientController implements Initializable {
          //--------------------------//
 
     /**
-     *
+     * grega un nuevo usuario
      * @param data
      */
     public void userAdd(String data) {
@@ -86,7 +86,7 @@ public class ViewChatClientController implements Initializable {
     //--------------------------//
 
     /**
-     *
+     * quita un usuario
      * @param data
      */
     public void userRemove(String data) {
@@ -96,7 +96,7 @@ public class ViewChatClientController implements Initializable {
     //--------------------------//
 
     /**
-     *
+     * escribe mensaje a todos los usuarios
      */
     public void writeUsers() {
         String[] tempList = new String[(users.size())];
@@ -106,7 +106,7 @@ public class ViewChatClientController implements Initializable {
     //--------------------------//
 
     /**
-     *
+     * Manda mensaje desconexion
      */
     public void sendDisconnect() {
         String bye = (username + ": :Disconnect");
@@ -121,7 +121,7 @@ public class ViewChatClientController implements Initializable {
     //--------------------------//
 
     /**
-     *
+     * Se desconecta
      */
     public void Disconnect() {
         try {
@@ -141,7 +141,7 @@ public class ViewChatClientController implements Initializable {
     public class IncomingReader implements Runnable {
 
         /**
-         *
+         * ejecuta el chat
          */
         @Override
         public void run() {

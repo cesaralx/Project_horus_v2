@@ -174,7 +174,7 @@ public class ViewEmployeController implements Initializable {
 
     /**
      *
-     * @return
+     * @return usuario logeado
      */
     public userNameMedia getNameMedia() {
         return nameMedia;
@@ -302,6 +302,9 @@ public class ViewEmployeController implements Initializable {
         }
     }
 
+     /**
+     * cambia permisos
+     */
     @FXML
     private void hlChangePasswordOnAction(ActionEvent event) throws IOException {
         
@@ -339,6 +342,9 @@ public class ViewEmployeController implements Initializable {
 
     }
 
+    /**
+     * revisa permisos
+     */
     @FXML
     private void hlViewPermissionOnAction(ActionEvent event) throws IOException {
         String idU;

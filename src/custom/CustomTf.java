@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 /**
+ * Validaciones de botones
  * @author alexi
  */
 public class CustomTf {

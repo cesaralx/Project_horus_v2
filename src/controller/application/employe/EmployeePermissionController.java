@@ -28,7 +28,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Se encarga de manejar todos los permisos por usuario
  * @author alexi
  */
 public class EmployeePermissionController implements Initializable {
@@ -100,8 +100,8 @@ public class EmployeePermissionController implements Initializable {
     String db = dBProperties.loadPropertiesFile();
 
     /**
-     *
-     * @return
+     * 
+     * @return is de usuario 
      */
     public userNameMedia getMedia() {
         return media;
@@ -109,7 +109,7 @@ public class EmployeePermissionController implements Initializable {
 
     /**
      *
-     * @param media
+     * @param media 
      */
     public void setMedia(userNameMedia media) {
         id = media.getId();

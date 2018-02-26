@@ -193,7 +193,10 @@ public class AddEmployeController implements Initializable {
         basicPermission();
     }
 
-    
+        /**
+     * Establece permisos basicos
+     *  @see Actions.UsersGetway
+     */
     private void basicPermission(){
         DBConnection dbCon = new DBConnection();
         Connection con;

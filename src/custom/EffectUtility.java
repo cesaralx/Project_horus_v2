@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- *
+ * hace "draggable" la ventana
  * @author alexi
  */
 public class EffectUtility {

@@ -10,8 +10,8 @@ package custom;
 import javafx.scene.image.Image;
 
 /**
- *
- * @author rifat
+ * efecto de los botones
+ * @author alexi
  */
 public class ButtonEffect {
     

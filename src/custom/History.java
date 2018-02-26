@@ -22,8 +22,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * No se usa
  * @author alexi
+ * @deprecated 
  */
 public class History {
     

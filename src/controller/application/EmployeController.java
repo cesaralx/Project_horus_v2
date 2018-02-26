@@ -25,7 +25,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * controla aspectos del usuario en el menu
  * @author alexi
  */
 public class EmployeController implements Initializable {
@@ -80,7 +80,7 @@ public class EmployeController implements Initializable {
     }    
 
     /**
-     *
+     * muestra datos del empleado
      * @param event
      * @throws IOException
      */

@@ -15,7 +15,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * Metodo no se usa
+ * @see controller.popup.SucessController
  * @author alexi
  */
 public class PopUp {

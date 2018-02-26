@@ -24,7 +24,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Maneja la venta
  * @author alexi
  */
 public class SellController implements Initializable {

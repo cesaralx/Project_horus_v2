@@ -75,7 +75,7 @@ public class ViewChatController implements Initializable {
     } 
     
     /**
-     *
+     * configura el server chat
      */
     public class ClientHandler implements Runnable {
 
@@ -100,7 +100,7 @@ public class ViewChatController implements Initializable {
         }
 
         /**
-         *
+         * inicia el proceso del server de chat
          */
         @Override
         public void run() {
@@ -144,7 +144,7 @@ public class ViewChatController implements Initializable {
     {
 
         /**
-         *
+         * ejecuta el hilo del chat
          */
         @Override
         public void run() 
@@ -172,7 +172,7 @@ public class ViewChatController implements Initializable {
     }//ServerStart
     
     /**
-     *
+     * agrega un nuevo usuario
      * @param data
      */
     public void userAdd (String data) 
@@ -193,7 +193,7 @@ public class ViewChatController implements Initializable {
     }//userAdd
     
     /**
-     *
+     * remueve un usuario
      * @param data
      */
     public void userRemove (String data) 
@@ -212,7 +212,7 @@ public class ViewChatController implements Initializable {
     }//userRemove
     
     /**
-     *
+     * mensaje para todos
      * @param message
      */
     public void tellEveryone(String message) 

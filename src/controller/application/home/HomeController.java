@@ -38,7 +38,7 @@ import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
- *
+ * Controlador para el menu principal
  * @author alexi
  */
 public class HomeController implements Initializable {
@@ -91,7 +91,7 @@ public class HomeController implements Initializable {
     }    
     
     /**
-     *
+     * Optiene datos para formar la grafica al incio
      * @throws IOException
      */
     public void getPieData() throws IOException {
@@ -118,7 +118,7 @@ public class HomeController implements Initializable {
     }
     
     /**
-     *
+     * cuenta numero de campos en el query de productos
      */
     public void valueCount(){
         con = dbCon.geConnection();
@@ -168,7 +168,7 @@ public class HomeController implements Initializable {
     }
     
     /**
-     *
+     * conteo del total de los querys para formar la grafica
      */
     public void totalCount(){
         con = dbCon.geConnection();

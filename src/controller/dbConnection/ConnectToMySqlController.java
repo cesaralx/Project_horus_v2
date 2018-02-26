@@ -16,8 +16,9 @@ import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
- *
- * @author rifat
+ * conexion a server Mysql
+ * @author alexi
+ * @deprecated no se usa
  */
 public class ConnectToMySqlController implements Initializable {
     @FXML

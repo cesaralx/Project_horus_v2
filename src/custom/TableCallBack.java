@@ -7,7 +7,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 /**
- *
+ * Call back para el llenado de las tablas
  * @author alexi
  */
 public class TableCallBack implements Callback<TableColumn<Object, Object>, TableCell<Object, Object>> {

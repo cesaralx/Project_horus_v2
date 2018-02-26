@@ -246,7 +246,7 @@ public class NewSellController implements Initializable {
     }
 
     /**
-     *
+     * muestra todo el la venta
      */
     public void viewAll() {
         tblSellPreList.setItems(preList);
@@ -297,7 +297,7 @@ public class NewSellController implements Initializable {
     }
 
     /**
-     *
+     * Limpia todos los campos
      */
     public void clearAll() {
         tfBrand.clear();
@@ -353,7 +353,7 @@ public class NewSellController implements Initializable {
     }
 
     /**
-     *
+     * agrega un clientea  la venta
      * @param actionEvent
      */
     @FXML

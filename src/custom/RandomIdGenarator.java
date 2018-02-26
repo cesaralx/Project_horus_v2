@@ -15,7 +15,7 @@ public class RandomIdGenarator {
      *
      * @param lo
      * @param hi
-     * @return
+     * @return string generado
      */
     public static String randomstring(int lo, int hi){
                   int n = rand(lo, hi);
