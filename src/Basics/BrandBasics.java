@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Utiliza las acciones descritas BrandsGetway 
  * @see Actions.BrandsGetway
  * @author alexi
  */

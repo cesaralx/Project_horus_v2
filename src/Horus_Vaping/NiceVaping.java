@@ -18,7 +18,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
- *
+ *clase que se encarga de lanzar el login
  * @author alexi
  */
 public class NiceVaping extends Application {

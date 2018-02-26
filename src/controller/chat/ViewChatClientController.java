@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
- *
+ * Cliente chat
  * @author alexi
  */
 public class ViewChatClientController implements Initializable {

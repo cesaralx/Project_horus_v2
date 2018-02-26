@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Maneja las acciones para la venta
  * @see Actions.SellCartGerway
  * @author alexi
  */

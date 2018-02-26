@@ -50,7 +50,7 @@ import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
- *
+ * Controlador para la vista de mi cuenta
  * @author alexi
  */
 public class MyAccountController implements Initializable {
@@ -105,7 +105,7 @@ public class MyAccountController implements Initializable {
 
     /**
      *
-     * @return
+     * @return userid
      */
     public userNameMedia getUsrMediaID() {
         return usrMediaID;
@@ -113,7 +113,7 @@ public class MyAccountController implements Initializable {
 
     /**
      *
-     * @param usrMediaID
+     * @param usrMediaID el user logeado
      */
     public void setUsrMediaID(userNameMedia usrMediaID) {
         userID = usrMediaID.getId();
@@ -199,7 +199,7 @@ public class MyAccountController implements Initializable {
     }
 
     /**
-     *
+     * muestra detalles del usuario
      */
     public void showDetails() {
         users.id = userID;
@@ -214,7 +214,7 @@ public class MyAccountController implements Initializable {
     }
 
     /**
-     *
+     * muestra permisos del usuario
      */
     public void accountPermission() {
         con = dbCon.geConnection();

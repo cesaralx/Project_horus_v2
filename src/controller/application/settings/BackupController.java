@@ -10,8 +10,10 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
 /**
+ * 
  * FXML Controller class
- *
+ * Pensada para un backup, no implementada
+ * @deprecated no se usa mas esta
  * @author alexi
  */
 public class BackupController implements Initializable {

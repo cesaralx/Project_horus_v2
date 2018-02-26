@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Maneja las acciones de clientes
  * @see Actions.CustomerGetway
  * @author alexi
  */

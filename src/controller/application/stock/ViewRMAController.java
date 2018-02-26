@@ -42,7 +42,7 @@ import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
- *
+ * muestra las politicas de devolucion
  * @author alexi
  */
 public class ViewRMAController implements Initializable {
@@ -157,7 +157,7 @@ public class ViewRMAController implements Initializable {
     }
 
     /**
-     *
+     * muestra las devoluciones
      */
     public void showDetails() {
         tblViewRMA.setItems(rma.rmaDetails);
@@ -176,7 +176,7 @@ public class ViewRMAController implements Initializable {
     }
 
     /**
-     *
+     * agrega una nueva
      * @param actionEvent
      */
     @FXML

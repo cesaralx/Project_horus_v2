@@ -6,7 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * modelo unidades de productos
  * @author alexi
  */
 public class Unit {

@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 
 /**
  * FXML Controller class
- *
+ * Maneja la venta acerca de 
  * @author alexi
  */
 public class AboutController implements Initializable {

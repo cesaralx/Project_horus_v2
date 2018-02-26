@@ -42,7 +42,7 @@ import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
- *
+ * muestra las unidades de los productos
  * @author alexi
  */
 public class ViewUnitController implements Initializable {

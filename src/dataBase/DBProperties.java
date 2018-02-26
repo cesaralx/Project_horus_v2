@@ -18,7 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * propiedades de la conexion, usuario,host,puerto, etc
  * @author alexi
  */
 public class DBProperties {

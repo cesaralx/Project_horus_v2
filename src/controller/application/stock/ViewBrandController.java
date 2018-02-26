@@ -39,8 +39,8 @@ import java.util.Optional;
 
 /**
  * FXML Controller class
- *
- * @author rifat
+ * Controllador de mostrar marcas
+ * @author alexi
  */
 public class ViewBrandController implements Initializable {
 

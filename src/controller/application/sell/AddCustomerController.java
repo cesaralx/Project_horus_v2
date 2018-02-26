@@ -17,7 +17,7 @@ import UserLogged.userNameMedia;
 import Models.Customer;
 
 /**
- *
+ * Agrega cliente a ventas
  * @author alexi
  */
 public class AddCustomerController implements Initializable {
@@ -59,7 +59,7 @@ public class AddCustomerController implements Initializable {
     
     /**
      *
-     * @param nameMedia
+     * @param nameMedia el usuario logeado
      */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();

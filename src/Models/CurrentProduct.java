@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Modelo para productos
  * @author alexi
  */
 public class CurrentProduct {

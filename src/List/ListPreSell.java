@@ -7,7 +7,6 @@ package List;
 
 /**
  *  el proposito es retornar todos los valoes puestos
- * @see Actions.SellCartGetway
  * @author alexi
  */
 public class ListPreSell {

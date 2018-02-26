@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import java.sql.*;
 
 /**
- *
+ * modelo de usuarios
  * @author alexi
  */
 public class Users extends Person{

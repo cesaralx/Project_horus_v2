@@ -6,7 +6,7 @@
 package Models;
 
 /**
- *
+ * Modelo persona
  * @author alexi
  */
 public class Person {

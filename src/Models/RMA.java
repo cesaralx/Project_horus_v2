@@ -6,7 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Modelo politicas de devolucion
  * @author alexi
  */
 public class RMA {

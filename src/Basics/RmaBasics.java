@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Maneja las acciones de devoluciones
  * @see Actions.RmaGetway
  * @author alexi
  */

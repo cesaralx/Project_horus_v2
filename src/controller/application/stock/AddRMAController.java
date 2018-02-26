@@ -29,7 +29,7 @@ import Models.RMA;
 
 /**
  * FXML Controller class
- *
+ * Agrega una politica devolucion
  * @author alexi
  */
 public class AddRMAController implements Initializable {

@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Controlador de la conexion de SQL server
  * @author alexi
  */
 public class DBConnection {

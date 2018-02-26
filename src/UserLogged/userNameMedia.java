@@ -6,7 +6,7 @@
 package UserLogged;
 
 /**
- *
+ * esta clase guarda el usuario logeado y se usa en toda la interfaz
  * @author alexi
  */
 

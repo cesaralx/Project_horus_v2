@@ -41,6 +41,7 @@ import javafx.scene.image.Image;
 import javafx.stage.StageStyle;
 
 /**
+ * @deprecated no se usa mas este login
  * FXML Controller class
  *
  * @author alexi

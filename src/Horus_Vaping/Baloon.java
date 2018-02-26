@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
  * esto maneja las notificaciones emergentes
  * @author alexi
  * @version 1.5
- * @see Visitar <a href="http://www.google.com">Factory Management System</a></font>
  */
 public class Baloon {
 

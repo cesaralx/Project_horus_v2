@@ -41,7 +41,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Maneja el stock de productos lo que bien seria unit
  * @author alexi
  */
 public class StockController implements Initializable {

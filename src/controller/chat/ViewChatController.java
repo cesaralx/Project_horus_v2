@@ -24,7 +24,7 @@ import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
- *
+ * Server chat
  * @author alexi
  */
 public class ViewChatController implements Initializable {

@@ -49,7 +49,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Agrega producto
  * @author alexi
  */
 public class AddProductController implements Initializable {

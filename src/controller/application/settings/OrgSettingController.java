@@ -42,7 +42,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Controlador de la vista de organizacion
  * @author alexi
  */
 public class OrgSettingController implements Initializable {
@@ -156,7 +156,7 @@ public class OrgSettingController implements Initializable {
      */
 
     /**
-     *
+     * muestra detalles de la organizacion
      */
     public void showDetails() {
         con = dbCon.geConnection();

@@ -39,7 +39,7 @@ import java.util.Optional;
 
 /**
  * FXML Controller class
- *
+ * Muestra las categorias
  * @author alexi
  */
 public class ViewCatagoryController implements Initializable {
@@ -202,7 +202,7 @@ public class ViewCatagoryController implements Initializable {
     }
 
     /**
-     *
+     * muestra detalle de la categoria
      */
     public void showDetails() {
         tblCatagory.setItems(catagory.catagoryDetails);
@@ -220,7 +220,7 @@ public class ViewCatagoryController implements Initializable {
     }
 
     /**
-     *
+     * busca una categoria
      * @param event
      */
     @FXML

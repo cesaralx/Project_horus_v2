@@ -56,7 +56,7 @@ import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 /**
- * @see view.application.fxml
+ * Login principal de la aplicacion
  * @author alexi
  */
 public class LoginController1 implements Initializable {

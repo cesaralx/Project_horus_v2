@@ -14,7 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * pensado en conexion SQL lite para mobile
+ * @deprecated  no se usa
  * @author alexi
  */
 public class SQLightConnection {

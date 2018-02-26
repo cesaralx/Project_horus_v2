@@ -7,7 +7,6 @@ package List;
 
 /**
  * el proposito es retornar todos los valoes puestos
- * @see Actions.OrdersGetway
  * @author alexi
  */
 public class ListOrders {

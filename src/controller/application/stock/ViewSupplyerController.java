@@ -38,7 +38,7 @@ import UserLogged.userNameMedia;
 
 /**
  * FXML Controller class
- *
+ * Muestra todos los proveedores
  * @author alexi
  */
 public class ViewSupplyerController implements Initializable {
@@ -136,8 +136,8 @@ public class ViewSupplyerController implements Initializable {
     }
 
     /**
-     *
-     * @param event
+     * muestra los proveedores en una tabla
+     * @param event el evento de buscar
      */
     @FXML
     public void tfSearchOnType(Event event) {

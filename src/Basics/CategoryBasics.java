@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Se encarga de usar las acciones de CatagoryGetway
  * @see Actions.CatagoryGetway
  * @author alexi
  */

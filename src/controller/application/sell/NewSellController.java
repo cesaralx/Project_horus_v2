@@ -42,8 +42,8 @@ import custom.RandomIdGenarator;
 import java.time.LocalDateTime;
 
 /**
- *
- * @author rifat
+ * Controlador para la venta nueva
+ * @author alexi
  */
 public class NewSellController implements Initializable {
 
@@ -137,7 +137,7 @@ public class NewSellController implements Initializable {
 
     /**
      *
-     * @param nameMedia
+     * @param nameMedia user logeado
      */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
@@ -246,7 +246,7 @@ public class NewSellController implements Initializable {
     }
 
     /**
-     * muestra todo el la venta
+     * muestra todo la venta
      */
     public void viewAll() {
         tblSellPreList.setItems(preList);

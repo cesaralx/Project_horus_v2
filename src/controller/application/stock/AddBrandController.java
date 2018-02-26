@@ -41,8 +41,8 @@ import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
- *
- * @author rifat
+ * Agregar una marca
+ * @author alexi
  */
 public class AddBrandController implements Initializable {
 

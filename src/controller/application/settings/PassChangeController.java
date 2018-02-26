@@ -32,6 +32,7 @@ import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
+ * Pensada para el cambio de password de usuario
  *
  * @author alexi
  */

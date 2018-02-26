@@ -23,6 +23,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Maneja el CRUD de las categorias
  * @author alexi
  */
 public class CatagoryGetway {

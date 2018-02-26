@@ -19,7 +19,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * Pensada en crear la Bd si no existe
+ * @deprecated no se usa
  * @author alexi
  */
 public class DBModel {

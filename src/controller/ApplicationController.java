@@ -246,7 +246,6 @@ public class ApplicationController implements Initializable {
 
     /**
      * redirige a home.fxml
-     * @see view.application.home.home.fxml
      * @param event
      * @throws IOException
      */

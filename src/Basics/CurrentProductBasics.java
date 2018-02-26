@@ -15,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Se encarga de jecutar las acciones de CurrentProductGetway
  * @see Actions.CurrentProductGetway
  * @author alexi
  */

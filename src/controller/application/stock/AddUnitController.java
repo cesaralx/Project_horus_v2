@@ -29,7 +29,7 @@ import Models.Unit;
 
 /**
  * FXML Controller class
- *
+ * Agrega unidad de producto
  * @author alexi
  */
 public class AddUnitController implements Initializable {

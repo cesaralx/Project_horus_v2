@@ -6,7 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Modelo ventas
  * @author alexi
  */
 public class SellCart {

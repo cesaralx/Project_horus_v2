@@ -38,7 +38,7 @@ import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 /**
- * FXML Controller class
+ * FXML Controller class, controla aspectos de l aventa de settings
  *
  * @author alexi
  */

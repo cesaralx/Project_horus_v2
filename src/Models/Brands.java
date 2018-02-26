@@ -6,7 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * modelo para marcas
  * @author alexi
  */
 public class Brands {

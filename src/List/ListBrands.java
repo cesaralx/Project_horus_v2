@@ -2,7 +2,6 @@ package List;
 
 /**
  * el proposito es retornar todos los valoes puestos
- * @see Actions.BrandsGetway()
  * @author alexi
  */
 public class ListBrands{

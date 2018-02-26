@@ -6,7 +6,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 /**
- *
+ * Efecto en las celdas de las tablas
  * @author alexi
  */
 public class CellFactories {

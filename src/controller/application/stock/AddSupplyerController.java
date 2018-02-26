@@ -26,7 +26,7 @@ import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
- *
+ * Agrega un proveedor
  * @author alexi
  */
 public class AddSupplyerController implements Initializable {

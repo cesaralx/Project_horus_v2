@@ -40,8 +40,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
 /**
- *
- * @author rifat
+ * Vista del cliente
+ * @author alexi
  */
 public class ViewCustomerController implements Initializable {
 

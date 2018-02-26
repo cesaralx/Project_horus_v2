@@ -35,7 +35,7 @@ import javafx.stage.StageStyle;
 import UserLogged.userNameMedia;
 
 /**
- *
+ * Vista de la venta
  * @author alexi
  */
 public class ViewSellController implements Initializable{

@@ -21,6 +21,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * Maneja el CRUD de productos
  * @author alexi
  */
 public class CurrentProductGetway {

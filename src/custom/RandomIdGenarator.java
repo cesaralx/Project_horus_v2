@@ -6,7 +6,7 @@
 package custom;
 
 /**
- *
+ * Generador random de strings
  * @author alexi
  */
 public class RandomIdGenarator {

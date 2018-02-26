@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  * @deprecated No se usa
- * @see view.popup
  * @author alexi
  */
 public class SucessController implements Initializable {

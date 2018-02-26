@@ -47,7 +47,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
- *
+ * controlador de la sucursal
  * @author alexi
  */
 public class CurrentStoreController implements Initializable {

@@ -6,7 +6,7 @@
 package Models;
 
 /**
- *
+ * Modelo para conexion
  * @author alexi
  */
 public class MysqlConnector {

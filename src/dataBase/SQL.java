@@ -24,7 +24,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 /**
- *
+ * controla los usuarios que se den de alta desde la ventana de login 
+ * cuando se auto genera un nuevo usuario, sin ser dado de alta por otro
  * @author alexi
  */
 public class SQL {

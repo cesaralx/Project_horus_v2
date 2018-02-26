@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * modelo de las ordenes
  * @author alexi
  */
 public class Orders {

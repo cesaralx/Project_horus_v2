@@ -41,7 +41,7 @@ import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
- *
+ * Agrega categoria
  * @author alexi
  */
 public class AddCategoryController implements Initializable {
