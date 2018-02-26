@@ -82,10 +82,18 @@ public class OrgSettingController implements Initializable {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getUsrIdMedia() {
         return usrIdMedia;
     }
 
+    /**
+     *
+     * @param usrIdMedia
+     */
     public void setUsrIdMedia(userNameMedia usrIdMedia) {
         userId = usrIdMedia.getId();
         this.usrIdMedia = usrIdMedia;
@@ -93,6 +101,8 @@ public class OrgSettingController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -145,6 +155,9 @@ public class OrgSettingController implements Initializable {
     
      */
 
+    /**
+     *
+     */
     public void showDetails() {
         con = dbCon.geConnection();
         try {

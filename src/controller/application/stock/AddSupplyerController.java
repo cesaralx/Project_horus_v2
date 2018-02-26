@@ -33,6 +33,9 @@ public class AddSupplyerController implements Initializable {
 
     private String usrId;
 
+    /**
+     *
+     */
     public String supplyerId;
 
     private userNameMedia media;
@@ -42,14 +45,30 @@ public class AddSupplyerController implements Initializable {
     private TextArea taSupplyerAddress;
     @FXML
     private TextArea taSupplyerDescription;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
     @FXML
     private TextArea taContactNumbers;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClose;
+
+    /**
+     *
+     */
     @FXML
     public Label lblCaption;
 
@@ -57,10 +76,18 @@ public class AddSupplyerController implements Initializable {
     @FXML
     private AnchorPane apContent;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -94,6 +121,10 @@ public class AddSupplyerController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isNotNull() {
         boolean isNotNull;
         if (tfSupplyerName.getText().trim().isEmpty()
@@ -142,6 +173,9 @@ public class AddSupplyerController implements Initializable {
         stage.close();
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         oSupplier.id = supplyerId;
         supplyerGetway.selectedView(oSupplier);
@@ -161,6 +195,10 @@ public class AddSupplyerController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param stage
+     */
     public void addSupplyerStage(Stage stage) {
         EffectUtility.makeDraggable(stage, apContent);
     }

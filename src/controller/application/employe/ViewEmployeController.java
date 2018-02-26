@@ -119,16 +119,40 @@ public class ViewEmployeController implements Initializable {
     private TextField tfCreatedBy;
     @FXML
     private TextArea taAddress;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrFulNametf;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrEmailtf;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrPhonetf;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrSalarytf;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrDatestf;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrCreatortf;
     @FXML
@@ -148,10 +172,18 @@ public class ViewEmployeController implements Initializable {
 
     Image usrImg = new Image("/image/rifat.jpg");
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         name = nameMedia.getUsrName();
@@ -160,6 +192,8 @@ public class ViewEmployeController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -213,6 +247,10 @@ public class ViewEmployeController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param event
+     */
     public void tblEmloyeOnClick(Event event) {
         setselectedView();
     }
@@ -335,6 +373,9 @@ public class ViewEmployeController implements Initializable {
         history.viewText(emp, tfUserName.getText(), name);
     }
 
+    /**
+     *
+     */
     public void setselectedView() {
         clearAll();
         ListEmployee employeeList = tblEmoyeeList.getSelectionModel().getSelectedItem();
@@ -376,6 +417,9 @@ public class ViewEmployeController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         tblEmoyeeList.setItems(users.employeeLists);
         clmEmployeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
@@ -384,6 +428,9 @@ public class ViewEmployeController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void checqPermission() {
         try {
             pst = con.prepareStatement("select * from userpermission where UsuarioId=?");

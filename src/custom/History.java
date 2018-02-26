@@ -27,6 +27,12 @@ import javafx.stage.Stage;
  */
 public class History {
     
+    /**
+     *
+     * @param Catagorys
+     * @param nameOrId
+     * @param userName
+     */
     public void writeText(String Catagorys,String nameOrId, String userName){
         try {
             String content = "Actualizado por    :" + userName + "\nFecha\t:" + LocalDate.now().toString() + "\n------------------------";
@@ -49,6 +55,12 @@ public class History {
         }
     }
     
+    /**
+     *
+     * @param Catagoryes
+     * @param nameOrId
+     * @param userName
+     */
     public void viewText(String Catagoryes,String nameOrId, String userName){
         try {
             HistoryController hc = new HistoryController();

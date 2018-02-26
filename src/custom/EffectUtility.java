@@ -16,6 +16,11 @@ import javafx.stage.Stage;
  */
 public class EffectUtility {
 
+    /**
+     *
+     * @param stage
+     * @param byNode
+     */
     public static void makeDraggable(final Stage stage, final Node byNode) {
         final Delta dragDelta = new Delta();
         byNode.setOnMousePressed((MouseEvent event) -> {
@@ -42,6 +47,9 @@ public class EffectUtility {
         });
     }
 
+    /**
+     *
+     */
     public static class Delta {
 
         double x, y;

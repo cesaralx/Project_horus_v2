@@ -32,6 +32,10 @@ public class SQLightConnection {
 
     String demoValue = "insert into mysqlInof values(?,?,?,?,?)";
 
+    /**
+     *
+     * @return
+     */
     public Connection sqliteConnection() {
         try {
             Class.forName("org.sqlite.JDBC");

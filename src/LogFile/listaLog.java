@@ -3,12 +3,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.FileHandler;
 
+/**
+ * esta clase se encarga de el manejo del logfile
+ * @author alexi
+ */
 public class listaLog {
 
     int tam;
     modeloLog inicio, fin, anterior;
     int pos;
     
+    /**
+     * inicia el logile
+     */
     public void inicializacion() {
         this.inicio = null;
         this.anterior = null;
@@ -16,6 +23,11 @@ public class listaLog {
         this.tam = 0;
     }
 
+    /**
+     * este metodo busca si la lista esta vacia
+     * @param log
+     * @throws IOException
+     */
     public void ins_vacia(String log) throws IOException {
         if (tam != 0) {
             System.out.println("\n La lista tiene datos...");
@@ -31,6 +43,11 @@ public class listaLog {
         }
     }
     
+    /**
+     *
+     * @param log
+     * @throws IOException
+     */
     public void ins_inicio(String log) throws IOException {
         if (tam == 0) {
             System.out.println("\n La lista esta vacia...");
@@ -84,6 +101,11 @@ public class listaLog {
 //        }
 //
 //    }
+
+    /**
+     * imprime los datos del log
+     * @throws IOException
+     */
      
     public void visualizar() throws IOException {
         if (tam == 0) {
@@ -98,7 +120,11 @@ public class listaLog {
         }
     }
     
-        public void generarLogOrdenado() throws IOException {
+    /**
+     * genera el logfile ordenado y lo guarda en una ubicacion
+     * @throws IOException
+     */
+    public void generarLogOrdenado() throws IOException {
         if (tam == 0) {
             System.out.println("NO HAY DATOS ALMACENADOS");
         } else {
@@ -118,7 +144,11 @@ public class listaLog {
         }
     }
 
-        public void visualizar_invert() throws IOException {
+    /**
+     * visualiza el logfile invertido
+     * @throws IOException
+     */
+    public void visualizar_invert() throws IOException {
         if (tam == 0) {
             System.out.println("NO HAY DATOS ALMACENADOS");
         } else {
@@ -236,6 +266,11 @@ public class listaLog {
 //        }
 //
 //    }
+
+    /**
+     * ordena tippo burbuja el logfile
+     * @throws IOException
+     */
         
          public void bubbleSortTipo() throws IOException {
         logger log = new logger();
@@ -273,6 +308,9 @@ public class listaLog {
         }
     }
 
+    /**
+     *ayuda del metodo burbuja para ordenar
+     */
     private void swap(modeloLog n1, modeloLog n2) throws IOException {
         logger log = new logger();
         log.wirteLogInfo("Cambiando n1: " + n1.getTipo() + " con n2: " + n2.getTipo());
@@ -291,6 +329,9 @@ public class listaLog {
         n2.setSiguiente(aux.getSiguiente());
     }
     
+    /**
+     * ordena por metodo quickshort
+     */
     public void quickSort() {
         modeloLog actual = inicio;
         modeloLog head = lastNode(actual);

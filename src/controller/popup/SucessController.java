@@ -22,8 +22,15 @@ import javafx.stage.Stage;
  */
 public class SucessController implements Initializable {
    
+    /**
+     *
+     */
     @FXML
     public Button btnClose;
+
+    /**
+     *
+     */
     @FXML
     public Text message;
     @FXML
@@ -31,6 +38,8 @@ public class SucessController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
+ * maneja los proveedores
  * @author alexi
  */
 public class SupplyerGetway {
@@ -32,6 +33,10 @@ public class SupplyerGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     * guarda un nuevo proeedor
+     * @param supplyer
+     */
     public void save(Orders supplyer) {
         con = dbCon.geConnection();
         if (isUniqSupplyerName(supplyer)) {
@@ -61,6 +66,10 @@ public class SupplyerGetway {
 
     }
 
+    /**
+     * busca todos los proveedores
+     * @param supplyer
+     */
     public void view(Orders supplyer) {
         con = dbCon.geConnection();
         try {
@@ -86,6 +95,10 @@ public class SupplyerGetway {
         }
     }
 
+    /**
+     * busca proveedoores por nombre o telefono
+     * @param supplyer
+     */
     public void searchView(Orders supplyer) {
         supplyer.supplyerDetails.clear();
         con = dbCon.geConnection();
@@ -114,6 +127,10 @@ public class SupplyerGetway {
         }
     }
 
+    /**
+     * selecciona proveedores por id
+     * @param supplyer
+     */
     public void selectedView(Orders supplyer) {
         System.out.println("nombre :" + supplyer.supplyerName);
         con = dbCon.geConnection();
@@ -140,6 +157,10 @@ public class SupplyerGetway {
         }
     }
 
+    /**
+     * actualiza proveedores existentes
+     * @param supplyer
+     */
     public void update(Orders supplyer) {
         con = dbCon.geConnection();
         try {
@@ -170,6 +191,10 @@ public class SupplyerGetway {
 
     }
 
+    /**
+     * elimina un proveedor existente
+     * @param supplyer
+     */
     public void delete(Orders supplyer) {
         con = dbCon.geConnection();
         try {
@@ -198,6 +223,11 @@ public class SupplyerGetway {
 
     }
 
+    /**
+     * busca si ya existe el proveedor
+     * @param supplyer
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isUniqSupplyerName(Orders supplyer) {
         con = dbCon.geConnection();
         boolean uniqSupplyer = false;
@@ -226,6 +256,10 @@ public class SupplyerGetway {
         return uniqSupplyer;
     }
 
+    /**
+     * actualiza el proveedor
+     * @param supplyer
+     */
     public void updateNow(Orders supplyer) {
         con = dbCon.geConnection();
         try {
@@ -250,6 +284,10 @@ public class SupplyerGetway {
         }
     }
 
+    /**
+     * elimina un proveedor
+     * @param supplyer
+     */
     public void deleteParmanently(Orders supplyer) {
         con = dbCon.geConnection();
         try {
@@ -277,6 +315,11 @@ public class SupplyerGetway {
         return isUpdate;
     }
 
+    /**
+     * busca proveedores existentes
+     * @param supplyer
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotUse(Orders supplyer) {
         con = dbCon.geConnection();
         boolean isNotUse = false;

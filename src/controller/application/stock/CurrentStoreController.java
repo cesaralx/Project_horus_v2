@@ -62,6 +62,10 @@ public class CurrentStoreController implements Initializable {
     private String usrId;
 
     private userNameMedia media;
+
+    /**
+     *
+     */
     @FXML
     public StackPane spProductContent;
     @FXML
@@ -123,13 +127,25 @@ public class CurrentStoreController implements Initializable {
     SQL sql = new SQL();
     @FXML
     private Button btnRefresh;
+
+    /**
+     *
+     */
     @FXML
     public AnchorPane apCombobox;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -321,6 +337,9 @@ showDetails();
         }
     }
 
+    /**
+     *
+     */
     public void viewDetails() {
      tblViewCurrentStore.setItems(productCurrent.currentProductList);
         tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
@@ -440,6 +459,9 @@ showDetails();
         }
     }
 
+    /**
+     *
+     */
     public void settingPermission() {
         con = dbCon.geConnection();
         try {
@@ -471,6 +493,9 @@ showDetails();
 
     }
     
+    /**
+     *
+     */
     public void showDetails(){
                 productCurrent.currentProductList.clear();
         tfSearch.clear();

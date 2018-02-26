@@ -35,6 +35,10 @@ public class CurrentProductGetway {
 
     SQL sql = new SQL();
 
+    /**
+     * guarda un producto nuevo
+     * @param currentProduct producto a guardar
+     */
     public void save(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
@@ -66,6 +70,10 @@ public class CurrentProductGetway {
 
     }
 
+    /**
+     * slecciona todo de productos
+     * @param currentProduct
+     */
     public void view(CurrentProduct currentProduct) {
         currentProduct.currentProductList.clear();
         con = dbCon.geConnection();
@@ -106,6 +114,10 @@ public class CurrentProductGetway {
 
     }
 
+    /**
+     *selecciona por id
+     * @param currentProduct
+     */
     public void selectedView(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
@@ -142,6 +154,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona los primeros 15
+     * @param currentProduct
+     */
     public void viewFistTen(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -181,6 +197,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     * selecciona productos por id y nombre
+     * @param currentProduct
+     */
     public void searchView(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -222,6 +242,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona productos por medio del id de proveedor
+     * @param currentProduct
+     */
     public void searchBySupplyer(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -262,6 +286,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *busca productos por medio del id de la marca
+     * @param currentProduct
+     */
     public void searchByBrand(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -305,6 +333,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona productos por medio de la categoria
+     * @param currentProduct
+     */
     public void searchByCatagory(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -347,6 +379,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona productos por medio del id de devolucion
+     * @param currentProduct
+     */
     public void searchByRMA(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -387,6 +423,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona productos por medio del id
+     * @param currentProduct
+     */
     public void sView(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -429,6 +469,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *selecciona los proveedores actuales
+     * @param currentProduct
+     */
     public void cbSupplyer(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -446,6 +490,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *actualiza un producto existente
+     * @param currentProduct
+     */
     public void update(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
 
@@ -481,6 +529,10 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *elimina un producto existente
+     * @param currentProduct
+     */
     public void delete(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         try {
@@ -494,6 +546,11 @@ public class CurrentProductGetway {
         }
     }
 
+    /**
+     *verifica si ya existe un producto
+     * @param currentProduct
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotSoled(CurrentProduct currentProduct) {
         con = dbCon.geConnection();
         boolean isNotSoled = false;

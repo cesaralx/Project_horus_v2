@@ -11,7 +11,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * @see Actions.SellCartGerway
+ * @author alexi
+ */
 public class SellCartBasics {
 
     SellCartGerway sellCartGerway = new SellCartGerway();
@@ -24,6 +27,10 @@ public class SellCartBasics {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @param sellCart
+     */
     public void sell(SellCart sellCart) {
 
         updateCurrentQuentity(sellCart);
@@ -31,6 +38,10 @@ public class SellCartBasics {
 
     }
 
+    /**
+     *
+     * @param sellCart
+     */
     public void updateCurrentQuentity(SellCart sellCart) {
         int oQ = Integer.parseInt(sellCart.oldQuentity);
         int nQ = Integer.parseInt(sellCart.quantity);

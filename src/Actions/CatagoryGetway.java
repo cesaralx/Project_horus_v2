@@ -36,6 +36,10 @@ public class CatagoryGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *guarda una categoria
+     * @param catagory
+     */
     public void save(Catagory catagory) {
         con = dbCon.geConnection();
         catagory.brandName = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
@@ -65,6 +69,10 @@ public class CatagoryGetway {
 
     }
 
+    /**
+     *recuoera todas las categorias dadas de alta
+     * @param catagory
+     */
     public void view(Catagory catagory) {
         con = dbCon.geConnection();
         try {
@@ -92,6 +100,10 @@ public class CatagoryGetway {
         }
     }
 
+    /**
+     *busca una categoria por id
+     * @param catagory
+     */
     public void selectedView(Catagory catagory) {
         con = dbCon.geConnection();
         try {
@@ -116,6 +128,10 @@ public class CatagoryGetway {
 
     }
 
+    /**
+     *selecciona las marcas por medio del proveedor
+     * @param catagory
+     */
     public void brandView(Catagory catagory) {
         con = dbCon.geConnection();
 
@@ -135,6 +151,10 @@ public class CatagoryGetway {
 
     }
 
+    /**
+     * busca categoria por nombre
+     * @param catagory
+     */
     public void searchView(Catagory catagory) {
         con = dbCon.geConnection();
         catagory.catagoryDetails.clear();
@@ -167,6 +187,10 @@ public class CatagoryGetway {
         }
     }
 
+    /**
+     *actualiza categorias
+     * @param catagory
+     */
     public void update(Catagory catagory) {
         con = dbCon.geConnection();
         catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
@@ -195,6 +219,10 @@ public class CatagoryGetway {
 
     }
 
+    /**
+     *elimina una categoria por id
+     * @param catagory
+     */
     public void delete(Catagory catagory) {
         con = dbCon.geConnection();
         try {
@@ -208,6 +236,11 @@ public class CatagoryGetway {
         }
     }
 
+    /**
+     *busca si la categoria ya existe
+     * @param catagory
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotUse(Catagory catagory) {
         con = dbCon.geConnection();
         boolean isNotUse = false;

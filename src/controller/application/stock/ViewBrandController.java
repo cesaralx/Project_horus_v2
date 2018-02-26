@@ -87,10 +87,18 @@ public class ViewBrandController implements Initializable {
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         usrName = media.getUsrName();
@@ -99,12 +107,18 @@ public class ViewBrandController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tblBrandOnClick(MouseEvent event) {
         int click = event.getClickCount();
@@ -185,6 +199,9 @@ public class ViewBrandController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         tblBrand.setItems(brands.brandDitails);
         tblCollumId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -220,6 +237,10 @@ public class ViewBrandController implements Initializable {
         }
     };
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfSearchOnAction(ActionEvent event) {
 

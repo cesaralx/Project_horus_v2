@@ -15,7 +15,10 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-
+/**
+ * @see Actions.RmaGetway
+ * @author alexi
+ */
 public class RmaBasics {
     SQL sql = new SQL();
     RmaGetway rmaGetway = new RmaGetway();
@@ -26,12 +29,20 @@ public class RmaBasics {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @param rma
+     */
     public void save(RMA rma){
         if(isUniqName(rma)){
             rmaGetway.save(rma);
         }
     }
 
+    /**
+     *
+     * @param rma
+     */
     public void update(RMA rma){
         if(sameName(rma)){
             rmaGetway.update(rma);
@@ -40,6 +51,11 @@ public class RmaBasics {
         }
     }
     
+    /**
+     *
+     * @param rma
+     * @return
+     */
     public Object delete(RMA rma){
         if(rmaGetway.isNotUse(rma)){
             rmaGetway.delete(rma);
@@ -49,6 +65,11 @@ public class RmaBasics {
         return rma;
     }
 
+    /**
+     *
+     * @param rma
+     * @return
+     */
     public boolean sameName(RMA rma){
         boolean sameName =false;
         try {
@@ -68,6 +89,11 @@ public class RmaBasics {
         return sameName;
     }
 
+    /**
+     *
+     * @param rma
+     * @return
+     */
     public boolean isUniqName(RMA rma) {
 
         boolean uniqRMA = false;

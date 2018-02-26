@@ -79,6 +79,10 @@ public class ViewCustomerController implements Initializable {
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -163,6 +167,9 @@ public class ViewCustomerController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void viewDetails() {
         tblCustomer.setItems(customer.customerList);
         tblClmName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
@@ -174,6 +181,9 @@ public class ViewCustomerController implements Initializable {
         customerGetway.view(customer);
     }
 
+    /**
+     *
+     */
     public void selectedView() {
         ListCustomer listCustomer = tblCustomer.getSelectionModel().getSelectedItem();
         String item = listCustomer.getId();

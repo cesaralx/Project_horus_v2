@@ -90,10 +90,18 @@ public class ViewUnitController implements Initializable {
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -211,6 +219,9 @@ public class ViewUnitController implements Initializable {
         miUpdateOnAction(event);
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         tblViewUnit.setItems(unit.unitDetails);
         clmUnitId.setCellValueFactory(new PropertyValueFactory<>("unitId"));
@@ -259,6 +270,10 @@ public class ViewUnitController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfSearchOnKeyResele(Event event) {
         unit.unitDetails.clear();

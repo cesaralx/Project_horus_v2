@@ -53,6 +53,10 @@ public class StockController implements Initializable {
     private String usrId;
 
     private userNameMedia userId;
+
+    /**
+     *
+     */
     @FXML
     public BorderPane bpStore;
     @FXML
@@ -75,10 +79,18 @@ public class StockController implements Initializable {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getUserId() {
         return userId;
     }
 
+    /**
+     *
+     * @param userId
+     */
     public void setUserId(userNameMedia userId) {
         usrId = userId.getId();
         this.userId = userId;
@@ -111,7 +123,11 @@ public class StockController implements Initializable {
 
     }
 
-
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void btnStockOnAction(ActionEvent event) throws IOException {
         lblHeader.setText("Tienda");
@@ -220,6 +236,9 @@ public class StockController implements Initializable {
     private void btnRepoertsOnAction(ActionEvent event) {
     }
     
+    /**
+     *
+     */
     public void settingPermission(){
         con = dbCon.geConnection();
         try {

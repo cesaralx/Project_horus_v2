@@ -17,6 +17,11 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
+/**
+ * carro que maneja carro de ventas.
+ * no se eliminan ventas
+ * @author alexi
+ */
 public class SellCartGerway {
 
     DBConnection dbCon = new DBConnection();
@@ -27,7 +32,10 @@ public class SellCartGerway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
-
+    /**
+     * inserta una venta nueva
+     * @param sellCart
+     */
     public void save(SellCart sellCart){
         con = dbCon.geConnection();
         try {
@@ -53,6 +61,10 @@ public class SellCartGerway {
         }
     }
 
+    /**
+     * retorna todas las ventas
+     * @param sellCart
+     */
     public void view(SellCart sellCart){
         con = dbCon.geConnection();
         SQL sql = new SQL();
@@ -84,6 +96,10 @@ public class SellCartGerway {
         }
     }
     
+    /**
+     * selecciona las priemras 15 ventas
+     * @param sellCart
+     */
     public void firstTenView(SellCart sellCart){
         con = dbCon.geConnection();
         SQL sql = new SQL();
@@ -115,6 +131,10 @@ public class SellCartGerway {
         }
     }
     
+    /**
+     * selecciona las ventas por medio del id
+     * @param sellCart
+     */
     public void searchView(SellCart sellCart){
         con = dbCon.geConnection();
         sellCart.carts.clear();
@@ -148,7 +168,11 @@ public class SellCartGerway {
         }
     }
     
-       public void update(SellCart sellCart) {
+    /**
+     * actualiza una venta existente
+     * @param sellCart
+     */
+    public void update(SellCart sellCart) {
            con = dbCon.geConnection();
         try {
             pst = con.prepareStatement("update venta set ClienteId=?,"

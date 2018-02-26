@@ -53,6 +53,7 @@ import javafx.util.Duration;
 import UserLogged.userNameMedia;
 
 /**
+ * Esta controla todos los aspectos del menu
  * FXML Controller class
  *
  * @author alexi
@@ -140,14 +141,26 @@ public class ApplicationController implements Initializable {
 
     private userNameMedia usrNameMedia;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getUsrNameMedia() {
         return usrNameMedia;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getUsrName() {
         return usrName;
     }
 
+    /**
+     * pone el username actualmente logeado
+     * @param usrNameMedia
+     */
     public void setUsrNameMedia(userNameMedia usrNameMedia) {
         lblUserId.setText(usrNameMedia.getId());
         lblUsrName.setText(usrNameMedia.getUsrName());
@@ -231,6 +244,12 @@ public class ApplicationController implements Initializable {
         }
     }
 
+    /**
+     * redirige a home.fxml
+     * @see view.application.home.home.fxml
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void btnHomeOnClick(ActionEvent event) throws IOException{
         log.wirteLogInfo("Entrando en home");
@@ -385,6 +404,9 @@ public class ApplicationController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void permission() {
         con = dbCon.geConnection();
 
@@ -498,6 +520,9 @@ public class ApplicationController implements Initializable {
         btnAbout.setStyle(activeStyle);
     }
 
+    /**
+     *
+     */
     public void viewDetails() {
         users.id = id;
         usersGetway.selectedView(users);

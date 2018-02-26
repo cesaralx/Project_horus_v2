@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 import UserLogged.userNameMedia;
 import Models.Customer;
 
+/**
+ *
+ * @author alexi
+ */
 public class AddCustomerController implements Initializable {
     @FXML
     private TextField tfCustomerName;
@@ -23,22 +27,40 @@ public class AddCustomerController implements Initializable {
     private TextArea taCustomerContact;
     @FXML
     private TextArea taCustomerAddress;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
+
+    /**
+     *
+     */
     @FXML
     public Label lblCustomerContent;
     @FXML
     private Button btnClose;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
     
+    /**
+     *
+     */
     public String customerId;
     
     private String userId;
     
     userNameMedia nameMedia;
     
-
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -77,6 +99,9 @@ public class AddCustomerController implements Initializable {
         customerBLL.update(customer);
     }
     
+    /**
+     *
+     */
     public void viewDetails(){
         customer.id = customerId;
         customerGetway.selectedView(customer);

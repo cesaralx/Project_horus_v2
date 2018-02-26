@@ -12,7 +12,10 @@ import java.sql.SQLException;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-
+/**
+ * @see Actions.CustomerGetway
+ * @author alexi
+ */
 public class CustomerBasics {
     SQL sql = new SQL();
     CustomerGetway customerGetway = new CustomerGetway();
@@ -23,12 +26,20 @@ public class CustomerBasics {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @param customer
+     */
     public void save(Customer customer){
         if(isUniqName(customer)){
             customerGetway.save(customer);
         }
     }
 
+    /**
+     *
+     * @param customer
+     */
     public void update(Customer customer){
         if(isUpdate(customer)){
             if(isSame(customer)){
@@ -39,7 +50,11 @@ public class CustomerBasics {
         }
     }
 
-
+    /**
+     *
+     * @param customer
+     * @return
+     */
     public boolean isUniqName(Customer customer) {
         boolean inUniqName = false;
         try {
@@ -65,6 +80,11 @@ public class CustomerBasics {
         return inUniqName;
     }
 
+    /**
+     *
+     * @param customer
+     * @return
+     */
     public boolean isUpdate(Customer customer) {
         boolean isUpdate = false;
         try {

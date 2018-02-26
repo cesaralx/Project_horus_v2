@@ -65,10 +65,18 @@ public class PassChangeController implements Initializable {
     @FXML
     private ImageView imgNewPassMatch;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
 //        userName = nameMedia.getUsrName();
@@ -87,6 +95,8 @@ public class PassChangeController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

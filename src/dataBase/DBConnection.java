@@ -24,6 +24,9 @@ public class DBConnection {
     Properties properties = new Properties();
     InputStream inputStream;
 
+    /**
+     *se encarga de la conexion a base de datos
+     */
     public Connection con;
 
     String url;
@@ -32,6 +35,9 @@ public class DBConnection {
     String db;
     String unicode = "?useUnicode=yes&characterEncoding=UTF-8";
 
+    /**
+     *carga las propiedades por default
+     */
     public void loadPropertiesFile() {
         try {
             inputStream = new FileInputStream("database.properties");
@@ -45,6 +51,11 @@ public class DBConnection {
         }
     }
 
+    /**
+     *
+     * @return el objeto de conexion a SQL
+     * @throws SQLException
+     */
     public Connection mkDataBase() throws SQLException {
         loadPropertiesFile();
         try {
@@ -58,6 +69,10 @@ public class DBConnection {
         return con;
     }
 
+    /**
+     *
+     * @return el objeto de conexion a SQL
+     */
     public Connection geConnection() {
         loadPropertiesFile();
         try {

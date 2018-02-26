@@ -39,6 +39,10 @@ public class EmployeController implements Initializable {
     private userNameMedia nameMedia;
     @FXML
     private StackPane spEmployeContent;
+
+    /**
+     *
+     */
     @FXML
     public BorderPane bpContent;
     @FXML
@@ -48,10 +52,18 @@ public class EmployeController implements Initializable {
     
     Image image = new Image("/icon/d.png");
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -67,6 +79,11 @@ public class EmployeController implements Initializable {
         ivEmployeIcon.setImage(image);
     }    
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void btnViewEmployeeOnAction(ActionEvent event) throws IOException {
         lblView.setText("Empleados");

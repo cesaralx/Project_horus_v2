@@ -14,7 +14,10 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-
+/**
+ * @see Actions.CurrentProductGetway
+ * @author alexi
+ */
 public class CurrentProductBasics {
 
     DBConnection dbCon = new DBConnection();
@@ -27,6 +30,10 @@ public class CurrentProductBasics {
     SQL sql = new SQL();
     CurrentProductGetway currentProductGetway = new CurrentProductGetway();
 
+    /**
+     *
+     * @param currentProduct
+     */
     public void save(CurrentProduct currentProduct) {
         if (isUniqName(currentProduct)) {
             currentProductGetway.save(currentProduct);
@@ -34,6 +41,10 @@ public class CurrentProductBasics {
         
     }
 
+    /**
+     *
+     * @param currentProduct
+     */
     public void update(CurrentProduct currentProduct) {
         if(isNotNull(currentProduct)){
         if (isUpdate(currentProduct)) {
@@ -46,6 +57,11 @@ public class CurrentProductBasics {
         }
     }
 
+    /**
+     *
+     * @param currentProduct
+     * @return
+     */
     public boolean isUniqName(CurrentProduct currentProduct) {
         boolean isUniqname = false;
         try {
@@ -69,6 +85,11 @@ public class CurrentProductBasics {
         return isUniqname;
     }
 
+    /**
+     *
+     * @param currentProduct
+     * @return
+     */
     public boolean isUpdate(CurrentProduct currentProduct) {
         boolean isUpdate = false;
         try {
@@ -98,6 +119,11 @@ public class CurrentProductBasics {
         return isUpdate;
     }
 
+    /**
+     *
+     * @param currentProduct
+     * @return
+     */
     public boolean checkUpdateCondition(CurrentProduct currentProduct) {
         boolean isTrueUpdate = false;
         if (isUpdate(currentProduct)) {
@@ -117,6 +143,11 @@ public class CurrentProductBasics {
         return isTrueUpdate;
     }
 
+    /**
+     *
+     * @param currentProduct
+     * @return
+     */
     public boolean isNotNull(CurrentProduct currentProduct) {
         
         boolean isNotNull = false;
@@ -133,6 +164,11 @@ public class CurrentProductBasics {
         return isNotNull;
     }
 
+    /**
+     *
+     * @param currentProduct
+     * @return
+     */
     public Object delete(CurrentProduct currentProduct){
         if(currentProductGetway.isNotSoled(currentProduct)){
             currentProductGetway.delete(currentProduct);

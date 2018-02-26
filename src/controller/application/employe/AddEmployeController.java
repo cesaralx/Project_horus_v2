@@ -72,16 +72,40 @@ public class AddEmployeController implements Initializable {
     private String usrId;
     
     private userNameMedia nameMedia;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrUsrName;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrFullName;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrEmail;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrPhone;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrSalary;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClrPassword;
     
@@ -91,12 +115,18 @@ public class AddEmployeController implements Initializable {
     Users users = new Users();
     UsersGetway usersGetway = new UsersGetway();
 
-    
-
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         usrId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -104,6 +134,8 @@ public class AddEmployeController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

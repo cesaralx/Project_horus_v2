@@ -99,10 +99,18 @@ public class EmployeePermissionController implements Initializable {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         id = media.getId();
         this.media = media;
@@ -110,6 +118,8 @@ public class EmployeePermissionController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -214,6 +224,9 @@ public class EmployeePermissionController implements Initializable {
     private void cbUserOnAction(ActionEvent event) {
     }
 
+    /**
+     *
+     */
     public void checqPermission() {
 
         con = dbCon.geConnection();

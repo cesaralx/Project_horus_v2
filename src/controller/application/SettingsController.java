@@ -69,13 +69,25 @@ public class SettingsController implements Initializable {
     
     private String userID;
     userNameMedia usrMedia;    
+
+    /**
+     *
+     */
     @FXML
     public BorderPane bpSettings;
  
+    /**
+     *
+     * @return
+     */
     public userNameMedia getUsrMedia() {
         return usrMedia;
     }
 
+    /**
+     *
+     * @param usrMedia
+     */
     public void setUsrMedia(userNameMedia usrMedia) {
         userID = usrMedia.getId();
         this.usrMedia = usrMedia;
@@ -84,12 +96,19 @@ public class SettingsController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void miMyASccountOnClick(ActionEvent event) throws IOException {
         System.out.println(userID);
@@ -207,6 +226,9 @@ public class SettingsController implements Initializable {
         }
     }
     
+    /**
+     *
+     */
     public void settingPermission(){
         con = dbCon.geConnection();
         try {

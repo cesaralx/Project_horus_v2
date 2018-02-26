@@ -19,10 +19,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class NiceVaping extends Application {
     
+    /**
+     * clase que se encarga de lanzar el login
+     */
     public NiceVaping() {
         
         DBModel model = new DBModel();

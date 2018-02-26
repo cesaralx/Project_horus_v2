@@ -42,6 +42,10 @@ import UserLogged.userNameMedia;
  * @author alexi
  */
 public class ViewSupplyerController implements Initializable {
+
+    /**
+     *
+     */
     @FXML
     public AnchorPane acContent;
     SQL sql = new SQL();
@@ -88,11 +92,18 @@ public class ViewSupplyerController implements Initializable {
     @FXML
     private Button btnRefresh;
 
-
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -101,6 +112,8 @@ public class ViewSupplyerController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -122,7 +135,10 @@ public class ViewSupplyerController implements Initializable {
 
     }
 
-
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfSearchOnType(Event event) {
         supplyer.supplyerDetails.removeAll();
@@ -138,7 +154,9 @@ public class ViewSupplyerController implements Initializable {
         supplyerGetway.searchView(supplyer);
     }
 
-
+    /**
+     *
+     */
     public void showDetails() {
         tblSupplyer.setItems(supplyer.supplyerDetails);
         clmSUpplyerId.setCellValueFactory(new PropertyValueFactory<>("supplyerId"));
@@ -286,6 +304,10 @@ public class ViewSupplyerController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void btnDeleteOnAction(ActionEvent event) {
         mbDeleteItem(event);

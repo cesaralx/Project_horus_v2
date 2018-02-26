@@ -20,7 +20,9 @@ import javafx.stage.Stage;
  */
 public class PopUp {
     
-    
+    /**
+     *
+     */
     public void sucessMessage(){
         SucessController sc = new SucessController();
         System.out.println("COmm");

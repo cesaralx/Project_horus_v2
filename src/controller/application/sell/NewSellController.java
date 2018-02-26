@@ -47,6 +47,9 @@ import java.time.LocalDateTime;
  */
 public class NewSellController implements Initializable {
 
+    /**
+     *
+     */
     public Button btnAddCustomer;
     userNameMedia nameMedia;
 
@@ -65,6 +68,10 @@ public class NewSellController implements Initializable {
     private Button btnClose;
 
     String customerId;
+
+    /**
+     *
+     */
     @FXML
     public TextField tfProductId;
     @FXML
@@ -128,6 +135,10 @@ public class NewSellController implements Initializable {
     
     logger log = new logger();
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -181,6 +192,10 @@ public class NewSellController implements Initializable {
         customerGetway.searchView(customer);
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfProductIdOnAction(ActionEvent event) {
         if (tfProductId.getText().isEmpty()) {
@@ -230,6 +245,9 @@ public class NewSellController implements Initializable {
         lblTotalItems.setText(totalItem);
     }
 
+    /**
+     *
+     */
     public void viewAll() {
         tblSellPreList.setItems(preList);
         tblClmProductId.setCellValueFactory(new PropertyValueFactory<>("productID"));
@@ -278,6 +296,9 @@ public class NewSellController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void clearAll() {
         tfBrand.clear();
         tfProductId.clear();
@@ -331,6 +352,10 @@ public class NewSellController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     public void btnAddCustomerOnAction(ActionEvent actionEvent) {
         System.out.println(userId);
@@ -378,6 +403,9 @@ public class NewSellController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void genarateSellID() {
         String id = RandomIdGenarator.randomstring();
         if (id.matches("001215")) {
@@ -389,6 +417,10 @@ public class NewSellController implements Initializable {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean inNotNull() {
         boolean isNotNull = false;
         

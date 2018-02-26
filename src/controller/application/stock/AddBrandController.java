@@ -46,6 +46,9 @@ import javafx.scene.control.Alert;
  */
 public class AddBrandController implements Initializable {
 
+    /**
+     *
+     */
     public Button btnAddSupplyer;
     private userNameMedia media;
 
@@ -53,6 +56,9 @@ public class AddBrandController implements Initializable {
     BrandsGetway brandsGetway = new BrandsGetway();
     BrandBasics brandBLL = new BrandBasics();
 
+    /**
+     *
+     */
     public String brandId;
     private String usrId;
     private String supplyerName;
@@ -66,10 +72,21 @@ public class AddBrandController implements Initializable {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
+
+    /**
+     *
+     */
     @FXML
     public Label lblHeader;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClose;
 
@@ -79,13 +96,25 @@ public class AddBrandController implements Initializable {
     private TextField tfBrandName;
     @FXML
     private TextArea taDiscription;
+
+    /**
+     *
+     */
     @FXML
     public Button btnAddBrand;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -93,6 +122,8 @@ public class AddBrandController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -157,6 +188,10 @@ public class AddBrandController implements Initializable {
         stage.close();
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isNotNull() {
         System.out.println(cbSupplyer.getPromptText());
 //        System.out.println(cbSupplyer.getSelectionModel().getSelectedItem().isEmpty());
@@ -181,6 +216,9 @@ public class AddBrandController implements Initializable {
         return isNotNull;
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         brands.id = brandId;
         brandsGetway.selectedView(brands);
@@ -189,6 +227,10 @@ public class AddBrandController implements Initializable {
         cbSupplyer.setPromptText(brands.supplyerName);
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddSupplyerOnAction(ActionEvent actionEvent) {
         AddSupplyerController addSupplyerController = new AddSupplyerController();
         userNameMedia media = new userNameMedia();

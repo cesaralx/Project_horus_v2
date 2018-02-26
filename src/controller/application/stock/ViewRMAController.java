@@ -74,10 +74,18 @@ public class ViewRMAController implements Initializable {
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -98,6 +106,8 @@ public class ViewRMAController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -146,6 +156,9 @@ public class ViewRMAController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         tblViewRMA.setItems(rma.rmaDetails);
         clmRMAId.setCellValueFactory(new PropertyValueFactory<>("ramId"));
@@ -162,6 +175,10 @@ public class ViewRMAController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     public void btnAddNew(ActionEvent actionEvent) {
         AddRMAController addRMAController = new AddRMAController();
@@ -188,6 +205,10 @@ public class ViewRMAController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfSearchOnKeyRelesh(Event event) {
         rma.rmaDetails.clear();

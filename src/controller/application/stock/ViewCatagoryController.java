@@ -71,8 +71,16 @@ public class ViewCatagoryController implements Initializable {
     private TableColumn<Object, Object> clmCatagoryDate;
     @FXML
     private TableColumn<Object, Object> clmCatagoryDescription;
+
+    /**
+     *
+     */
     @FXML
     public TableColumn<Object, Object> clmSupplyer;
+
+    /**
+     *
+     */
     @FXML
     public TableColumn tablClmBox;
 
@@ -95,10 +103,18 @@ public class ViewCatagoryController implements Initializable {
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -185,6 +201,9 @@ public class ViewCatagoryController implements Initializable {
         
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         tblCatagory.setItems(catagory.catagoryDetails);
         tablClmBox.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -200,6 +219,10 @@ public class ViewCatagoryController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void tfSearchOnType(Event event) {
         catagory.catagoryDetails.clear();

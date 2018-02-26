@@ -65,27 +65,49 @@ public class ViewChatClientController implements Initializable {
     }    
     
      //--------------------------//
+
+    /**
+     *
+     */
     public void ListenThread() {
         Thread IncomingReader = new Thread(new IncomingReader());
         IncomingReader.start();
     }
          //--------------------------//
+
+    /**
+     *
+     * @param data
+     */
     public void userAdd(String data) {
         users.add(data);
     }
 
     //--------------------------//
+
+    /**
+     *
+     * @param data
+     */
     public void userRemove(String data) {
         ta_chat.setText(ta_chat.getText() + data + " esta fuera de linea.\n");
     }
 
     //--------------------------//
+
+    /**
+     *
+     */
     public void writeUsers() {
         String[] tempList = new String[(users.size())];
         users.toArray(tempList);
     }
 
     //--------------------------//
+
+    /**
+     *
+     */
     public void sendDisconnect() {
         String bye = (username + ": :Disconnect");
         try {
@@ -97,6 +119,10 @@ public class ViewChatClientController implements Initializable {
     }
 
     //--------------------------//
+
+    /**
+     *
+     */
     public void Disconnect() {
         try {
             ta_chat.setText(ta_chat.getText() + "Desconectado.\n");
@@ -109,8 +135,14 @@ public class ViewChatClientController implements Initializable {
 
     }
     
+    /**
+     *
+     */
     public class IncomingReader implements Runnable {
 
+        /**
+         *
+         */
         @Override
         public void run() {
             String[] data;

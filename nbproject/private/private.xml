@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Practicas-hasem"/>
+        <group name="Practicas-hasem">
+            <file>file:/C:/Users/alexi/Documents/clone_code/Project_horus_v2/src/dataBase/DBModel.java</file>
+            <file>file:/C:/Users/alexi/Documents/clone_code/Project_horus_v2/src/dataBase/DBProperties.java</file>
+            <file>file:/C:/Users/alexi/Documents/clone_code/Project_horus_v2/src/controller/LogFileController.java</file>
+            <file>file:/C:/Users/alexi/Documents/clone_code/Project_horus_v2/src/dataBase/SQL.java</file>
+        </group>
     </open-files>
 </project-private>

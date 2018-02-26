@@ -38,7 +38,14 @@ public class AddUnitController implements Initializable {
     UnitGetway unitGetway = new UnitGetway();
     UnitBasics unitBLL = new UnitBasics();
 
+    /**
+     *
+     */
     public String unitId;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
     @FXML
@@ -59,17 +66,33 @@ public class AddUnitController implements Initializable {
     
     @FXML
     private TextArea taDescription;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
+
+    /**
+     *
+     */
     @FXML
     public Label lblContent;
     @FXML
     private Button btnClose;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         usrId =  nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -77,6 +100,8 @@ public class AddUnitController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -110,7 +135,9 @@ public class AddUnitController implements Initializable {
         stage.close();
     }
 
-
+    /**
+     *
+     */
     public void showDetails() {
         unit.id = unitId;
         unitGetway.selectedView(unit);

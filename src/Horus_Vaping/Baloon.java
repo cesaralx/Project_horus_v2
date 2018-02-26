@@ -13,8 +13,10 @@ import javafx.scene.control.Alert;
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author Dan Malware
+ * esto maneja las notificaciones emergentes
+ * @author alexi
+ * @version 1.5
+ * @see Visitar <a href="http://www.google.com">Factory Management System</a></font>
  */
 public class Baloon {
 
@@ -22,6 +24,9 @@ public class Baloon {
     private static TrayIcon trayIcon;
     private static SystemTray systemTray;
 
+    /**
+     *
+     */
     public Baloon() {
         final PopupMenu popupMenu = new PopupMenu();
         MenuItem exitItem = new MenuItem("Exit");

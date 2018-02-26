@@ -103,10 +103,18 @@ public class MyAccountController implements Initializable {
     @FXML
     private Button attachImage;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getUsrMediaID() {
         return usrMediaID;
     }
 
+    /**
+     *
+     * @param usrMediaID
+     */
     public void setUsrMediaID(userNameMedia usrMediaID) {
         userID = usrMediaID.getId();
         this.usrMediaID = usrMediaID;
@@ -114,6 +122,8 @@ public class MyAccountController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -188,6 +198,9 @@ public class MyAccountController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         users.id = userID;
         usersGetway.selectedView(users);
@@ -200,6 +213,9 @@ public class MyAccountController implements Initializable {
         retImage.setFill(new ImagePattern(image));
     }
 
+    /**
+     *
+     */
     public void accountPermission() {
         con = dbCon.geConnection();
         try {

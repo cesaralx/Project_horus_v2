@@ -49,8 +49,20 @@ public class AddCategoryController implements Initializable {
     private String userId;
     private String brandId;
     private String brnadName;
+
+    /**
+     *
+     */
     public String supplyerId;
+
+    /**
+     *
+     */
     public String supplyerName;
+
+    /**
+     *
+     */
     public String catagoryId;
 
     Catagory catagory = new Catagory();
@@ -68,6 +80,10 @@ public class AddCategoryController implements Initializable {
     private TextField tfCatagoryName;
     @FXML
     private TextArea taCatagoryDescription;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
     @FXML
@@ -76,10 +92,22 @@ public class AddCategoryController implements Initializable {
     private Button btnAddSupplyer;
     @FXML
     private Button btnAddBrand;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
+
+    /**
+     *
+     */
     @FXML
     public Label lblHeaderContent;
+
+    /**
+     *
+     */
     @FXML
     public Button btnClose;
 
@@ -88,10 +116,18 @@ public class AddCategoryController implements Initializable {
     PreparedStatement pst;
     ResultSet rs;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         userId = media.getId();
         this.media = media;
@@ -99,6 +135,8 @@ public class AddCategoryController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -192,11 +230,19 @@ public class AddCategoryController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnCloseOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isNotNull() {
         boolean isNotNull;
         if (tfCatagoryName.getText().trim().isEmpty()
@@ -250,6 +296,9 @@ public class AddCategoryController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void showDetails() {
         catagory.id = catagoryId;
         catagoryGetway.selectedView(catagory);

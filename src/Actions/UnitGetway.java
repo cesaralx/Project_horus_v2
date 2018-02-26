@@ -22,8 +22,11 @@ import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
 /**
- *
+ * esta clase maneja las unidades, estas estan ligadas a productos.
+ * se crea una clase aparte porque existen liquidos de diferentes capacidades
+ * es decir de un mismo producto existen diferentes presentaciones
  * @author alexi
+ * @version 1.5
  */
 public class UnitGetway {
 
@@ -37,6 +40,10 @@ public class UnitGetway {
 
     SQL sql = new SQL();
 
+    /**
+     * guarda una nueva unidad
+     * @param unit
+     */
     public void save(Unit unit) {
         con = dbCon.geConnection();
 
@@ -63,6 +70,10 @@ public class UnitGetway {
 
     }
 
+    /**
+     * busca todas las unidades 
+     * @param unit
+     */
     public void view(Unit unit) {
         con = dbCon.geConnection();
         try {
@@ -85,6 +96,10 @@ public class UnitGetway {
         }
     }
 
+    /**
+     * selecciona unidad por id
+     * @param unit
+     */
     public void selectedView(Unit unit) {
         con = dbCon.geConnection();
         try {
@@ -106,6 +121,10 @@ public class UnitGetway {
         }
     }
 
+    /**
+     * selecciona unidad por nombre
+     * @param unit
+     */
     public void searchView(Unit unit) {
         con = dbCon.geConnection();
         unit.unitDetails.clear();
@@ -133,6 +152,10 @@ public class UnitGetway {
         }
     }
 
+    /**
+     * actualiza una unidad existente
+     * @param unit
+     */
     public void update(Unit unit) {
         con = dbCon.geConnection();
         try {
@@ -156,6 +179,10 @@ public class UnitGetway {
         }
     }
 
+    /**
+     * actualiza nombre de unidad y descripcion
+     * @param unit
+     */
     public void updateNow(Unit unit) {
         con = dbCon.geConnection();
         try {
@@ -178,11 +205,20 @@ public class UnitGetway {
         }
     }
 
+    /**
+     * elimina una unidad
+     * @param unit
+     */
     public void delete(Unit unit) {
         con = dbCon.geConnection();
         deleteParmanently(unit);
     }
 
+    /**
+     * busca si ya existe una unidad
+     * @param unit
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isUniqName(Unit unit) {
         con = dbCon.geConnection();
         boolean uniqBrand = false;
@@ -210,6 +246,10 @@ public class UnitGetway {
         return uniqBrand;
     }
 
+    /**
+     * elimina unidad por id
+     * @param unit
+     */
     public void deleteParmanently(Unit unit) {
         con = dbCon.geConnection();
 
@@ -225,6 +265,11 @@ public class UnitGetway {
 
     }
 
+    /**
+     * busca si la unidad esta ligada a un producto
+     * @param unit
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotUse(Unit unit) {
         con = dbCon.geConnection();
         boolean isNotUse = false;

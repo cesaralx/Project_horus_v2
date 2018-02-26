@@ -54,12 +54,39 @@ import UserLogged.userNameMedia;
  */
 public class AddProductController implements Initializable {
 
+    /**
+     *
+     */
     public ComboBox<String> cmbBrand;
+
+    /**
+     *
+     */
     public ComboBox cmbCatagory;
+
+    /**
+     *
+     */
     public Button btnAddSupplier;
+
+    /**
+     *
+     */
     public Button btnAddBrand;
+
+    /**
+     *
+     */
     public Button btnAddCatagory;
+
+    /**
+     *
+     */
     public Button btnAddUnit;
+
+    /**
+     *
+     */
     public Button btnAddRma;
     @FXML
     private RadioButton rbStatic;
@@ -102,11 +129,18 @@ public class AddProductController implements Initializable {
     private ComboBox<String> cbRMA;
     @FXML
     private DatePicker dpDate;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
     @FXML
     private TextField tfValue;
 
+    /**
+     *
+     */
     public String id;
     private String supplyerName;
     private String supplyerId;
@@ -119,15 +153,31 @@ public class AddProductController implements Initializable {
 
     @FXML
     private ComboBox<String> cbSupplyer;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
+
+    /**
+     *
+     */
     @FXML
     public Label lblHeader;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         usrId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -280,6 +330,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void cmbBrandOnClick(Event event) {
         cmbBrand.getItems().clear();
@@ -298,6 +352,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void cmbCatagoryOnClick(Event event) {
         cmbCatagory.getItems().clear();
@@ -330,6 +388,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     public void cmbCatagoryOnAction(ActionEvent actionEvent) {
         cmbCatagory.getSelectionModel().getSelectedItem();
@@ -427,6 +489,9 @@ public class AddProductController implements Initializable {
 
     }
 
+    /**
+     *
+     */
     public void viewSelected() {
         currentProduct.id = id;
         currentProductGetway.selectedView(currentProduct);
@@ -477,6 +542,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddSupplierOnAction(ActionEvent actionEvent) {
         AddSupplyerController addSupplyerController = new AddSupplyerController();
         userNameMedia media = new userNameMedia();
@@ -503,6 +572,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddBrandOnAction(ActionEvent actionEvent) {
         AddBrandController addSupplyerController = new AddBrandController();
         userNameMedia media = new userNameMedia();
@@ -528,6 +601,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddCatagoryOnAction(ActionEvent actionEvent) {
         AddCategoryController addCatagoryController = new AddCategoryController();
         userNameMedia media = new userNameMedia();
@@ -553,6 +630,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddUnitOnAction(ActionEvent actionEvent) {
         AddUnitController addUnitController = new AddUnitController();
         userNameMedia media = new userNameMedia();
@@ -578,6 +659,10 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void btnAddRmaOnAction(ActionEvent actionEvent) {
         AddRMAController addRMAController = new AddRMAController();
         userNameMedia media = new userNameMedia();
@@ -603,6 +688,9 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void refreshProductList() {
         try {
             CurrentStoreController asc = new CurrentStoreController();

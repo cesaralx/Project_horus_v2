@@ -46,9 +46,17 @@ public class SellController implements Initializable {
     userNameMedia nameMedia;
 
     String userId;
+
+    /**
+     *
+     */
     @FXML
     public AnchorPane acMainSells;
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -56,6 +64,8 @@ public class SellController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,6 +76,11 @@ public class SellController implements Initializable {
         tbtnReports.setToggleGroup(group);
     }
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tbtnSellOnAction(ActionEvent event) throws IOException {
         lblPathInfo.setText("Ventas");

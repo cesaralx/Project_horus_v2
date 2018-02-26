@@ -76,6 +76,8 @@ public class ServerController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -94,6 +96,9 @@ public class ServerController implements Initializable {
     private void btnResetOnAction(ActionEvent event) {
     }
     
+    /**
+     *
+     */
     public void getDataFromFile(){
         try {
             inputStream = new FileInputStream("database.properties");
@@ -113,6 +118,9 @@ public class ServerController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void mkDbProperties() {
         try {
             output = new FileOutputStream("database.properties");
@@ -153,6 +161,9 @@ public class ServerController implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void checkSQLStatus() {
         try {
             inputStream = new FileInputStream("database.properties");
@@ -167,6 +178,9 @@ public class ServerController implements Initializable {
         }
     }
     
+    /**
+     *
+     */
     public void loadPropertiesFile(){
         try {
             inputStream = new FileInputStream("database.properties");

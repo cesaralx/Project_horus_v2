@@ -11,9 +11,19 @@ package Basics;
  */
 public abstract class BrandBasics_interface extends BrandBasics {
     
-
+    /**
+     *
+     */
     public abstract void update();
+
+    /**
+     *
+     */
     public abstract void delete();
+
+    /**
+     *
+     */
     public abstract void save();
     
     

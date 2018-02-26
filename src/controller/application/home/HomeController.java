@@ -77,6 +77,8 @@ public class HomeController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -88,6 +90,10 @@ public class HomeController implements Initializable {
         }
     }    
     
+    /**
+     *
+     * @throws IOException
+     */
     public void getPieData() throws IOException {
         log.wirteLogInfo("Cargando datos inicio");
         ObservableList<PieChart.Data> pieChartData
@@ -111,6 +117,9 @@ public class HomeController implements Initializable {
 
     }
     
+    /**
+     *
+     */
     public void valueCount(){
         con = dbCon.geConnection();
         try {
@@ -158,6 +167,9 @@ public class HomeController implements Initializable {
         }
     }
     
+    /**
+     *
+     */
     public void totalCount(){
         con = dbCon.geConnection();
         try {

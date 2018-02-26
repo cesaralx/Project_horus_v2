@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * pensado en guardar la configuracion en una tabla
  * @author alexi
  */
 public class MySqlConnectorGetway {
@@ -29,6 +29,11 @@ public class MySqlConnectorGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     * guardaria datos de conexion
+     * @param connector
+     * @version 1.0
+     */
     public void save(MysqlConnector connector) {
         try {
             pst = con.prepareStatement("insert into mysqlInfo values(?,?,?,?,?)");
@@ -43,6 +48,10 @@ public class MySqlConnectorGetway {
         }
     }
 
+    /** 
+     * devolveria los valores de conexion
+     * @param connector
+     */
     public void view(MysqlConnector connector) {
         try {
             pst = con.prepareStatement("select * from mysqlInfo where Id=1");

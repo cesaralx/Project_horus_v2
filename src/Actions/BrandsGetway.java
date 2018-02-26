@@ -37,6 +37,10 @@ public class BrandsGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *permite guardar una marca nueva
+     * @param brands el objeto brands para dar de alta
+     */
     public void save(Brands brands) {
         con = dbCon.geConnection();
         brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "proveedor", "ProveedorNombre");
@@ -64,6 +68,10 @@ public class BrandsGetway {
 
     }
 
+    /**
+     *permite recuperar todas las marcas disponibles
+     * @param brands el objeto para recuperar
+     */
     public void view(Brands brands) {
         con = dbCon.geConnection();
 
@@ -90,6 +98,10 @@ public class BrandsGetway {
 
     }
 
+    /**
+     *selecciona una marca en espesifico
+     * @param brands retorna la marca buscada
+     */
     public void selectedView(Brands brands) {
         con = dbCon.geConnection();
 
@@ -114,6 +126,10 @@ public class BrandsGetway {
         }
     }
 
+    /**
+     *busca marca por nombre
+     * @param brands
+     */
     public void searchView(Brands brands) {
         con = dbCon.geConnection();
 
@@ -147,6 +163,10 @@ public class BrandsGetway {
         }
     }
 
+    /**
+     *elimina una marca por id
+     * @param brands recibe el id a eliminar
+     */
     public void delete(Brands brands) {
         con = dbCon.geConnection();
 
@@ -159,6 +179,10 @@ public class BrandsGetway {
         }
     }
 
+    /**
+     *actualiza una marca
+     * @param brands la marca a actualizar
+     */
     public void update(Brands brands) {
         con = dbCon.geConnection();
 
@@ -183,6 +207,11 @@ public class BrandsGetway {
         }
     }
     
+    /**
+     *busca si una marca ya esta dada de alta
+     * @param brands
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotUsed(Brands brands){
         con = dbCon.geConnection();
         boolean inNotUse = false;

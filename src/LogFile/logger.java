@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 import UserLogged.userNameMedia;
 
 /**
- *
+ * este motodo genera el logile
  * @author alexi
  */
 public class logger {
@@ -29,6 +29,9 @@ public class logger {
     private userNameMedia usrNameMedia;
     private String user;
 
+    /**
+     * setea el formato que llevara el logfile el cual es fecha y hora mas el mensaje
+     */
     public logger()  {
         
         System.setProperty("java.util.logging.SimpleFormatter.format", 
@@ -70,7 +73,11 @@ public class logger {
         }
     }
     
-
+    /**
+     * escribe el mensaje en el log
+     * @param mensaje
+     * @throws IOException
+     */
     public void wirteLogInfo(String mensaje) throws IOException {
         try {
             checkUser();
@@ -81,6 +88,11 @@ public class logger {
         }
     }
     
+    /**
+     * escribe el log con mensaje de alerta
+     * @param mensaje
+     * @throws IOException
+     */
     public void wirteLogWarning(String mensaje) throws IOException {
         try {
             // aqui se escribe el string que le pasemos como parametro
@@ -90,7 +102,11 @@ public class logger {
         }
     }
 
-    
+    /**
+     * lee el archivo logfile
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public void readFile() throws FileNotFoundException, IOException {
 
         listLog.inicializacion();
@@ -111,6 +127,11 @@ public class logger {
         }
     }
     
+    /**
+     * ordena por tipo de mensaje
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     public void orderByTipo() throws FileNotFoundException, IOException {
 
         listLog.bubbleSortTipo();
@@ -120,7 +141,12 @@ public class logger {
         // refresh info del log
     }
     
-        public void orderByQuickSort() throws FileNotFoundException, IOException {
+    /**
+     * ordena por metodo quicksort
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    public void orderByQuickSort() throws FileNotFoundException, IOException {
         listLog.quickSort();
         System.out.println("Despues de ordenar");
         listLog.visualizar();

@@ -15,7 +15,10 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-
+/**
+ * @see Actions.CatagoryGetway
+ * @author alexi
+ */
 public class CategoryBasics {
 
     SQL sql = new SQL();
@@ -28,12 +31,20 @@ public class CategoryBasics {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *
+     * @param catagory
+     */
     public void save(Catagory catagory){
         if (isUniqName(catagory)){
             catagoryGetway.save(catagory);
         }
     }
 
+    /**
+     *
+     * @param catagory
+     */
     public void update(Catagory catagory){
         if(checkUpdate(catagory)){
             catagoryGetway.update(catagory);
@@ -42,6 +53,10 @@ public class CategoryBasics {
         }
     }
     
+    /**
+     *
+     * @param catagory
+     */
     public void delete(Catagory catagory){
         if(catagoryGetway.isNotUse(catagory)){
             catagoryGetway.delete(catagory);
@@ -50,6 +65,11 @@ public class CategoryBasics {
         }
     }
 
+    /**
+     *
+     * @param catagory
+     * @return
+     */
     public boolean checkUpdate(Catagory catagory){
         boolean isTrueUpdate = false;
         catagory.brandId = sql.getIdNo(catagory.brandName, catagory.brandId, "marcas", "MarcaNombre");
@@ -72,6 +92,11 @@ public class CategoryBasics {
         return isTrueUpdate;
     }
 
+    /**
+     *
+     * @param catagory
+     * @return
+     */
     public boolean isUniqName(Catagory catagory) {
 
         boolean uniqSupplyer = false;

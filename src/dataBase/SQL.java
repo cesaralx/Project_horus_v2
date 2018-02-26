@@ -37,8 +37,21 @@ public class SQL {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
     
-    
-    
+    /**
+     *
+     * @param id
+     * @param userName
+     * @param fullName
+     * @param emailAddress
+     * @param contactNumber
+     * @param salary
+     * @param address
+     * @param password
+     * @param status
+     * @param date
+     * @param crratorId
+     * @param imagePath
+     */
     public void registration(String id,String userName,String fullName,
             String emailAddress,String contactNumber,String salary,
             String address,String password,int status,
@@ -81,6 +94,10 @@ public class SQL {
         }
     }
     
+    /**
+     *
+     * @param id
+     */
     public void userPermissionUpdate(int id){
         con = dbCon.geConnection();
         try {
@@ -90,7 +107,10 @@ public class SQL {
         }
     }
     
-    
+    /**
+     *
+     * @param usrName
+     */
     public void basicPermission(String usrName){
         DBConnection dbc = new DBConnection();
         con = dbc.geConnection();
@@ -133,6 +153,11 @@ public class SQL {
         }
     }
 
+    /**
+     *
+     * @param creatorId
+     * @param creatorName
+     */
     public void creatorNameFindar( String creatorId, Label creatorName){
 
         con = dbCon.geConnection();
@@ -151,6 +176,13 @@ public class SQL {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param name
+     * @param tableName
+     * @return
+     */
     public String getName(String id, String name, String tableName){
         String campo = tableName;
         if (tableName.equals("marcas")) {
@@ -182,6 +214,14 @@ public class SQL {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     * @param id
+     * @param tableName
+     * @param fieldName
+     * @return
+     */
     public String getIdNo( String name,String id, String tableName,String fieldName){
 
         con = dbCon.geConnection();
@@ -201,6 +241,13 @@ public class SQL {
         return id;
     }
     
+    /**
+     *
+     * @param supplyerId
+     * @param brandId
+     * @param brandName
+     * @return
+     */
     public String getBrandID(String supplyerId,String brandId,String brandName){
         con = dbCon.geConnection();
         try {
@@ -220,6 +267,14 @@ public class SQL {
         return brandId;
     }
     
+    /**
+     *
+     * @param supplyerId
+     * @param brandId
+     * @param catagoryId
+     * @param catagoryName
+     * @return
+     */
     public String getCatagoryId(String supplyerId,String brandId,String catagoryId,String catagoryName){
         con = dbCon.geConnection();
         try {
@@ -240,6 +295,12 @@ public class SQL {
         return catagoryId;
     }
     
+    /**
+     *
+     * @param rmaDayes
+     * @param id
+     * @return
+     */
     public String getDayes(String rmaDayes, String id){
         con = dbCon.geConnection();;
         try {

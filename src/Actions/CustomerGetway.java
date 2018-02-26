@@ -35,6 +35,10 @@ public class CustomerGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     *guarda un nuevo cliente
+     * @param customer
+     */
     public void save(Customer customer) {
         con = dbCon.geConnection();
         try {
@@ -62,6 +66,10 @@ public class CustomerGetway {
 
     }
 
+    /**
+     *selecciona todos los clientes
+     * @param customer
+     */
     public void view(Customer customer) {
         con = dbCon.geConnection();
         try {
@@ -86,6 +94,10 @@ public class CustomerGetway {
         }
     }
 
+    /**
+     *selecciona cliente por id
+     * @param customer
+     */
     public void selectedView(Customer customer) {
         con = dbCon.geConnection();
         try {
@@ -106,6 +118,10 @@ public class CustomerGetway {
         }
     }
 
+    /**
+     *busca cliente por nombre y numero de contacto
+     * @param customer
+     */
     public void searchView(Customer customer) {
         con = dbCon.geConnection();
         customer.customerList.clear();
@@ -133,6 +149,10 @@ public class CustomerGetway {
         }
     }
 
+    /**
+     *actualiza un cliente existente
+     * @param customer
+     */
     public void update(Customer customer) {
         con = dbCon.geConnection();
         try {
@@ -156,6 +176,10 @@ public class CustomerGetway {
         }
     }
 
+    /**
+     * elimina un cliente existente
+     * @param customer
+     */
     public void delete(Customer customer) {
         con = dbCon.geConnection();
         try {
@@ -168,7 +192,12 @@ public class CustomerGetway {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * busca si el cliente ya existe
+     * @param customer
+     * @return retorna true si ya existe y false si no existe
+     */
     private boolean isNotUsed(Customer customer) {
         con = dbCon.geConnection();
         boolean isNotUsed = false;

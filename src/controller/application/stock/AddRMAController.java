@@ -34,6 +34,9 @@ import Models.RMA;
  */
 public class AddRMAController implements Initializable {
 
+    /**
+     *
+     */
     @FXML
     public Label lblContent;
 
@@ -49,20 +52,39 @@ public class AddRMAController implements Initializable {
 
     private String usrId;
 
+    /**
+     *
+     */
     public String rmaId;
 
     private userNameMedia media;
+
+    /**
+     *
+     */
     @FXML
     public Button btnSave;
+
+    /**
+     *
+     */
     @FXML
     public Button btnUpdate;
     @FXML
     private Button btnClose;
 
+    /**
+     *
+     * @return
+     */
     public userNameMedia getMedia() {
         return media;
     }
 
+    /**
+     *
+     * @param media
+     */
     public void setMedia(userNameMedia media) {
         usrId = media.getId();
         this.media = media;
@@ -77,6 +99,8 @@ public class AddRMAController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -126,7 +150,9 @@ public class AddRMAController implements Initializable {
         stage.close();
     }
 
-
+    /**
+     *
+     */
     public void showDetails() {
         rma.id = rmaId;
         rmaGetway.selectedView(rma);

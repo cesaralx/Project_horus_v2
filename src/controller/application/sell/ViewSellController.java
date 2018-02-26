@@ -77,6 +77,10 @@ public class ViewSellController implements Initializable{
     @FXML
     private Button btnRefresh;
 
+    /**
+     *
+     * @param nameMedia
+     */
     public void setNameMedia(userNameMedia nameMedia) {
         userId = nameMedia.getId();
         this.nameMedia = nameMedia;
@@ -117,6 +121,9 @@ public class ViewSellController implements Initializable{
         }
     }
     
+    /**
+     *
+     */
     public void viewDetails(){
         tblSellView.setItems(sellCart.soldList);
         tblClmCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));

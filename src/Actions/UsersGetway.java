@@ -33,6 +33,10 @@ public class UsersGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     * guarda un nuevo usuario
+     * @param users
+     */
     public void save(Users users) {
 
         if (isUniqName(users)) {
@@ -82,6 +86,10 @@ public class UsersGetway {
         }
     }
 
+    /**
+     * selecciona todos los usuarios
+     * @param users
+     */
     public void view(Users users) {
         con = dbConnection.geConnection();
         try {
@@ -101,6 +109,10 @@ public class UsersGetway {
 
     }
 
+    /**
+     * selecciona todos los usuarios por id
+     * @param users
+     */
     public void selectedView(Users users) {
         con = dbConnection.geConnection();
         try {
@@ -137,6 +149,10 @@ public class UsersGetway {
         }
     }
 
+    /**
+     * actualiza un uduario existente
+     * @param users
+     */
     public void update(Users users) {
         con = dbConnection.geConnection();
         try {
@@ -172,6 +188,10 @@ public class UsersGetway {
         }
     }
 
+    /**
+     * elimina un usuario existente
+     * @param users
+     */
     public void delete(Users users) {
         con = dbConnection.geConnection();
         try {
@@ -189,6 +209,11 @@ public class UsersGetway {
         }
     }
 
+    /**
+     * busca si el usuario ya existe
+     * @param users
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isUniqName(Users users) {
         con = dbConnection.geConnection();
         boolean isUniqName = false;
@@ -200,7 +225,7 @@ public class UsersGetway {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERROR :");
                 alert.setHeaderText("ERROR : Existe el nombre");
-                alert.setContentText("User name " + users.userName + " ya en uso");
+                alert.setContentText("Nombre de usuario " + users.userName + " ya en uso");
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
                 return isUniqName;

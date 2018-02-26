@@ -28,8 +28,9 @@ public class DBModel {
     InputStream inputStream;
     String db;
     
-    
-    
+    /**
+     *
+     */
     public void loadPropertiesFile(){
         try {
             inputStream = new FileInputStream("database.properties");
@@ -41,6 +42,9 @@ public class DBModel {
 
     PreparedStatement pst;
 
+    /**
+     *
+     */
     public void createDataBase() {
         loadPropertiesFile();
         DBConnection con = new DBConnection();

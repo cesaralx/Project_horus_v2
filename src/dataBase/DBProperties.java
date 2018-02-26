@@ -26,6 +26,9 @@ public class DBProperties {
     InputStream inputStream;
     OutputStream output = null;
 
+    /**
+     *
+     */
     public void mkDbProperties() {
         
         try {
@@ -35,6 +38,11 @@ public class DBProperties {
             properties.setProperty("db", "horus_v2");
             properties.setProperty("user", "cesar");
             properties.setProperty("password", "alexaltair360Q");
+//            properties.setProperty("host", "den1.mssql6.gear.host ");
+//            properties.setProperty("port", "49679");
+//            properties.setProperty("db", "horusv2");
+//            properties.setProperty("user", "horusv2");
+//            properties.setProperty("password", "Aj6TK0XR_d9_");
             properties.store(output, null);
             output.close();
         } catch (FileNotFoundException ex) {
@@ -44,6 +52,10 @@ public class DBProperties {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public String loadPropertiesFile() {
         try {
             inputStream = new FileInputStream("database.properties");

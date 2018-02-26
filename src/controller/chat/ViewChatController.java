@@ -31,14 +31,33 @@ public class ViewChatController implements Initializable {
     ArrayList clientOutputStreams;
     ArrayList<String> users;
     
+    /**
+     *
+     */
     @FXML
     public TextArea ta_chat;
+
+    /**
+     *
+     */
     @FXML
     public Button b_start;
+
+    /**
+     *
+     */
     @FXML
     public Button b_end;
+
+    /**
+     *
+     */
     @FXML
     public Button b_users;
+
+    /**
+     *
+     */
     @FXML
     public Button b_clear;
     
@@ -47,19 +66,28 @@ public class ViewChatController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     } 
     
-    
+    /**
+     *
+     */
     public class ClientHandler implements Runnable {
 
         BufferedReader reader;
         Socket sock;
         PrintWriter client;
         
+        /**
+         *
+         * @param clientSocket
+         * @param user
+         */
         public ClientHandler(Socket clientSocket, PrintWriter user) {
             client = user;
             try {
@@ -71,6 +99,9 @@ public class ViewChatController implements Initializable {
             }
         }
 
+        /**
+         *
+         */
         @Override
         public void run() {
             String message, connect = "Connect", disconnect = "Disconnect", chat = "Chat";
@@ -106,8 +137,15 @@ public class ViewChatController implements Initializable {
         }//run//Run 
     }////ClientClientHandler
     
+    /**
+     *
+     */
     public class ServerStart implements Runnable 
     {
+
+        /**
+         *
+         */
         @Override
         public void run() 
         {
@@ -133,6 +171,10 @@ public class ViewChatController implements Initializable {
         }//Run
     }//ServerStart
     
+    /**
+     *
+     * @param data
+     */
     public void userAdd (String data) 
     {
         String message, add = ": :Connect", done = "Server: :Done", name = data;
@@ -150,6 +192,10 @@ public class ViewChatController implements Initializable {
         tellEveryone(done);
     }//userAdd
     
+    /**
+     *
+     * @param data
+     */
     public void userRemove (String data) 
     {
         String message, add = ": :Disconnect", done = "Server: :Done", name = data;
@@ -165,6 +211,10 @@ public class ViewChatController implements Initializable {
         tellEveryone(done);
     }//userRemove
     
+    /**
+     *
+     * @param message
+     */
     public void tellEveryone(String message) 
     {
 	Iterator it = clientOutputStreams.iterator();

@@ -39,7 +39,9 @@ public class ButtonEffect {
     Image about = new Image("/icon/about.png");
     Image aboutRed = new Image("/icon/aboutRed.png");
     
-    
+    /**
+     *
+     */
     public void btnHomeEffect(){
         
     }

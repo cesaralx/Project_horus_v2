@@ -5,10 +5,19 @@
  */
 package custom;
 
-
+/**
+ *
+ * @author alexi
+ */
 public class RandomIdGenarator {
     
-   public static String randomstring(int lo, int hi){
+    /**
+     *
+     * @param lo
+     * @param hi
+     * @return
+     */
+    public static String randomstring(int lo, int hi){
                   int n = rand(lo, hi);
                   byte b[] = new byte[n];
                   for (int i = 0; i < n; i++)
@@ -24,7 +33,12 @@ public class RandomIdGenarator {
                           i = -i;
                   return lo + i;
           }
-          public static String randomstring(){
+
+    /**
+     *
+     * @return
+     */
+    public static String randomstring(){
                   return randomstring(5, 5);
           }
     

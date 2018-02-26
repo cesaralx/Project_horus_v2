@@ -15,6 +15,10 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
+/**
+ * @see Actions.BrandsGetway
+ * @author alexi
+ */
 public class BrandBasics {
 
     SQL sql = new SQL();
@@ -29,13 +33,20 @@ public class BrandBasics {
 
     BrandsGetway brandsGetway = new BrandsGetway();
 
-
+    /**
+     * guarda una marca
+     * @param brands
+     */
     public void save(Brands brands) {
         if (isUniqName(brands)) {
             brandsGetway.save(brands);
         }
     }
 
+    /**
+     * actualiza una marca
+     * @param brands
+     */
     public void update(Brands brands) {
         if (isTrueUpdate(brands)) {
             brandsGetway.update(brands);
@@ -45,6 +56,10 @@ public class BrandBasics {
 
     }
 
+    /**
+     * elimina la marca
+     * @param brands
+     */
     public void delete(Brands brands){
         if(brandsGetway.isNotUsed(brands)){
             brandsGetway.delete(brands);
@@ -52,6 +67,11 @@ public class BrandBasics {
       }
     }
 
+    /**
+     *
+     * @param brands
+     * @return
+     */
     public boolean isTrueUpdate(Brands brands) {
         boolean isTreu = false;
         brands.supplyrId = sql.getIdNo(brands.supplyerName, brands.supplyrId, "proveedor", "ProveedorNombre");
@@ -72,7 +92,11 @@ public class BrandBasics {
         return isTreu;
     }
 
-
+    /**
+     *
+     * @param brands
+     * @return
+     */
     public boolean isUniqName(Brands brands) {
         boolean uniqSupplyer = false;
         try {

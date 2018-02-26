@@ -5,9 +5,15 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
-
+/**
+ *
+ * @author alexi
+ */
 public class CellFactories {
 
+    /**
+     *
+     */
     public  Callback<TableColumn, TableCell> cellFactoryCheckBox = new Callback<TableColumn, TableCell>() {
 
         @Override

@@ -15,14 +15,19 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-/**
+/** 
+ * ESTA CLASE NO SE USA
  * FXML Controller class
- *
+ * clase pensada en guardar historial, pero despues se desarrollo el logfile
  * @author alexi
  */
 public class HistoryController implements Initializable {
     @FXML
     private Label lblHistory;
+
+    /**
+     *
+     */
     @FXML
     public TextArea tfHistory;
     @FXML
@@ -30,6 +35,8 @@ public class HistoryController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,6 +49,10 @@ public class HistoryController implements Initializable {
         stage.close();
         
     }
+
+    /**
+     *
+     */
     public void showData(){
         
     }

@@ -21,7 +21,11 @@ import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-
+/**
+ * Esta clase se encarga de las devoluciones (RMA) siglas en ingles
+ * @author alexi
+ * @version 1.0
+ */
 public class RmaGetway {
 
     SQL sql = new SQL();
@@ -34,6 +38,10 @@ public class RmaGetway {
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
 
+    /**
+     * guarda una nueva fecha de devolucion
+     * @param rma
+     */
     public void save(RMA rma) {
         try {
             con = dbCon.geConnection();
@@ -57,6 +65,10 @@ public class RmaGetway {
         }
     }
 
+    /**
+     * busca todas las fechas de devolucion
+     * @param rma
+     */
     public void view(RMA rma) {
 
         try {
@@ -78,6 +90,10 @@ public class RmaGetway {
         }
     }
 
+    /**
+     * selecciona las fechas de devolucion por id
+     * @param rma
+     */
     public void selectedView(RMA rma) {
         try {
             con = dbCon.geConnection();
@@ -97,6 +113,10 @@ public class RmaGetway {
         }
     }
 
+    /**
+     * selecciona fechas de devolucion por nombre
+     * @param rma
+     */
     public void searchView(RMA rma) {
         rma.rmaDetails.clear();
         System.out.println("nombre :" + rma.rmaName);
@@ -124,6 +144,10 @@ public class RmaGetway {
         }
     }
 
+    /**
+     * actualiza una fecha existente
+     * @param rma
+     */
     public void update(RMA rma) {
         try {
             pst = con.prepareStatement("update devolucion set DevoluionNombre=? , DevoluionDias=?, Comentario=? where DevoluionId=?");
@@ -144,6 +168,10 @@ public class RmaGetway {
         }
     }
 
+    /**
+     * elimina una fecha existente
+     * @param rma
+     */
     public void delete(RMA rma) {
         con = dbCon.geConnection();
         try {
@@ -158,6 +186,11 @@ public class RmaGetway {
         }
     }
 
+    /**
+     *busca si una fecha ya existe por nombre y dias
+     * @param rma
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isUniqName(RMA rma) {
         con = dbCon.geConnection();
         boolean uniqRMA = false;
@@ -187,6 +220,11 @@ public class RmaGetway {
         return uniqRMA;
     }
 
+    /**
+     * busca si un producto esta ligado a una fecha que se pretende eliminar
+     * @param rma
+     * @return retorna true si ya existe y false si no existe
+     */
     public boolean isNotUse(RMA rma) {
         con = dbCon.geConnection();
         boolean isNotUse = false;

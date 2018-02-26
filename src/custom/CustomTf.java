@@ -15,6 +15,11 @@ import javafx.scene.input.KeyEvent;
  */
 public class CustomTf {
 
+    /**
+     *
+     * @param value
+     * @param btn
+     */
     public void clearTextFieldByButton(TextField value, Button btn) {
 
 
@@ -53,6 +58,10 @@ public class CustomTf {
 
     }
 
+    /**
+     *
+     * @param tField
+     */
     public void numaricTextfield(TextField tField) {
         tField.setOnKeyReleased((KeyEvent event) -> {
             if (!tField.getText().matches("[0-9.]*")) {
