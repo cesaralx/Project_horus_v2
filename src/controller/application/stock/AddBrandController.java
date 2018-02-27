@@ -47,7 +47,7 @@ import javafx.scene.control.Alert;
 public class AddBrandController implements Initializable {
 
     /**
-     *
+     *boton 
      */
     public Button btnAddSupplyer;
     private userNameMedia media;
@@ -57,7 +57,7 @@ public class AddBrandController implements Initializable {
     BrandBasics brandBLL = new BrandBasics();
 
     /**
-     *
+     * strings para propiedades
      */
     public String brandId;
     private String usrId;
@@ -73,13 +73,13 @@ public class AddBrandController implements Initializable {
     String db = dBProperties.loadPropertiesFile();
 
     /**
-     *
+     * boton update
      */
     @FXML
     public Button btnUpdate;
 
     /**
-     *
+     * label
      */
     @FXML
     public Label lblHeader;
@@ -190,7 +190,7 @@ public class AddBrandController implements Initializable {
 
     /**
      *
-     * @return
+     * @return true si estan llenos todos los campos
      */
     public boolean isNotNull() {
         System.out.println(cbSupplyer.getPromptText());
@@ -217,7 +217,8 @@ public class AddBrandController implements Initializable {
     }
 
     /**
-     *
+     * muestra todos los detalles
+     * 
      */
     public void showDetails() {
         brands.id = brandId;
@@ -228,7 +229,7 @@ public class AddBrandController implements Initializable {
     }
 
     /**
-     *
+     * boton provvedor nuevo
      * @param actionEvent
      */
     public void btnAddSupplyerOnAction(ActionEvent actionEvent) {

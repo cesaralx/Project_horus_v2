@@ -96,8 +96,8 @@ public class SQL {
     }
     
     /**
-     *
-     * @param id
+     * actualiza permisos
+     * @param id 
      */
     public void userPermissionUpdate(int id){
         con = dbCon.geConnection();
@@ -109,8 +109,8 @@ public class SQL {
     }
     
     /**
-     *
-     * @param usrName
+     * permisos basicos al crear usuario
+     * @param usrName nombre de usuario
      */
     public void basicPermission(String usrName){
         DBConnection dbc = new DBConnection();
@@ -155,9 +155,9 @@ public class SQL {
     }
 
     /**
-     *
-     * @param creatorId
-     * @param creatorName
+     *busca el creator id
+     * @param creatorId creator id
+     * @param creatorName nombre
      */
     public void creatorNameFindar( String creatorId, Label creatorName){
 
@@ -178,7 +178,7 @@ public class SQL {
     }
 
     /**
-     *
+     * obtiene el nombre de marcas, devoluciones y productos
      * @param id
      * @param name
      * @param tableName
@@ -216,12 +216,12 @@ public class SQL {
     }
 
     /**
-     *
-     * @param name
-     * @param id
-     * @param tableName
-     * @param fieldName
-     * @return
+     * selecciona el id
+     * @param name nombre a buscar
+     * @param id id
+     * @param tableName nombre de tabla
+     * @param fieldName nombre del campo
+     * @return el objeto con los datos del query
      */
     public String getIdNo( String name,String id, String tableName,String fieldName){
 
@@ -243,7 +243,7 @@ public class SQL {
     }
     
     /**
-     *
+     *obtiene la marca
      * @param supplyerId
      * @param brandId
      * @param brandName
@@ -269,11 +269,11 @@ public class SQL {
     }
     
     /**
-     *
-     * @param supplyerId
-     * @param brandId
-     * @param catagoryId
-     * @param catagoryName
+     *Obtener categoria del proveedor
+     * @param supplyerId proveedor id
+     * @param brandId marca id
+     * @param catagoryId categoria id
+     * @param catagoryName nombre categoria
      * @return
      */
     public String getCatagoryId(String supplyerId,String brandId,String catagoryId,String catagoryName){
@@ -297,10 +297,10 @@ public class SQL {
     }
     
     /**
-     *
-     * @param rmaDayes
-     * @param id
-     * @return
+     * optiene dias devolucion
+     * @param rmaDayes dias
+     * @param id id de devolucion
+     * @return obeto de query
      */
     public String getDayes(String rmaDayes, String id){
         con = dbCon.geConnection();;

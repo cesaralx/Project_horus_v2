@@ -44,7 +44,7 @@ public class DBModel {
     PreparedStatement pst;
 
     /**
-     *
+     * crea la base de datos
      */
     public void createDataBase() {
         loadPropertiesFile();

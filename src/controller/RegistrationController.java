@@ -39,7 +39,7 @@ import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
- *
+ * clase Para venta de registro
  * @author alexi
  */
 public class RegistrationController implements Initializable {
@@ -115,6 +115,11 @@ public class RegistrationController implements Initializable {
         hlLoginStage.close();
     }
 
+    /**
+     * Proceso de registrar nueva cuenta
+     * @param event evento de actionperformance
+     * @throws IOException 
+     */
     @FXML
     private void btnRegistration(ActionEvent event) throws IOException {
         log.wirteLogInfo("Registrando nueva cuenta");
@@ -143,7 +148,10 @@ public class RegistrationController implements Initializable {
         }
 
     }
-
+/**
+ * Condicion valida de registro
+ * @return 
+ */
     private boolean isValidCondition() {
         boolean registration = false;
         if (nullChecq() && passMatch()) {
@@ -156,6 +164,10 @@ public class RegistrationController implements Initializable {
         return registration;
     }
 
+    /**
+     * Checa por campos vacios
+     * @return 
+     */
     private boolean nullChecq() {
         boolean nullChecq = false;
         if (tfUserName.getText().trim().isEmpty()
@@ -172,6 +184,10 @@ public class RegistrationController implements Initializable {
         return nullChecq;
     }
 
+    /**
+     * Verifica si el password coincide
+     * @return true si si coincide
+     */
     private boolean passMatch() {
         boolean passMatch = false;
         String password = pfUserPassword.getText();

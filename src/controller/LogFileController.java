@@ -23,14 +23,13 @@ import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
- *
+ * controlador del log file
  * @author alexi
  */
 public class LogFileController implements Initializable {
     
     logger log = new logger();
 
-    
     
     
     @FXML
@@ -73,7 +72,10 @@ public class LogFileController implements Initializable {
             tn.showAndDismiss(Duration.seconds(1));
     }
     
-        
+        /**
+         * Lee el log file
+         * @throws IOException 
+         */
     private void readLogInit() throws IOException {
         BufferedReader in = null;
         try {
@@ -91,6 +93,11 @@ public class LogFileController implements Initializable {
         }
     }
     
+    /**
+     * Ordena el log
+     * @param path la ruta donde esta el log
+     * @throws IOException 
+     */
         private void readLogOrdenado(String path) throws IOException {
         BufferedReader in = null;
         try {

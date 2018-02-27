@@ -144,6 +144,11 @@ public class HomeController implements Initializable {
 //        tn.showAndDismiss(Duration.seconds(2));
 //    }
     
+    /**
+     * Metodo de cancelar
+     * @deprecated  es una prueba no se usa
+     * @param event 
+     */
     @FXML
     private void cancelAction(ActionEvent event) {
         TrayNotification tn = new TrayNotification();

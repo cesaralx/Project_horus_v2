@@ -26,7 +26,7 @@ public class HistoryController implements Initializable {
     private Label lblHistory;
 
     /**
-     *
+     * utilidades usadas en la vista
      */
     @FXML
     public TextArea tfHistory;
@@ -51,7 +51,8 @@ public class HistoryController implements Initializable {
     }
 
     /**
-     *
+     * mustra la informacion
+     * @deprecated  no se usa
      */
     public void showData(){
         

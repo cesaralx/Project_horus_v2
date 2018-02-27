@@ -94,8 +94,8 @@ public class LoginController1 implements Initializable {
 
     /**
      * Initializes the controller class.
-     *
-     * @param url
+     * Controller de ventana de login
+     * @param url url de menu
      * @param rb
      */
     @Override
@@ -124,6 +124,9 @@ public class LoginController1 implements Initializable {
         } 
     }
 
+    /**
+     * Maneja los campos de user y password sean validos
+     */
     private void handleValidation() {
         RequiredFieldValidator fieldValidator = new RequiredFieldValidator();
         fieldValidator.setMessage("Requerido");
@@ -147,13 +150,24 @@ public class LoginController1 implements Initializable {
 
     }
     
+    /**
+     * crea el archivo donde se guarda el usuario logeado
+     * @param usr el objeto usuario
+     * @throws FileNotFoundException
+     * @throws UnsupportedEncodingException 
+     */
     private void crearUserFile(String usr) throws FileNotFoundException, UnsupportedEncodingException{
         PrintWriter writer = new PrintWriter(System.getProperty("user.dir")+ "/usr.txt", "UTF-8");
         writer.println(usr);
-        writer.close();
-        
+        writer.close(); 
     }
-
+    
+    
+/**
+ * Inicia el proceso de validacion
+ * @param event
+ * @throws IOException 
+ */
     private void completeLogin(ActionEvent event) throws IOException {
 //        btnLogin.getScene().getWindow().hide();
         log.wirteLogInfo("Iniciando proceso de validacion");
@@ -228,6 +242,11 @@ public class LoginController1 implements Initializable {
 
     }
     
+    /**
+     * Verifica que ambos campos tengan texto
+     * @return retorna true si estan llenos
+     * @throws IOException 
+     */
     private boolean isValidCondition() throws IOException {
         boolean validCondition = false;
         if (txtUsername.getText().trim().isEmpty()
@@ -247,6 +266,10 @@ public class LoginController1 implements Initializable {
         return validCondition;
     }
 
+    /**
+     * Inicia menu de configuracion de BD
+     * @param event 
+     */
     @FXML
     private void hlDbOnAction(ActionEvent event) {
         Parent root = null;
@@ -263,7 +286,12 @@ public class LoginController1 implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
+/**
+ * crea cuenta de administrador
+ * @param event
+ * @throws IOException 
+ */
     @FXML
     private void hlCreateAnAccount(ActionEvent event) throws IOException {
         DBConnection dbCon = new DBConnection();
@@ -306,6 +334,10 @@ public class LoginController1 implements Initializable {
 
     }
 
+    /**
+     * Carga menu de nuevo registro
+     * @throws IOException 
+     */
     private void loadRegistration() throws IOException {
         log.wirteLogInfo("Cargando menu para nuevo registro");
         Parent root = null;

@@ -38,8 +38,8 @@ import dataBase.DBProperties;
 
 /**
  * FXML Controller class
- *
- * @author rifat
+ *Controla los empleados
+ * @author alexi
  */
 public class AddEmployeController implements Initializable {
 
@@ -117,14 +117,14 @@ public class AddEmployeController implements Initializable {
 
     /**
      *
-     * @return
+     * @return usuario logeado
      */
     public userNameMedia getNameMedia() {
         return nameMedia;
     }
 
     /**
-     *
+     * pone el usuario logeado
      * @param nameMedia
      */
     public void setNameMedia(userNameMedia nameMedia) {
@@ -156,6 +156,11 @@ public class AddEmployeController implements Initializable {
         btnSave.disableProperty().bind(binding);
     }    
 
+    /**
+     * Elige una imagen de usuario
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void btnAttachImageOnAction(ActionEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
@@ -178,6 +183,10 @@ public class AddEmployeController implements Initializable {
         }
     }
 
+    /**
+     * Boton de guardar
+     * @param event 
+     */
     @FXML
     private void btnSaveOnAction(ActionEvent event) {
         users.userName = tfUserName.getText();

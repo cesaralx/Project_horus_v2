@@ -142,7 +142,7 @@ public class ApplicationController implements Initializable {
     private userNameMedia usrNameMedia;
 
     /**
-     *
+     * optiene el usuario logeado
      * @return
      */
     public userNameMedia getUsrNameMedia() {
@@ -150,7 +150,7 @@ public class ApplicationController implements Initializable {
     }
     
     /**
-     *
+     * pone el usuario logeado
      * @return
      */
     public String getUsrName() {
@@ -404,7 +404,7 @@ public class ApplicationController implements Initializable {
     }
 
     /**
-     *
+     * optiene los permisos del usuario actual
      */
     public void permission() {
         con = dbCon.geConnection();
@@ -520,7 +520,7 @@ public class ApplicationController implements Initializable {
     }
 
     /**
-     *
+     *mostrar detalles de usuario en la esquina
      */
     public void viewDetails() {
         users.id = id;
