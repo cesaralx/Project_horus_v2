@@ -94,6 +94,7 @@ public class ServerController implements Initializable {
 
     @FXML
     private void btnResetOnAction(ActionEvent event) {
+        getDataFromFile();
     }
     
     /**
@@ -137,7 +138,7 @@ public class ServerController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Servidor conectado correctamente");
                 alert.setHeaderText("Conectado");
-                alert.setContentText("Servidor ha sido conectado correctamente \n para inciar sesion haz click en ok");
+                alert.setContentText("Servidor ha sido conectado correctamente \n para inciar sesion haz click en aceptar");
                 alert.initStyle(StageStyle.UNDECORATED);
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {

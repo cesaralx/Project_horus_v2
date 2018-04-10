@@ -208,7 +208,7 @@
                                     </HBox>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Text fill="#cc3535" layoutX="11.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nice Vaping" wrappingWidth="191.41162109375">
+                                          <Text fill="#90dde4" layoutX="11.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nice Vaping" wrappingWidth="191.41162109375">
                                              <font>
                                                 <Font name="System Bold Italic" size="21.0" />
                                              </font>

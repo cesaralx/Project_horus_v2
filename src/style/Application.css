@@ -5,7 +5,7 @@
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     /*    -fx-border-color: white;*/
-    -fx-text-fill: #4E4F52;
+    -fx-text-fill: #819ca9;
     /*    -fx-border-radius: 50px;*/
     /*    -fx-background-radius: 50px;*/
     -fx-background-color: #282E34;
@@ -123,11 +123,12 @@ MenuButton{
     -fx-background-color:#282E34;
 }
 #mbtnUsrInfoBox{
+    /*-fx-background-color:#282E34;*/
     -fx-background-color:#282E34;
     -fx-text-fill: white;
 }
 #mbtnUsrInfoBox:hover, #mbtnUsrInfoBox:focused{
-    -fx-background-color:#494949;
+    -fx-background-color:#819ca9;
 }
 #circleImgUsr{
     -fx-padding: 0;

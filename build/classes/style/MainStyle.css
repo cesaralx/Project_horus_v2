@@ -461,7 +461,7 @@ StoreComboBox{
     -fx-text-fill: white;
 }
 .toggle-button:selected{
-    -fx-background-color: #959595;
+    -fx-background-color: #EA5444;
     -fx-border-color: #D7D7D7;
     -fx-border-width: 0px 0px 3px 0px;
     -fx-text-fill: white;

@@ -43,7 +43,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author rifat
+ * @author alexi
  */
 public class NewSellController implements Initializable {
 
